@@ -1,4 +1,6 @@
-## <ins> **Education** </ins>
+___
+
+## **Education**
 ___
 ### BS-MS | Aug 2018 - April 2019 | IISER Mohali
 - **CPI**: 9.9
@@ -21,7 +23,7 @@ ___
 ### INSPIRE
 - Hold an INSPIRE Fellowship
 
-###und Vijyoshi-2018
+### Vijyoshi-2018
 - Attended the Vijyoshi camp in December 2018
 
 ___
