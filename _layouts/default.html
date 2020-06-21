@@ -14,6 +14,7 @@
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
+      <img id="avatar" src="images/avatar.jpg" style="min-height:0px; height: 80%; float:right; position:absolute; right: 0; top: 0; margin:20px">
         <header class="inner">
           {% if site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
@@ -21,7 +22,7 @@
 
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-          <img src="avatar.jpg" alt="profilepic" width="150" height="150" align="right">
+       
           
           {% if site.show_downloads %}
             <section id="downloads">
