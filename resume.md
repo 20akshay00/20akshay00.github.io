@@ -14,6 +14,7 @@ ___
 
 ### 10th Grade | March 2016 | Vani Vidyalaya Sr. Sec. & Jr. College
 - **CGPA** : 10.0
+
 ___
 ## Academic Achievements
 ___
@@ -22,9 +23,11 @@ ___
 
 ### Vijyoshi-2018
 - Attended the Vijyoshi camp in December 2018
+
 ___
 ## Research Experience
 ___
 ### Analysing the neutrino detection efficiency of INO-ICAL detector | [Dr. Prafulla Kumar Behera](https://www.iitm.ac.in/info/fac/behera) | Summer 2019
 - This was an introduction into the basic structure of the standard model, and more specifically into the research on neutrino oscillations and the mass heirarchy. I then read about various neutrino detection methods, and used simulated neutrino detector data (from the proposed INO-ICAL schematic) to study the efficiency of the detector and rationalize the results on the basis of detector geometry. Here is a rather [verbose report](pr.pdf) of what I learnt along with the analysis performed using [ROOT](https://root.cern.ch/).
+
 ___
