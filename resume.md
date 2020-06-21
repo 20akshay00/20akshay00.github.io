@@ -1,19 +1,18 @@
-title: Resume
 # Education
 ## BS-MS | Aug 2018 - April 2019 | IISER Mohali
-- CPI: 9.9
-- SPI (Sem 1): 9.8
-- SPI (Sem 2): 10.0
-- SPI (Sem 3): 10.0
+- **CPI**: 9.9
+- **SPI (Sem 1)**: 9.8
+- **SPI (Sem 2)**: 10.0
+- **SPI (Sem 3)**: 10.0
 
-##12th Grade | April 2018 | Devi Academy Sr. Sec. School
-- Physics: 96
-- Math: 99
-- Chemistry: 97 
-- CS: 96
+## 12th Grade | April 2018 | Devi Academy Sr. Sec. School
+- **Physics**: 96
+- **Math**: 99
+- **Chemistry**: 97 
+- **CS**: 96
 
 ## 10th Grade | March 2016 | Vani Vidyalaya Sr. Sec. & Jr. College
-- CGPA : 10.0
+- **CGPA** : 10.0
 
 # Academic Achievements
 ## INSPIRE
