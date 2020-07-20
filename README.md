@@ -5,3 +5,4 @@ I'm a Physics undergraduate studying at IISER Mohali (BS-MS), expected to gradua
 Check out my resume [here](resume.md)
 
 ## Casual projects
+At the moment, I'm working on setting up and building an open source physics simulation repository, with the aim of providing a free source of learning material that anyone can contribute to. It is still under works at https://physicshub.herokuapp.com/.
