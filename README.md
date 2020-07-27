@@ -8,6 +8,6 @@ Check out my CV [here](resume.md).
 Currently, I'm working with a team to set up an open-source physics simulation repository. We aim to provide a free source of learning material while being open to anyone who wants to contribute to it. It is still in its early stages but will be live [here](https://physicshub.herokuapp.com/).
 Meanwhile, you can find some of the simulations as I work on them in my [github](https://github.com/20akshay00/).
 
-Here are few of the one's I've made so far; (Better viewed on a desktop/laptop)
+Here are some that I've made so far; (Better viewed on a desktop/laptop)
 - *Elastic Pendulum*: https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6
 - *Coupled Pendulum*: https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR
