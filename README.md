@@ -9,5 +9,5 @@ Currently, I'm working with a team to set up an open-source physics simulation r
 Meanwhile, you can find some of the simulations as I work on them in my [github](https://github.com/20akshay00/).
 
 Here are some that I've made so far; (Better viewed on a desktop/laptop)
-- *Elastic Pendulum*: https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6
-- *Coupled Pendulum*: https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR
+- [*Elastic Pendulum*](https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6) 
+- [*Coupled Pendulum*](https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR) 
