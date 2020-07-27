@@ -6,3 +6,4 @@ Check out my CV [here](resume.md).
 
 ## Casual projects
 Currently, I'm working with a team to set up an open-source physics simulation repository. We aim to provide a free source of learning material while being open to anyone who wants to contribute to it. It is still in its early stages but will be live [here](https://physicshub.herokuapp.com/).
+Meanwhile, you can find some of the simulations as I work on them in my [github](https://github.com/20akshay00/).
