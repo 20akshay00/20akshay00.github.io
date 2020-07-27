@@ -2,7 +2,7 @@ ___
 
 ## **Education**
 ___
-### BS-MS | Aug 2018 - April 2019 | IISER Mohali
+### BS-MS | Aug 2018 - Present| IISER Mohali
 - **CPI**: 9.95
 - **SPI (Sem 1)**: 9.8
 - **SPI (Sem 2)**: 10.0
