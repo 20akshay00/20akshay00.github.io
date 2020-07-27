@@ -1,8 +1,8 @@
 ## About Me
-I'm a Physics undergraduate studying at IISER Mohali (BS-MS), expected to graduate in 2023. I'm yet to figure out my specific interests, but I enjoy doing computational work and interactive simulations. I usually work with Python, recently JavaScript, and a little bit of C++.
+I'm a Physics undergraduate studying at IISER Mohali (BS-MS), expected to graduate in 2023. I'm yet to figure out my specific interests, but I enjoy doing computational work and interactive simulations. I usually work with Python, and a little bit of C++ but recently I've picked up Julia and JavaScript as well.
 
-## Resume
-Check out my resume [here](resume.md).
+## CV
+Check out my CV [here](resume.md).
 
 ## Casual projects
-At the moment, I'm working with a team, to set up an open source physics simulation repository, with the aim of providing a free source of learning material that anyone can contribute to. It is still under works but will be live [here](https://physicshub.herokuapp.com/).
+Currently, I'm working with a team to set up an open-source physics simulation repository. We aim to provide a free source of learning material while being open to anyone who wants to contribute to it. It is still in its early stages but will be live [here](https://physicshub.herokuapp.com/).
