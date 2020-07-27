@@ -3,10 +3,11 @@ ___
 ## **Education**
 ___
 ### BS-MS | Aug 2018 - April 2019 | IISER Mohali
-- **CPI**: 9.9
+- **CPI**: 9.95
 - **SPI (Sem 1)**: 9.8
 - **SPI (Sem 2)**: 10.0
 - **SPI (Sem 3)**: 10.0
+- **SPI (Sem 4)**: 10.0
 
 ### 12th Grade | April 2018 | Devi Academy Sr. Sec. School
 - **Physics**: 96
