@@ -36,9 +36,11 @@ Explored simulation methods to observe and study the beha‐
 viour of quantum wave packets in 1 dimensional potentials. In‐
 volved implementing algorithms to solve time (in)dependant
 Schrodinger equations and transfer matrix‐based calculations
-to study scattering from barriers. Here is a [short report](https://20akshay00.github.io/reports/summer2020) describing the methods used and the result obtained.
+to study scattering from barriers. Here is a [short report](reports/summer2020) describing the methods used and the result obtained.
+
 ___
 ### Analysing the neutrino detection efficiency of INO-ICAL detector | [Dr. Prafulla Kumar Behera](https://www.iitm.ac.in/info/fac/behera) | Summer 2019
-- This was an introduction into the basic structure of the standard model, and more specifically into the research on neutrino oscillations and the mass heirarchy. I then read about various neutrino detection methods, and used simulated neutrino detector data (from the proposed INO-ICAL schematic) to study the efficiency of the detector and rationalize the results on the basis of detector geometry. Here is a rather [verbose report](https://20akshay00.github.io/reports/summer2019) of what I learnt along with the analysis performed using [ROOT](https://root.cern.ch/).
+- This was an introduction into the basic structure of the standard model, and more specifically into the research on neutrino oscillations and the mass heirarchy. I then read about various neutrino detection methods, and used simulated neutrino detector data (from the proposed INO-ICAL schematic) to study the efficiency of the detector and rationalize the results on the basis of detector geometry. Here is a rather [verbose report](reports/summer2019) of what I learnt along with the analysis performed using [ROOT](https://root.cern.ch/).
+
 ___
 
