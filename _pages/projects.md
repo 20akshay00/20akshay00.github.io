@@ -16,13 +16,17 @@ redirect_from:
 **OpenPsiMu - [[link]](https://github.com/OpenPsiMu/)**
 =====
 * **About:** An unofficial organization intended to facilitate and organize projects involving Computational Physics on the web. It is still in its infancy, and we have yet to make much progress but it is something I intend to build over time.
-* **The Book of PsiMulations:** It is intended to be a full-fledged website with algorithms, implementations and explanations of concepts in Computational Physics supporting Python and Julia. This is a pet project of mine, that I wish to flesh out, over time.
+* **The Book of PsiMulations:** It is intended to be a full-fledged website with algorithms, implementations and explanations of concepts in Computational Physics supporting Python and Julia. This is a pet project of mine that I wish to flesh out in the future. An early mock version can be seen [here](https://openpsimu.github.io/The-Book-of-PsiMulations/docs/SolvingODEs/EulerMethod/EulerMethod.html).
+
+**Egg Paratha: Exploring Physics with Code** - [[link]](https://iiserm.github.io/egg-paratha/)
+=====
+* **About:** An initiative to conduct weekly discussion sessions on simulating physical phenomena on a computer. It is intended to be a regular event conducted by Phi@I, the physics club of IISER Mohali. I have hosted 2 sessions so far, which can be viewed [here](https://www.youtube.com/channel/UCgSU-x37bXpAYmVqgw0UyQA).
 
 **Tetra: A treasure hunt game-engine** - [[link]](https://github.com/DhruvaSambrani/turing-hunt-engine)
 =====
 * **About:** A simplistic 2D unicode-based 'game-engine' written by me and [Dhruva](https://dhruvasambrani.github.io) for the Turing Club treasure hunt event to be conducted online (in the midst of the pandemic).
 * **Details:** Written in Python with the GUI handled by PySimpleGUI. 
 
-**Egg Paratha: Exploring Physics with Code** - [[link]](https://iiserm.github.io/egg-paratha/)
+**Schedule Selector** - [[link]](https://20akshay00.github.io/schedule-selector/)
 =====
-* **About:** An initiative to conduct weekly discussion sessions on simulating physical phenomena on a computer. It is intended to be a regular event conducted by Phi@I, the physics club of IISER Mohali. I have hosted 2 sessions so far, which can be viewed [here](https://www.youtube.com/channel/UCgSU-x37bXpAYmVqgw0UyQA).
+* **About:** This was my first creation to using my newly attained HTML/CSS/Javascript knowledge, to solve the annoying problem of manually filtering through a master schedule to select our courses every semester. It isn't perfect (in terms of browser compatibility, and formatting the master schedule), but it did come out quite nicely.

@@ -7,12 +7,12 @@ These were my first attempts at pixel art. The goal was to create an image loose
 
 **"And God said, let there be Phi."**
 -----
-<img src='/images/phi1.png' width=500>
+<img src='/images/pixelart/phi1.png' width=500>
 
 **"Any sufficiently advanced technology is indistinguishable from magic."**
 -----
-<img src='/images/phi2.png' width=500>
+<img src='/images/pixelart/phi2.png' width=500>
 
 **"???"**
 -----
-<img src='/images/phi3.png' width=500>
+<img src='/images/pixelart/phi3.png' width=500>

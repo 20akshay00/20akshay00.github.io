@@ -7,4 +7,4 @@ My third attempt at pixel art, depicting an adventure that lies ahead in an unex
 
 **A Search for Adventure**
 ------
-<img src='/images/adventure.png' width=500>
+<img src='/images/pixelart/adventure.png' width=500>

@@ -20,24 +20,23 @@ Education
 Experience
 -----
 * **May‐Aug 2021, IIT Kharagpur, [Dr. Vishwanath Shukla](https://vishwanathshukla.in/)**
-  * Learnt and explored parts of parallel computing, by pickingup basics of MPI and OpenMP. Did not proceed with this,due to lack of interest.
-  * Read about superfluidity in BECs and implemented simplealgorithms to obtain ground state solutions. Continued to
-read about dipolar BECs and supersolidity, but not muchprogress has been made.
+  * Learnt and explored parts of parallel computing, by picking up basics of MPI and OpenMP. Did not proceed with this, due to lack of interest.
+  * Read about superfluidity in BECs and implemented simple algorithms to obtain ground state solutions. Continued to
+read about dipolar BECs and supersolidity, but not much progress has been made.
   * *Worked with **Fortran90, Julia***
 
 ---
 
 * **May‐July 2020, IISER Mohali, [Dr. P. Balanarayan](https://www.iisermohali.ac.in/faculty/dcs/balanarayan)**
-  * Explored simulation methods to observe and study the be‐haviour of quantum wave packets in 1 dimensional poten‐tials.
-  * Implemented algorithms to solve time (in)dependent Sch‐rodinger equations and transfer matrix‐based calculationsto study scattering from barriers.
+  * Explored simulation methods to observe and study the behaviour of quantum wave packets in 1 dimensional potentials.
+  * Implemented algorithms to solve time (in)dependent Schrodinger equations and transfer matrix‐based calculations to study scattering from barriers.
   * *Worked with **Python (Numpy, Scipy)***
 
 ---
 
 * **May-July 2019: IIT Madras, [Dr. Prafulla Kumar Behera](https://physics.iitm.ac.in/behera)**
   * Learnt elementary particle physics and neutrino detection methods.
-  * Worked with the analysis tool ROOT to study various as‐pects of the muon response of the Indian Neutrino Obser‐
-vatory’s ICAL detector using simulated data
+  * Worked with the analysis tool ROOT to study various as‐pects of the muon response of the Indian Neutrino Observatory’s ICAL detector using simulated data.
   * *Worked with **ROOT (C++ framework)***
 
 ---

@@ -7,4 +7,4 @@ My second attempt at pixel art, drawing inspiration from the struggles of a stud
 
 **Choices**
 ------
-<img src='/images/choices.png' width=1000>
+<img src='/images/pixelart/choices.png' width=1000>
