@@ -12,16 +12,13 @@ main:
     url: /simulations/
 
   - title: "Gallery"
-    url: /gallery/        
+    url: /gallery/   
 
   # - title: "Talks"
   #   url: /talks/    
 
   - title: "Blog Posts"
-    url: /year-archive/
-    
-  # - title: "Teaching"
-  #   url: /teaching/    
+    url: /year-archive/ 
     
   # - title: "Guide"
   #   url: /markdown/
