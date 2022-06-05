@@ -7,9 +7,8 @@ My second trip into the wonderful world of game development. This was made in ~1
 
 **Radar Defender**
 ------
-
-[gameplay](/images/gamedev/start.png)
-[gameplay](/images/gamedev/gameplay.png)
+<img src='/images/gamedev/start.png' width=1000>
+<img src='/images/gamedev/gameplay.png' width=1000>
 
 Click [here](https://youtu.be/jhMcW-pPb0k) for the gameplay demo video.
 
