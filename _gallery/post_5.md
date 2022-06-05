@@ -8,10 +8,7 @@ My second trip into the wonderful world of game development. This was made in ~1
 **Radar Defender**
 ------
 
-<iframe width="420" height="315"
-src="https://youtu.be/jhMcW-pPb0k">
-</iframe> 
+[gameplay](/images/gamedev/gameplay.png)
 
-
-(In case the iframe does not render; click [here](https://youtu.be/jhMcW-pPb0k)].
+Click [here](https://youtu.be/jhMcW-pPb0k) for the gameplay demo video.
 
