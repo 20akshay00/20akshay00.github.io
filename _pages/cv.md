@@ -12,7 +12,7 @@ redirect_from:
 Education
 -----
 * BS‐MS in Physics, IISER Mohali, 2018 - 2023 (expected)
-    * **CPI:** 9.97/10 (till 7th semester)
+    * **CPI:** 9.96/10 (till 8th semester)
 
 * Highschool, Devi Academy, Sr. Sec School, Chennai, 2016 ‐ 2018 
     * **CBSE 12th Boards:** 96%

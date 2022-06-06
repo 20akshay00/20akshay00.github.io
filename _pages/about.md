@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am a fourth year student pursuing a BS-MS degree in Physics, at the [Indian Institute of Science Education and Research, Mohali](https://www.iisermohali.ac.in/) (IISER-M). Implementing computational models of physical phenomena and creating interactive simulations is one of my favourite pastimes, heavily inspired by the lack of visual demonstrations in higher level concepts of physics. 
+Hi! I am a fifth year student pursuing a BS-MS degree in Physics, at the [Indian Institute of Science Education and Research, Mohali](https://www.iisermohali.ac.in/) (IISER-M). Implementing computational models of physical phenomena and creating interactive simulations is one of my favourite pastimes, heavily inspired by the lack of visual demonstrations in higher level concepts of physics. 
 
 I am currently working on my MS thesis with [Dr. Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar) and [Prof. Tilman Pfau's group](https://www.pi5.uni-stuttgart.de/institute/team/) broadly involving quantum simulations using ultracold atoms trapped in optical lattices. 
 
