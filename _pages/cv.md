@@ -19,6 +19,13 @@ Education
 
 Experience
 -----
+* **June-Present 2022, University of Stuttgart, [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)**
+  * Implemented algorithms to identify and locate exotic phases exhibited in the 2D - Bose Hubbard Model. 
+  * This was done to assist the planning of an experimental quantum simulator setup using an optical lattice loaded with dipolar dysprosium atoms.
+  * *Worked with **Python, Julia***
+
+---
+
 * **May‐Aug 2021, IIT Kharagpur, [Dr. Vishwanath Shukla](https://vishwanathshukla.in/)**
   * Learnt and explored parts of parallel computing, by picking up basics of MPI and OpenMP. Did not proceed with this, due to lack of interest.
   * Read about superfluidity in BECs and implemented simple algorithms to obtain ground state solutions. Continued to
