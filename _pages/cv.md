@@ -28,7 +28,7 @@ Experience
 
 ---
 
-* **May‐Aug 2021, Research Internship under [Dr. Vishwanath Shukla](https://vishwanathshukla.in/)** - [PDF]
+* **May‐Aug 2021, Research Internship under [Dr. Vishwanath Shukla](https://vishwanathshukla.in/)** - [PDF](https://20akshay00.github.io/Summer2021/)
   * Learnt and explored concepts of parallel computing by picking up basic MPI and OpenMP. Did not proceed with this due to lack of interest. 
   * Read about superfluidity in BECs and implemented simple algorithms to study ground state solutions and dynamics in trapping potentials. 
   * Continued to develop an interest in dipolar BECs and supersolidity, but not much progress was made.
@@ -64,7 +64,7 @@ Skills
 
 Achievements/Awards
 -----
-* **1st Place** [Enigma, AstraX'22](https://astrax.in/) - Machine Learning based Hackathon to solve problems in Astrophysics.
+* **1st Place** [Enigma, AstraX'22](http://20akshay00.github.io/files/enigma_cert.png) - Machine Learning based Hackathon to solve problems in Astrophysics.
 * **CNR Rao Foundation Award**: For obtaining 10 SPI in 2nd semester.
 
 <!-- Talks
