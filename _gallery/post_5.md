@@ -12,5 +12,5 @@ My first trip into the world of game development. This was made over 4 months of
 
 Visit the [github repository](https://github.com/IISERM/GrandThesisAdventure-StressCity) for the source code of the game. These 4 months of effort culminated in a short (~6 hrs) game for a Treasure Hunt event conducted by the Turing club, which involved a simple storyline prompting the player to go on a hunt to collect clues across a terminal-based recreation of the IISER Mohali campus.
 
-Click [here](https://youtu.be/jhMcW-pPb0k) for the trailer video and [here](https://iiserm.github.io/GTA-Stress-City/) if you want to try it out (be warned of occasional crude humor and lots of inside jokes though!).
+Click [here](https://youtu.be/AeqxuTZfrMI) for the trailer video (most of which was my work!) and [here](https://iiserm.github.io/GTA-Stress-City/) if you want to try it out (be warned of occasional crude humor and lots of inside jokes though!).
 
