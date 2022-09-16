@@ -3,7 +3,7 @@ title: "GTA: Stress City - A Virtual treasure hunt"
 excerpt: ""
 collection: gallery
 ---
-My first trip into the world of game development. This was made over 4 months of on-and-off development with a team of ~10 people as part of the Turing Club (the coding club) activities at IISER Mohali. The game was built using a very simple 'game engine', called [**Tetra**](github.com/dhruvaSambrani/turing-hunt-engine) that I developed under the lead of my friend, [Dhruva](dhruvasambrani.github.io/). The result wasn't particularly fancy or well-made, but working on this with my wonderful friends turned out as one of my most memorable experiences at IISER.
+My first trip into the world of game development. This was made over 4 months of on-and-off development with a team of ~10 people as part of the Turing Club (the coding club) activities at IISER Mohali. The game was built using a very simple 'game engine', called [**Tetra**](https://github.com/dhruvaSambrani/turing-hunt-engine) that I developed under the lead of my friend, [Dhruva](https://dhruvasambrani.github.io/). The result wasn't particularly fancy or well-made, but working on this with my wonderful friends turned out as one of my most memorable experiences at IISER.
 
 
 **GTA: Stress City**
