@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Curriculum Vitae - [\[PDF\]](http://20akshay00.github.io/files/CV.pdf)"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
