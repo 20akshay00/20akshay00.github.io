@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "My Personal Site"
+title                    : "Akshay Shankar"
 title_separator          : "-"
-name                     : &name 
-description              : &description
+name                     : &name "Akshay Shankar"
+description              : &description "5th year BS-MS Physics Major"
 url                      : https://20akshay00.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "20akshay00/20akshay00.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Akshay Shankar"
   avatar           : "profile.png"
-  bio              : 5th Year BS-MS student at IISER Mohali
+  bio              : "5th year BS-MS Physics Major <br> <a style='color: black;' href='https://web.iisermohali.ac.in/dept/physics/index.html'>Department of Physical Sciences</a>, <a style='color: black;' href='https://www.iisermohali.ac.in/'>IISER Mohali</a>"
   location         : 
   employer         :
   pubmed           : 
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "akshay-shankar-07a060140"
+  linkedin         : "20akshay00"
   orcid            : 
   pinterest        :
   soundcloud       :
