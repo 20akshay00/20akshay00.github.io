@@ -12,7 +12,7 @@ redirect_from:
 Education
 -----
 * **Indian Institute of Science Education and Research, Mohali** <br> BS-MS Dual Degree, Physics Major and Data Science Minor, 2018 - 2023 (expected)
-    * **Cumulative GPA:** 9.96/10 (till 8th semester)
+    * **Cumulative GPA:** 9.96/10 (till 8th semester) - [\[Transcript\]](http://20akshay00.github.io/files/transcript.pdf)
     * INSPIRE SHE (Scholarship for Higher Education) recipient, 2018‑202
 
 * **Devi Academy, Sr. Sec School, Chennai** <br> CBSE Board, Secondary and Senior Secondary School (2016 - 2018)
