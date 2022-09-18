@@ -44,7 +44,7 @@ Below are some projects that I carried out as part of coursework at IISER Mohali
 
 **News Recommender System (IDC410 - Machine Learning)** - [[link]](https://github.com/20akshay00/News-Recommender-System)
 -----
-* **About:** In this project, we (my friends [Bhavik](https://github.com/bhavikorange), [Kunal](https://github.com/kunal1729verma), [Aniket](https://github.com/aniket-sharma-768) and I) attempted to design a news recommender system by scraping news articles from some popular news websites, and used methods of Natural Language Processing to recommend build a simple website that recommends articles based on user history and preferences. We used a combination of content-based and collaborative-based recommendations to generate the news feed for each user.
+* **About:** In this project, we (my friends [Bhavik](https://github.com/bhavikorange), [Kunal](https://github.com/kunal1729verma), [Aniket](https://github.com/aniket-sharma-768) and I) attempted to design a news recommender system by scraping news articles from some popular news websites, and used methods of Natural Language Processing to build a simple website that recommends articles based on user history and preferences. We used a combination of content-based recommendation and collaborative filtering to generate the news feed for each user.
 
 **Charge Density Estimation using Pressure (PHY312 - Advanced Electronics Lab)** - [[link]](https://github.com/20akshay00/PHY312-Project)
 -----
