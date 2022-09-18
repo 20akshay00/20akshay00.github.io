@@ -52,4 +52,4 @@ Below are some projects that I carried out as part of coursework at IISER Mohali
 
 **Surface Waves in Fluids (PHY638 - Physics of Fluids)** - [[link]](https://20akshay00.github.io/PHY638-Assignment-5/)
 -----
-* **About:** This is a simple document describing the physics of waves on the surface of a liquid. It was written as as assignment for the PHY638 course. Unfortunately this does not involve any simulations :(. 
+* **About:** This is a simple document describing the physics of waves on the surface of a liquid. It was written as part of an assignment for the PHY638 course. Unfortunately this does not involve any simulations :(. 
