@@ -31,7 +31,7 @@ Research Experience
 
 * **May‐Aug 2021, Research Internship with [Dr. Vishwanath Shukla](https://vishwanathshukla.in/)** - [\[**PDF**\]](https://20akshay00.github.io/Summer2021/)
   * Learnt and explored concepts of parallel computing by picking up basic MPI and OpenMP. Did not proceed with this due to lack of interest. 
-  * Read about superfluidity in BECs and implemented simple algorithms to study ground state dynamics in harmonic traps. 
+  * Read about superfluidity in BECs and implemented methods to simulate the 1D Gross-Pitaevski Equation to study ground state dynamics in harmonic traps. 
   * Continued to develop an interest in dipolar BECs and supersolidity, but not much progress was made.
   * *Worked with **Fortran90, Julia***
 
