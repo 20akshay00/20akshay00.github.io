@@ -16,6 +16,7 @@ Visual simulations
 * **An assorted collection of visual simulations made using Javis.jl:** [https://20akshay00.github.io/PhysicsJavisAnim/](https://20akshay00.github.io/PhysicsJavisAnim/)
 * **A collection of pendulum based simulations, as part of ThePhysicsHub project:** [https://physicshub.herokuapp.com/simulations](https://physicshub.herokuapp.com/simulations)
 * * **Precursors to ThePhysicsHub simulations:** [Elastic Pendulum](https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6), [Coupled Pendulum](https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6)
+* **Exploring the Bose Hubbard Model:** [https://20akshay00.github.io/BoseHubbardMachineLearning/](https://20akshay00.github.io/BoseHubbardMachineLearning/)
 
 Others
 -----
