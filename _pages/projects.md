@@ -36,15 +36,15 @@ Below are some projects that I carried out as part of coursework at IISER Mohali
 
 **Complex system models (IDC621 - Modelling Complex Systems)** - [[link]](github.com/20akshay00/modellingComplexSystems)
 -----
-* **About:** We studied and built basic models to describe complex systems and explored them using numerical simulations to understand the emergence of complex behaviours from simple rules. Some of the topics we covered included SIRS disease spread models, Sandpile model and Kuramoto oscillators.
+* **About:** We studied and built basic models to describe complex systems and explored them using numerical simulations. This was done to understand the emergence of complex behaviours from simple rules. Some of the topics we covered included SIRS disease spread models, Sandpile model and Kuramoto oscillators.
 
 **Signature fraud busting using K-means (IDC409 - Intro to Data Science)** - [[link]](https://github.com/20akshay00/IDC409/blob/master/project_2_report.pdf)
 -----
-* **About:** In this project, we implemented a simple script to detect fraudulent signatures by using K-means clustering to classify a sample of signatures provided as training data. While this was not robust at all, it served as a good project to understand the utility of k-means clustering.
+* **About:** In this project, we wrote a script to detect fraudulent signatures by using K-means clustering to classify a sample of signatures provided as training data. While this was not robust at all, it served as a good project to understand the utility of K-means clustering.
 
 **News Recommender System (IDC410 - Machine Learning)** - [[link]](https://github.com/20akshay00/News-Recommender-System)
 -----
-* **About:** In this project, we (my friends [Bhavik](https://github.com/bhavikorange), [Kunal](https://github.com/kunal1729verma), [Aniket](https://github.com/aniket-sharma-768) and I) attempted to design a news recommender system by scraping news articles from some popular news websites, and used methods of Natural Language Processing to build a simple website that recommends articles based on user history and preferences. We used a combination of content-based recommendation and collaborative filtering to generate the news feed for each user.
+* **About:** In this project, we (my friends [Bhavik](https://github.com/bhavikorange), [Kunal](https://github.com/kunal1729verma), [Aniket](https://github.com/aniket-sharma-768) and I) attempted to design a news recommender system by scraping news articles from popular news websites. It involved utilizing the methods of Natural Language Processing to build a simple website that recommends articles based on user history and preferences. We used a combination of content-based recommendation and collaborative filtering to generate the news feed for each user.
 
 **Charge Density Estimation using Pressure (PHY312 - Advanced Electronics Lab)** - [[link]](https://github.com/20akshay00/PHY312-Project)
 -----
