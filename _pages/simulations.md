@@ -6,7 +6,7 @@ author_profile: true
 redirect_from:
   - /simulations
 ---
-I mostly work with Python and Julia to create visual simulations. Occasionally, I use Fortran and C++, but only if I *have* to. As I did not originally plan to display my simulations in a single place, they are scattered across various locations. For now, I have simply linked the ones that I can remember.
+I mostly work with Python and Julia to create visual simulations. I also have a working knowledge of C++ and Fortran95 but I do not use them quite often. Throughout my degree, I've made many small simulations that are scattered across various locations. For now, I have simply linked the ones that I can remember.
 
 Visual simulations
 -----
