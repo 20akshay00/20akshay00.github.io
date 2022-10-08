@@ -15,9 +15,9 @@ I am currently working on my MS thesis with [Dr. Sanjeev Kumar](https://www.iise
 The never-ending quest
 ---
 
-I am generally a bit hesitant to move out of my comfort zone. But having spent time with a friend of mine, [Dhruva](https://dhruvasambrani.github.io), I have developed the habit of learning a new skill every now and then, in the context of programming languages, or niche open source tools that people have made. With the plethora of things to learn and the unbridled access to them, it serves as a fun activity and slowly builds up my skillset over time. 
+I am generally a bit hesitant to move out of my comfort zone. But having spent time with a friend of mine, [Dhruva](https://dhruvasambrani.github.io), I have developed the habit of learning a new skill every now and then, in the context of programming languages and niche open source tools. With the plethora of things to learn and the unbridled access to them, it serves as a fun activity and slowly builds up my skillset over time. 
 
-A lot of my motivation comes from engaging in group activites, so I also enjoy working on collaborative projects with other students to learn something new and exciting. Feel free to contact me if you have something interesting to explore!
+A lot of my motivation comes from engaging in group activites, so I also enjoy working on collaborative projects to learn something new and exciting. Feel free to contact me if you have something interesting to explore!
 
 <!-- Purpose of this website
 ---
