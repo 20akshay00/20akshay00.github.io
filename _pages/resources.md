@@ -33,6 +33,7 @@ Scientific Computing
 - [MIT Computational Thinking](https://computationalthinking.mit.edu/), a yearly lecture series using Julia. 
 - [Parallel Computing and Scientific Machine Learning](https://book.sciml.ai/), online lecture series by [Chris Rackauckas](https://chrisrackauckas.com/) (using Julia).
 - [Machine Learning for Physicists](https://pad.gwdg.de/s/HJtiTE__U#), online lecture series by [Florian Marquardt](https://mpl.mpg.de/divisions/marquardt-division/).
+- [JuliaPhysics](https://juliaphysics.github.io/latest/), an overview of physics-related packages (+ tutorials) in the Julia ecosystem.
 
 Miscellaenous tools & resources
 --- 
