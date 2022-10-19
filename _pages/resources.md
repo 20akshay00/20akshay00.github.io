@@ -9,8 +9,8 @@ In today's world, there is no limit to the content that we can access for learni
 
 Condensed Matter
 ---
-
-- [This Condensed Life](https://thiscondensedlife.wordpress.com/), a nicely written blog on various topics of condensed matter physics.
+- [A Bit Correlated](https://tpolakovic.github.io/), a short series of blog posts on quantum mechanics and solid state physics.
+- [This Condensed Life](https://thiscondensedlife.wordpress.com/), a blog on various topics of condensed matter physics.
 - [An introduction to spontaneous symmetry breaking](https://scipost.org/10.21468/SciPostPhysLectNotes.11), really good notes on symmetry breaking.
 - **Online lecture series:**
 - - [Computational Many-Body Physics](http://www.thp.uni-koeln.de/trebst/Lectures/2021-CompManyBody.shtml), by [Simon Trebst](http://www.thp.uni-koeln.de/trebst/members.shtml).
