@@ -34,12 +34,12 @@ Scientific Computing
 - [Parallel Computing and Scientific Machine Learning](https://book.sciml.ai/), online lecture series by [Chris Rackauckas](https://chrisrackauckas.com/) (using Julia).
 - [Machine Learning for Physicists](https://pad.gwdg.de/s/HJtiTE__U#), online lecture series by [Florian Marquardt](https://mpl.mpg.de/divisions/marquardt-division/).
 - [JuliaPhysics](https://juliaphysics.github.io/latest/), an overview of physics-related packages (+ tutorials) in the Julia ecosystem.
-
+- [RookieHPC](https://rookiehpc.github.io/), a website covering major HPC technologies.
 Miscellaenous tools & resources
 --- 
 
 - [Approach Zero](https://approach0.xyz/search/), a website that lets you search all the Stack Exchange forums by LaTeX equations.
-- [Git Fix Um](http://sukima.github.io/GitFixUm/), a [TiddleWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
+- [Git Fix Um](http://sukima.github.io/GitFixUm/), a [TiddlyWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
 - [Excalidraw](https://excalidraw.com/), an online whiteboard application w/ live collaboration features.
 - [REXpaint](https://kyzrati.itch.io/rexpaint), a user-friendly ASCII art editor.
 - [Mermaid](https://mermaid-js.github.io/mermaid/#/), a JavaScript based diagramming and charting tool using markdown-like inputs. 
