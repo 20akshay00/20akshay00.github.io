@@ -74,6 +74,10 @@ Relevant Coursework
 * **Mandatory Lab courses** - Advanced optics and spectroscopy, Advanced Electronics, Nuclear Physics, Condensed Matter.
 * **Elective courses** - Modelling Complex Systems, Relativistic Quantum Mechanics and Quantum Field Theory (QFT-I), Introduction to Data Science, Computational Chemistry, Machine Learning, Physics of Fluids.
 
+
+---
+You can find a `.pdf` version of my CV [here](/files/AkshayShankarCV.pdf).
+
 <!-- Talks
 ======
   <ul>{% for post in site.talks %}
