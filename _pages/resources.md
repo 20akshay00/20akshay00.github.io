@@ -35,6 +35,7 @@ Scientific Computing
 - [Machine Learning for Physicists](https://pad.gwdg.de/s/HJtiTE__U#), online lecture series by [Florian Marquardt](https://mpl.mpg.de/divisions/marquardt-division/).
 - [JuliaPhysics](https://juliaphysics.github.io/latest/), an overview of physics-related packages (+ tutorials) in the Julia ecosystem.
 - [RookieHPC](https://rookiehpc.github.io/), a website covering major HPC technologies.
+
 Miscellaenous tools & resources
 --- 
 
