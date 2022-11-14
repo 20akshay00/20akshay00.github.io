@@ -17,6 +17,7 @@ Condensed Matter
 - - [Computational Many-Body Physics](http://www.thp.uni-koeln.de/trebst/Lectures/2021-CompManyBody.shtml), by [Simon Trebst](http://www.thp.uni-koeln.de/trebst/members.shtml).
 - - [Topology in condensed matter: Tying quantum knots](https://topocondmat.org/).
 - - [Lecture notes on Quantum Gases](https://pro.college-de-france.fr/jean.dalibard/index_en.html)
+- - [Speaker's corner](https://virtualscienceforum.org/speakers-corner/), A platform for scientific conferences going fully digital.
 - **Quantum Monte Carlo methods:**
 - - [Quantum Monte Carlo Methods: Algorithms for Lattice Models](https://www.cambridge.org/core/books/quantum-monte-carlo-methods/AEA92390DA497360EEDA153CF1CEC7AC), detailed book on QMC methods.
 - - [Monte Carlo Simulations of Quantum Spin Models](https://www.cond-mat.de/events/correl13/manuscripts/wessel.pdf), review on QMC methods. 
