@@ -21,7 +21,7 @@ Education
 
 Research Experience
 -----
-* **June-Present 2022, Master’s thesis with Dr. [Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar), in collaboration with [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)** - [\[**PDF**\]](http://20akshay00.github.io/files/summer2022.pdf)
+* **June-Present 2022, Master’s thesis with Dr. [Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar), in collaboration with [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)** - [\[**PDF**\]](http://20akshay00.github.io/files/summer2022.pdf) [\[**PPT**\]](https://20akshay00.github.io/web-presentations/)
   * Implemented algorithms (MFT, CMFT) to qualitatively predict and identify exotic phases exhibited in the 2D - Bose Hubbard Model.
   * This was done to assist the planning of an experimental quantum simulator setup using an optical lattice loaded with dipolar dysprosium atoms. 
   * Currently continuing this work by implementing Quantum Monte Carlo (QMC) algorithms to precisely locate the phases of the system.
