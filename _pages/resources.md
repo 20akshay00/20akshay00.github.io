@@ -26,6 +26,7 @@ Condensed Matter
 Scientific Computing
 ---
 
+- [Scientific programming with Julia](https://juliateachingctu.github.io/Scientific-Programming-in-Julia/dev/)
 - **Scientific Visualization:**
 - - [Scientific Visualization using Python + Matplotlib](https://www.labri.fr/perso/nrougier/scientific-visualization.html), book.
 - - [Scientific Visualization w/ Blender](https://www.youtube.com/c/CGFigures/featured), YouTube channel.
@@ -52,3 +53,6 @@ Miscellaenous tools & resources
 - [Nodes.io](https://nodes.io/), a visual scripting language for creating complex visualizations on the web.
 - [p5.js](https://p5js.org/), a javascript library for creative coding (check out [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) for fun projects using p5.js)
 - [Ryan's tutorials](https://ryanstutorials.net/regular-expressions-tutorial/regular-expressions-basics.php), a series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
+- **Shaders:**
+- - [An introduction to shader art coding](https://www.youtube.com/watch?v=f4s1h2YETNY&t=1194s), an introductory video tutorial to generate visualizations with fragment shaders. Also check out [Fragment foundry](https://hughsk.io/fragment-foundry/chapters/01-hello-world.html) for a collection of text-based tutorials for fragment shaders on the browser.
+- - [Shader school](https://github.com/stackgl/shader-school), a collection of browser-based tutorials to write fragment and vertex shaders in [GLSL](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders).
