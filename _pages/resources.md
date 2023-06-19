@@ -27,6 +27,7 @@ Scientific Computing
 ---
 
 - [Scientific programming with Julia](https://juliateachingctu.github.io/Scientific-Programming-in-Julia/dev/)
+- [Physics-based animation](https://iphys.files.wordpress.com/2020/01/erleben.ea05.pdf), a book on utilizing physics simulations in the field of computer graphics.
 - **Scientific Visualization:**
 - - [Scientific Visualization using Python + Matplotlib](https://www.labri.fr/perso/nrougier/scientific-visualization.html), book.
 - - [Scientific Visualization w/ Blender](https://www.youtube.com/c/CGFigures/featured), YouTube channel.
