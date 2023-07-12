@@ -1,5 +1,5 @@
 ---
-title: "My first gamejam"
+title: "A Godot GameJam Submission"
 excerpt: ""
 collection: gallery
 ---
