@@ -11,9 +11,9 @@ redirect_from:
 <hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
 Education
 -----
-* **Indian Institute of Science Education and Research, Mohali** <br> BS-MS Dual Degree, Physics Major and Data Science Minor, 2018 - 2023 (expected)
-    * **Cumulative GPA:** 9.96/10 (till 8th semester) - [\[Transcript\]](http://20akshay00.github.io/files/transcript.pdf)
-    * INSPIRE SHE (Scholarship for Higher Education) recipient, 2018‑202
+* **Indian Institute of Science Education and Research, Mohali** <br> BS-MS Dual Degree, Physics Major, 2018 - 2023
+    * **Cumulative GPA:** 9.97/10.00 
+    * INSPIRE SHE (Scholarship for Higher Education) recipient, 2018‑2023
 
 * **Devi Academy, Sr. Sec School, Chennai** <br> CBSE Board, Secondary and Senior Secondary School (2016 - 2018)
     * **AISSCE, Class 12:** 96% score
@@ -21,7 +21,7 @@ Education
 
 Research Experience
 -----
-* **June-Present 2022, Master’s thesis with Dr. [Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar), in collaboration with [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)** - [\[**PDF**\]](http://20akshay00.github.io/files/MS18117_PRJ502.pdf) [\[**PPT**\]](https://20akshay00.github.io/web-presentations/)
+* **June 2022 - April 2023, Master’s thesis with Dr. [Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar), in collaboration with [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)** - [\[**PDF**\]](http://20akshay00.github.io/files/MS18117_PRJ502.pdf) [\[**PPT**\]](https://20akshay00.github.io/web-presentations/)
   * Implemented algorithms (MFT, CMFT) to qualitatively predict and identify exotic phases exhibited in the 2D - Bose Hubbard Model.
   * This was done to assist the planning of an experimental quantum simulator setup using an optical lattice loaded with dipolar dysprosium atoms. 
   * Currently continuing this work by implementing Quantum Monte Carlo (QMC) algorithms to precisely locate the phases of the system.
