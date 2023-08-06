@@ -31,6 +31,7 @@ Scientific Computing
 - **Scientific Visualization:**
 - - [Scientific Visualization using Python + Matplotlib](https://www.labri.fr/perso/nrougier/scientific-visualization.html), book.
 - - [Scientific Visualization w/ Blender](https://www.youtube.com/c/CGFigures/featured), YouTube channel.
+- - [Penrose](https://penrose.cs.cmu.edu/), to create diagrams by typing notation in plain text.
 - [Numerical Methods for Scientific Computing](https://www.equalsharepress.com/media/NMFSC.pdf), using Julia. 
 - [Fundamentals of Numerical Computation](http://tobydriscoll.net/fnc-julia/frontmatter.html), using Julia.
 - [Solving PDEs by Pseudo-Spectral methods](https://rupakmukherjee.github.io/pseudo-spectral-crash-course/), a hands-on tutorial on fluid simulation.
