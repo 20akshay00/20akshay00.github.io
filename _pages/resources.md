@@ -45,6 +45,7 @@ Scientific Computing
 Miscellaenous tools & resources
 --- 
 
+-[Typst](https://typst.app/), a very promising LaTeX alternative in early development.
 - [Approach Zero](https://approach0.xyz/search/), a website that lets you search all the Stack Exchange forums by LaTeX equations.
 - [Git Fix Um](http://sukima.github.io/GitFixUm/), a [TiddlyWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
 - [Excalidraw](https://excalidraw.com/), an online whiteboard application w/ live collaboration features.
