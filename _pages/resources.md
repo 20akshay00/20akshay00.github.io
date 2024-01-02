@@ -26,6 +26,7 @@ Condensed Matter
 Scientific Computing
 ---
 
+- [Numerical methods for Engineers](https://folk.ntnu.no/leifh/teaching/tkt4140/._main000.html)
 - [Scientific programming with Julia](https://juliateachingctu.github.io/Scientific-Programming-in-Julia/dev/)
 - [Physics-based animation](https://iphys.files.wordpress.com/2020/01/erleben.ea05.pdf), a book on utilizing physics simulations in the field of computer graphics.
 - **Scientific Visualization:**
