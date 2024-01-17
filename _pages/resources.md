@@ -30,6 +30,7 @@ Scientific Computing
 - [Scientific programming with Julia](https://juliateachingctu.github.io/Scientific-Programming-in-Julia/dev/)
 - [Physics-based animation](https://iphys.files.wordpress.com/2020/01/erleben.ea05.pdf), a book on utilizing physics simulations in the field of computer graphics.
 - **Scientific Visualization:**
+- - [Creating publication-quality plots in Julia](https://nextjournal.com/leandromartinez98/tips-to-create-beautiful-publication-quality-plots-in-julia)
 - - [Scientific Visualization using Python + Matplotlib](https://www.labri.fr/perso/nrougier/scientific-visualization.html), book.
 - - [Scientific Visualization w/ Blender](https://www.youtube.com/c/CGFigures/featured), YouTube channel.
 - - [Penrose](https://penrose.cs.cmu.edu/), to create diagrams by typing notation in plain text.
@@ -59,4 +60,5 @@ Miscellaenous tools & resources
 - [Ryan's tutorials](https://ryanstutorials.net/regular-expressions-tutorial/regular-expressions-basics.php), a series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
 - **Shaders:**
 - - [An introduction to shader art coding](https://www.youtube.com/watch?v=f4s1h2YETNY&t=1194s), an introductory video tutorial to generate visualizations with fragment shaders. Also check out [Fragment foundry](https://hughsk.io/fragment-foundry/chapters/01-hello-world.html) for a collection of text-based tutorials for fragment shaders on the browser.
+- - [The Art of Code](https://www.youtube.com/@TheArtofCodeIsCool), an excellent YouTube channel covering a plethora of things that can be done with shaders.
 - - [Shader school](https://github.com/stackgl/shader-school), a collection of browser-based tutorials to write fragment and vertex shaders in [GLSL](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders).
