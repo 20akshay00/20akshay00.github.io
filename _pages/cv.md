@@ -11,9 +11,13 @@ redirect_from:
 <hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
 Education
 -----
+
+* **Ghent University**
+<br> Doctoral Degree in Physics, 2023 - Present
+  * Supervised by [Prof. Jutho Haegeman](https://scholar.google.be/citations?user=yfHe3OAAAAAJ) and [Prof. Karel Van Acoleyen](https://scholar.google.com/citations?user=hteD_jEAAAAJ&hl=sv).
+   
 * **Indian Institute of Science Education and Research, Mohali** <br> BS-MS Dual Degree, Physics Major, 2018 - 2023
-    * **Cumulative GPA:** 9.97/10.00 
-    * INSPIRE SHE (Scholarship for Higher Education) recipient, 2018‑2023
+    * **Cumulative GPA:** 10.0/10.0 
 
 * **Devi Academy, Sr. Sec School, Chennai** <br> CBSE Board, Secondary and Senior Secondary School (2016 - 2018)
     * **AISSCE, Class 12:** 96% score
@@ -24,7 +28,7 @@ Research Experience
 * **June 2022 - April 2023, Master’s thesis with Dr. [Sanjeev Kumar](https://www.iisermohali.ac.in/awards-recognitions/dps/dr-sanjeev-kumar), in collaboration with [Prof. Dr. Tilman Pfau](https://www.pi5.uni-stuttgart.de/institute/team/)** - [\[**PDF**\]](http://20akshay00.github.io/files/MS18117_PRJ502.pdf) [\[**PPT**\]](https://20akshay00.github.io/web-presentations/)
   * Implemented algorithms (MFT, CMFT) to qualitatively predict and identify exotic phases exhibited in the 2D - Bose Hubbard Model.
   * This was done to assist the planning of an experimental quantum simulator setup using an optical lattice loaded with dipolar dysprosium atoms. 
-  * Currently continuing this work by implementing Quantum Monte Carlo (QMC) algorithms to precisely locate the phases of the system.
+  * Initiated attempts to utilize Quantum Monte Carlo (QMC) algorithms to precisely locate the phases of the system.
   * *Worked with **Python, Julia***
 
 ---
@@ -47,7 +51,7 @@ Research Experience
 
 * **May-July 2019, Research Internship with [Dr. Prafulla Kumar Behera](https://physics.iitm.ac.in/behera)** - [\[**PDF**\]](http://20akshay00.github.io/files/summer2019.pdf)
   * Learnt elementary particle physics and neutrino detection methods.
-  * Worked with the analysis tool ROOT to study various as‐pects of the muon response of the Indian Neutrino Observatory’s ICAL detector using simulated data.
+  * Analyzed various aspects of the muon response of the proposed Indian Neutrino Observatory’s ICAL detector using simulated data.
   * *Worked with **ROOT (C++ framework)***
 
 ---
@@ -65,8 +69,9 @@ Technical Skills
 
 Achievements/Awards
 -----
-* **1st Place** [Enigma, AstraX'22](http://20akshay00.github.io/files/enigma_cert.png) - Machine Learning based Hackathon to solve problems in Astrophysics.
+* **President's Gold Medal**: For the best academic performance in the class of 2023
 * **CNR Rao Foundation Award**: For obtaining 10 SPI in 2nd semester.
+* **Innovation in Science Pursuit for Inspired Research - Scholarship for Higher Education (INSPIRE-SHE)**: for top 1% performance in AISSCE.
 
 Relevant Coursework
 -----
