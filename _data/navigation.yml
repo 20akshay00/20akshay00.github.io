@@ -18,7 +18,7 @@ main:
   #   url: /talks/    
 
   - title: "Blog"
-    url: /year-archive/ 
+    url: /blog/ 
 
   - title: "Resources"
     url: /resources/
