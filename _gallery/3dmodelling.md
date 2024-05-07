@@ -1,6 +1,6 @@
 ---
 title: "3D models"
-excerpt: "Exploring the third dimension :O <br/><br/><img src='/images/thumbnails/blender.png'>"
+excerpt: "Exploring the third dimension :O <br/><br/><img src='/images/thumbnails/blender.png' width='600'>"
 collection: gallery
 ---
 

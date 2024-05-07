@@ -1,6 +1,6 @@
 ---
 title: "Video games"
-excerpt: "Simple games made for various game jams and other events <br/><br/><img src='/images/thumbnails/godot.png'>"
+excerpt: "Simple games made for various game jams and other events <br/><br/><img src='/images/thumbnails/godot.png' width='600'>"
 collection: gallery
 ---
 

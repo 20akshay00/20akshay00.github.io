@@ -1,6 +1,6 @@
 ---
 title: "Pixel art"
-excerpt: "Amateur pixel art pieces made as a venting mechanism <br/><br/><img src='/images/thumbnails/aseprite.png'>"
+excerpt: "Amateur pixel art pieces made as a venting mechanism <br/><br/><img src='/images/thumbnails/aseprite.png' width='600'>"
 collection: gallery
 ---
 

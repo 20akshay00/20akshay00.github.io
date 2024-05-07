@@ -1,6 +1,6 @@
 ---
 title: "Academic Posters"
-excerpt: "Posters made to disseminate my research at various events <br/><br/><img src='/images/thumbnails/inkscape.png'>"
+excerpt: "Posters made to disseminate my research at various events <br/><br/><img src='/images/thumbnails/inkscape.png' width='600'>"
 collection: gallery
 ---
 Here are all of the academic posters I have made through the course of my research career so far. I use [Inkscape](https://inkscape.org/) to make them, and not $\LaTeX$ which seems to be a popular choice. The rationale is that it makes sense to use a purely code-based approach as with $\LaTeX$ for things that have a procedural component to them. For example, it would be a nightmare to position things by hand if you wanted images to always appear `x` units above text, and aligned to left, or adhering to any other such fixed constraint.
