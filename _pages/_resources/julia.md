@@ -1,9 +1,3 @@
----
-title: "Julia language"
-excerpt: ""
-collection: resources
----
-
 ## Intro to language features
 - [**Official docs**](https://docs.julialang.org/en/v1/): Pretty good documentation for an overview of what the language offers.
 - [**MIT Computational Thinking**](https://computationalthinking.mit.edu): Great gateway into Julia for those already familiar with programming and/or numerical computation. 

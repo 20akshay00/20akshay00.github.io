@@ -1,9 +1,3 @@
----
-title: "Visualization"
-excerpt: ""
-collection: resources
----
-
 ## Scientific Visualization 
 
 - [**Python + Matplotlib**](https://www.labri.fr/perso/nrougier/scientific-visualization.html): Book covering fundamental principles of [matplotlib](https://matplotlib.org/) and good practices to design plots.

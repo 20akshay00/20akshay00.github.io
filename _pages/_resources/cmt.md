@@ -1,11 +1,3 @@
----
-title: "Physics"
-excerpt: ""
-collection: resources
----
-
-This page is a work in progress. It will largely be biased towards Quantum Many Body physics and in particular, Quantum Fluids.
-
 ## Blogs
 - [**A Bit Correlated**](https://tpolakovic.github.io/): A short series of posts on quantum mechanics and solid state physics.
 - [**This Condensed Life**](https://thiscondensedlife.wordpress.com/): Regular tid-bits on various topics of condensed matter physics.

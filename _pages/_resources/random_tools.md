@@ -1,9 +1,3 @@
----
-title: "Random tools"
-excerpt: ""
-collection: resources
----
-
 ## LaTeX and Type-setting
 - [**Typst**](https://typst.app/): A very promising $\LaTeX$ alternative in early development.
 - [**Approach Zero**](https://approach0.xyz/search/): A website that lets you search all the Stack Exchange forums by $\LaTeX$ equations.

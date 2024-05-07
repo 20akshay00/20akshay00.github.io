@@ -1,9 +1,3 @@
----
-title: "Game development"
-excerpt: ""
-collection: resources
----
-
 ## Godot
 - [**Official documentation**](https://docs.godotengine.org/en/stable/index.html): Fairly good as far as documentation goes. There are also few text tutorials for beginner projects.
 - [**The ultimate introduction to Godot 4**](https://www.youtube.com/watch?v=nAh_Kx5Zh5Q): An excellent introduction to what Godot offers if already familiar with programming.
