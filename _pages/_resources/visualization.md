@@ -17,6 +17,7 @@
 - [**ScratchAPixel**](https://www.scratchapixel.com/): Computer graphics programming for regular folks.
 - [**Tiny Renderer**](https://github.com/ssloy/tinyrenderer/wiki/Lesson-1:-Bresenham%E2%80%99s-Line-Drawing-Algorithm): Lessons on how [OpenGL](https://learnopengl.com/) works.
 - [**LearnWebGPU**](https://eliemichel.github.io/LearnWebGPU/introduction.html): A WIP tutorial series on using WebGPU to communicate with the GPU.
+- [**LearnWebGL**](http://learnwebgl.brown37.net/): A tutorial series on using WebGL to communicate with the GPU.
 - [**Real Time Rendering**](https://www.amazon.com/Real-Time-Rendering-Fourth-Tomas-Akenine-M%C3%B6ller/dp/1138627003?tag=realtimerenderin): A book on techniques to render geometry in real time. 
 
 ## Creative Coding

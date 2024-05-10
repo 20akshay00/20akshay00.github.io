@@ -14,4 +14,5 @@
   
 ## General programming stuff
 - [**Git Fix Um**](http://sukima.github.io/GitFixUm/): A [TiddlyWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
-- [**Ryan's tutorials**](https://ryanstutorials.net/regular-expressions-tutorial/regular-expressions-basics.php), a series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
+- [**Ryan's tutorials**](https://ryanstutorials.net/regular-expressions-tutorial/regular-expressions-basics.php): A series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
+- [**Learn C++**](https://www.learncpp.com/): a series of text based tutorials to learn C++ from scratch.
