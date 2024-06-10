@@ -26,16 +26,6 @@ My second trip into the wonderful world of game development. This was made in ~1
 
 Click [here](https://youtu.be/jhMcW-pPb0k) for a demo of the gameplay.
 
-## Trickshot
+## Games made with Godot
 
-My first game made with [Godot engine](https://godotengine.org/) for the [GMTK 2023](https://itch.io/jam/gmtk-2023) game jam in 36 hours! This was done with the help of [L3mmy](https://l3mmy.itch.io) who did the art, and [Teedoh](https://twitter.com/yaboiteedoh) who composed the music and sound effects. 
-
-<iframe src="https://itch.io/embed/2162195" width="552" height="167" frameborder="0"><a href="https://20akshay00.itch.io/untitled-gun-game">Untitled Gun Game by 20akshay00</a></iframe>
-
-## Summon Squad
-
-My second game made with [Godot engine](https://godotengine.org/) for the [Ludum Dare 55](https://ludumdare.com/) game jam in 72 hours! This was an amazing experience as I was able to work with two extremely talented people, [Jaylus](https://roman-hyacinths.itch.io/) who designed the visuals, and [Gadsada](https://www.eranan.com/) who composed the music and sound effects. 
-
-<iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2641692"><a href="https://roman-hyacinths.itch.io/summon-squad">Summon Squad by Jaylus, 20akshay00, Gadsada</a></iframe>
-
-Check out the accompanying devlog blog post [here](/posts/2024/04/summon-squad/).
+Check them out [here](https://20akshay00.itch.io).
