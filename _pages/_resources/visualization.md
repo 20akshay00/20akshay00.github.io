@@ -11,13 +11,16 @@
 - [**Fragment foundry**](https://hughsk.io/fragment-foundry/chapters/01-hello-world.html): A collection of text-based tutorials for writing fragment shaders on the browser.
 - [**Shader school**](https://github.com/stackgl/shader-school), a collection of browser-based tutorials to write fragment and vertex shaders in [GLSL](https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders).
 - [**The Art of Code**](https://www.youtube.com/@TheArtofCodeIsCool): An excellent YouTube channel covering a plethora of things that can be made with shaders.
+- [**Painting with Math**](https://www.youtube.com/c/inigoquilez): [Inigo Quilez](https://iquilezles.org/)' YouTube channel on making shader art.
 
 ## Graphics Programming
 
+- [**3D Computer Graphics Programming for Beginners**](https://docs.google.com/document/u/0/d/1JwwLYxFMDwuxX4Sc3znE-8jVIQMW1LWjuvYeLpiVf_8/mobilebasic): A selection of resources to learn and tinker with.
 - [**ScratchAPixel**](https://www.scratchapixel.com/): Computer graphics programming for regular folks.
 - [**Tiny Renderer**](https://github.com/ssloy/tinyrenderer/wiki/Lesson-1:-Bresenham%E2%80%99s-Line-Drawing-Algorithm): Lessons on how [OpenGL](https://learnopengl.com/) works.
 - [**LearnWebGPU**](https://eliemichel.github.io/LearnWebGPU/introduction.html): A WIP tutorial series on using WebGPU to communicate with the GPU.
 - [**LearnWebGL**](http://learnwebgl.brown37.net/): A tutorial series on using WebGL to communicate with the GPU.
+- [**Learning Modern 3D Graphics Programming**](https://paroj.github.io/gltut/): A tutorial for learning graphics programming concepts using OpenGL. 
 - [**Real Time Rendering**](https://www.amazon.com/Real-Time-Rendering-Fourth-Tomas-Akenine-M%C3%B6ller/dp/1138627003?tag=realtimerenderin): A book on techniques to render geometry in real time. 
 
 ## Creative Coding
