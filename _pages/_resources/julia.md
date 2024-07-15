@@ -2,6 +2,7 @@
 - [**Official docs**](https://docs.julialang.org/en/v1/): Pretty good documentation for an overview of what the language offers.
 - [**MIT Computational Thinking**](https://computationalthinking.mit.edu): Great gateway into Julia for those already familiar with programming and/or numerical computation. 
 - **Misc. introductory courses:** [Scientific programming in Julia](https://juliateachingctu.github.io/Scientific-Programming-in-Julia/dev/), [Julia for economists](https://youtube.com/playlist?list=PLbuwVVKCI3sRW0Y5ehBFwdFVuyuy87ram&si=kCy1lmn-C20OcKWg)
+- [**Modern workflows**](https://modernjuliaworkflows.github.io/)
 
 ## Numerical techniques
 - **Some comprehensive and broad books:** [Numerical methods in scientific computing](https://www.equalsharepress.com/media/NMFSC.pdf), [Fundamentals of Numerical Computation](http://tobydriscoll.net/fnc-julia/frontmatter.html)
