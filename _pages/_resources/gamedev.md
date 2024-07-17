@@ -14,9 +14,10 @@
 
 ## Procedural Animation
 - [**Physics-based Animation**](https://iphys.wordpress.com/wp-content/uploads/2020/01/erleben.ea05.pdf): A book on using physics to generate realistic animations in video games.
+- [**Advanced Character Physics**](https://www.cs.cmu.edu/afs/cs/academic/class/15462-s13/www/lec_slides/Jakobsen.pdf): A paper on the basic elements of physically-based modelling as implemented in [Hitman: Codename 47](https://store.steampowered.com/app/6900/Hitman_Codename_47/).
 - [**Limbo-style spider**](https://www.youtube.com/watch?v=qYwYgEGMdLA)
-- [**Worms, snakes and lizards:**](https://www.youtube.com/watch?v=qlfh_rv6khY)
-- [**Swinging Gibbon:**](https://www.youtube.com/watch?v=KCKdGlpsdlo)
+- [**Worms, snakes and lizards**](https://www.youtube.com/watch?v=qlfh_rv6khY)
+- [**Swinging Gibbon**](https://www.youtube.com/watch?v=KCKdGlpsdlo)
 
 ## Misc.
 - [**Game Programming Patterns**](https://gameprogrammingpatterns.com/): Design patterns to make code cleaner, easier to understand, and faster.
