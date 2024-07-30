@@ -10,6 +10,7 @@
 - [**Lospec**](https://lospec.com/): Color palettes for pixel art: https://lospec.com/
 - [**Kenney's asset packs**](https://kenney.nl/): A vaaaast collection of art that is free to use. 
 - [**Aseprite:**](https://www.aseprite.org/): A paid (but source available) software to make pixel art. Follow [this](https://www.reddit.com/r/PixelArt/comments/on9pw6/guide_how_to_build_aseprite_from_source_aseprite/) for build instructions.
+- [**Pixelorama:**](https://orama-interactive.itch.io/pixelorama): An open source pixel art software made with Godot.
 - [**jsfxr**](https://sfxr.me/): 8-bit retro sfx generator.
 
 ## Procedural Animation

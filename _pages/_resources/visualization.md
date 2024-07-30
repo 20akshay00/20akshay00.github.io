@@ -4,6 +4,7 @@
 - [**Blender for Scientists**](https://www.youtube.com/c/CGFigures/featured): YouTube channel introducing 3D Modelling for scientists.
 - [**Penrose**](https://penrose.cs.cmu.edu/): Create diagrams by typing notation in plain text, separating logic from visuals.
 - [**Creating publication-quality plots in Julia**](https://nextjournal.com/leandromartinez98/tips-to-create-beautiful-publication-quality-plots-in-julia)
+- [**VisualPDE**](https://visualpde.com/): Rapid Interactive Simulations of Partial Differential Equation on the web.
 
 ## Shaders
 
