@@ -1,5 +1,6 @@
-## LaTeX and Type-setting
+## Type-setting
 - [**Typst**](https://typst.app/): A very promising $\LaTeX$ alternative in early development.
+- [**Tex2Typst**](https://qwinsi.github.io/tex2typst-webapp/): A web-app to quickly convert math syntax from TeX to Typst.
 - [**Approach Zero**](https://approach0.xyz/search/): A website that lets you search all the Stack Exchange forums by $\LaTeX$ equations.
 - [**Tables Generator**](https://www.tablesgenerator.com/): A website to generate $\LaTeX$ tables with ease.
 - [**Mathcha**](https://www.mathcha.io/): A WYSIWYG editor to create math diagrams for use in $\LaTeX$ documents.
@@ -15,5 +16,4 @@
 ## General programming stuff
 - [**Git Fix Um**](http://sukima.github.io/GitFixUm/): A [TiddlyWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
 - [**Ryan's tutorials**](https://ryanstutorials.net/regular-expressions-tutorial/regular-expressions-basics.php): A series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
-- [**Learn C++**](https://www.learncpp.com/): A series of text based tutorials to learn C++ from scratch.
 - [**From Python to Numpy**](https://www.labri.fr/perso/nrougier/from-python-to-numpy): A short book covering advanced usage of numpy.

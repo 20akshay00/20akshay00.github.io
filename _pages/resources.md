@@ -49,6 +49,15 @@ may find it helpful.
 <br>
 
 <hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
+# Computer Science and Mathematics
+<hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
+
+{% include_relative /_resources/computer_science_and_mathematics.md %}
+<hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
+<br>
+<br>
+
+<hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
 # Random tools
 <hr style="text-align:left;margin-left:0;border-top:2px solid #6b7278"> 
 
