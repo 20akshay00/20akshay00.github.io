@@ -23,7 +23,8 @@
 - [**LearnWebGL**](http://learnwebgl.brown37.net/): A tutorial series on using WebGL to communicate with the GPU.
 - [**Learning Modern 3D Graphics Programming**](https://paroj.github.io/gltut/): A tutorial for learning graphics programming concepts using OpenGL. 
 - [**Real Time Rendering**](https://www.amazon.com/Real-Time-Rendering-Fourth-Tomas-Akenine-M%C3%B6ller/dp/1138627003?tag=realtimerenderin): A book on techniques to render geometry in real time. 
-
+- [**GPU Puzzles**](https://gpupuzzles.answer.ai): A series of small, fun, self-contained coding challenges for learning GPU programming.
+ 
 ## Creative Coding
 
 - [**The Coding Train**](https://thecodingtrain.com/): A wonderful YouTube channel regularly exploring quite interesting coding projects made using [p5.js](https://p5js.org/) and [processing](https://processing.org/).

@@ -5,3 +5,6 @@
 
 ## Learning a new language
 - [**Learn C++**](https://www.learncpp.com/): A series of text based tutorials to learn C++ from scratch.
+
+## Software development
+- [**Third bit**](https://third-bit.com): A couple of excellent books covering things from writing good python code for scientific research to how open source projects design their architecture.
