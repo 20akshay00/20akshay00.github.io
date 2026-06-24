@@ -1,0 +1,192 @@
+---
+title: "Projects"
+subtitle: "Software tools, initiatives, and academic explorations."
+page-layout: full
+title-block-banner: true
+include-after-body:
+  text: |
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const categories = document.querySelectorAll('.listing-category');
+      categories.forEach(category => {
+        const text = category.innerText.trim();
+        if (/^\d{4}$/.test(text)) {
+          category.classList.add('year-pill');
+        } else {
+          const slug = text.toLowerCase().replace(/[^a-z0-9]/g, '-');
+          category.classList.add('lang-' + slug);
+        }
+      });
+    });
+    </script>
+listing:
+  - id: research-software
+    contents:
+      - title: "TentMPS.jl"
+        description: "Numerical implementation of the Finite-Element Matrix Product State (FE-MPS) framework for simulating 1D continuum models of interacting bosons."
+        path: "https://github.com/20akshay00/TentMPS.jl/"
+        image: "images/projects/tentmpsjl.png"
+        categories: [Julia, "2026"]
+      - title: "LiebLinigerBetheAnsatz.jl"
+        description: "Numerical implementation of the Bethe Ansatz solution for the 1D Lieb-Liniger model."
+        path: "https://github.com/20akshay00/LiebLinigerBetheAnsatz.jl/"
+        image: "images/projects/lieblinigerbetheansatzjl.png"
+        categories: [Julia, "2026"]
+      - title: "HermiteUtils.jl"
+        description: "Simple utilities for working with Hermite polynomials and functions."
+        path: "https://github.com/20akshay00/HermiteUtils.jl/"
+        image: "images/projects/hermiteutils.png"
+        categories: [Julia, "2026"]
+    type: grid
+    fields: [title, description, categories, image]
+    grid-columns: 3
+    image-height: 200px
+
+  - id: software-projects
+    contents:
+      - title: "ThePhysicsHub"
+        description: "Open source repository of interactive physics simulations created by the cumulative effort of a group of undergraduates, built with p5.js."
+        path: "https://github.com/OpenPsiMu/ThePhysicsHub"
+        image: "images/projects/physicshub.png"
+        categories: [JavaScript, "2020"]
+      - title: "Schedule Selector"
+        description: "A tool to automate course selection and schedule filtering for IISER Mohali students."
+        path: "https://20akshay00.github.io/schedule-selector/"
+        image: "images/projects/schedule-selector.png"
+        categories: [JavaScript, HTML, "2021"]
+      - title: "Tetra Engine"
+        description: "A simple 2D game engine written in Python with an Ascii-based renderer for treasure hunt events at IISER."
+        path: "https://github.com/DhruvaSambrani/turing-hunt-engine"
+        image: "images/projects/tetra.png"
+        categories: [Python, "2021"]
+      - title: "Pentra Engine"
+        description: "An evolution of the Tetra engine utilizing Pygame for 2D rendering with lighting and shadows."
+        path: "https://github.com/DhruvaSambrani/pentra"
+        image: "images/projects/pentra.png"
+        categories: [Python, "2023"]
+      - title: "GDWiiInput"
+        description: "GDExtension to use Wii controllers with the Godot game engine."
+        path: "https://github.com/20akshay00/godot-wii-input/"
+        image: "images/projects/godotwiiinput.png"
+        categories: [GDScript, C++, "2025"]
+    type: grid
+    fields: [title, description, categories, image]
+    grid-columns: 3
+    image-height: 200px
+
+  - id: coursework-projects
+    contents:
+      - title: "Modelling Complex Systems"
+        description: "Numerical simulations of SIRS models, Sandpile models, and Kuramoto oscillators."
+        path: "https://github.com/20akshay00/modellingComplexSystems"
+        image: "images/projects/complex-systems.png"
+        categories: [Python, Julia, "2021"]
+      - title: "Charge Density Estimation"
+        description: "Exploring the piezo-electric effect in PZT and PVDF materials using COMSOL."
+        path: "https://github.com/20akshay00/PHY312-Project"
+        image: "images/projects/charge-density.png"
+        categories: [COMSOL, "2021"]
+      - title: "News Recommender System"
+        description: "A NLP-based recommender system using web scraping and collaborative filtering."
+        path: "https://github.com/20akshay00/News-Recommender-System"
+        image: "images/projects/news-recommender.png"
+        categories: [Python, "2022"]
+      - title: "Signature Fraud Detection"
+        description: "Applying K-means clustering to classify and detect fraudulent signatures."
+        path: "https://github.com/20akshay00/IDC409/blob/master/project_2_report.pdf"
+        image: "images/projects/signature-fraud.png"
+        categories: [Python, "2022"]
+      - title: "Surface Waves in Fluids"
+        description: "A theoretical exploration of the physics of waves on liquid surfaces."
+        path: "https://20akshay00.github.io/PHY638-Assignment-5/"
+        image: "images/projects/surface-waves.png"
+        categories: [HTML, "2023"]
+    type: grid
+    fields: [title, description, categories, image]
+    grid-columns: 3
+    image-height: 150px
+
+  - id: gamedev-projects
+    contents:
+      - title: "GTA: Stress City"
+        description: "A treasure hunt event built using the tetra game engine."
+        path: "https://iiserm.github.io/GTA-Stress-City/"
+        image: "images/projects/gta.png"
+        categories: [Python, "2021"]
+      - title: "Radar Defender"
+        description: "A retro arcade-style game made using AlphaZero.jl where players must defend their base from incoming threats."
+        path: "https://github.com/20akshay00/RadarDefender"
+        image: "images/projects/radar-defender.png"
+        categories: [Julia, "2022"]
+    type: grid
+    fields: [title, description, categories, image]
+    grid-columns: 3
+    image-height: 350px
+
+  - id: misc-projects
+    contents:
+      - title: "Elastic pendulum"
+        description: "Simulation of a pendulum with an elastic string, demonstrating chaotic motion trajectories."
+        path: "https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6"
+        image: "images/projects/elastic-pendulum.png"
+        categories: [JavaScript, "2020"]
+      - title: "Coupled pendulum"
+        description: "Simulation of two pendulums connected by a spring, exploring energy exchange and normal modes."
+        path: "https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR"
+        image: "images/projects/coupled-pendulum.png"
+        categories: [JavaScript, "2020"]
+      - title: "PhysicsJavisAnim"
+        description: "A collection of physics-based animations and visualizations created using the Javis.jl library."
+        path: "https://20akshay00.github.io/PhysicsJavisAnim/"
+        image: "images/projects/physjavisanims.png"
+        categories: [Julia, "2021"]
+      - title: "Wave-packet dynamics"
+        description: "Simulation of the time-evolution of a quantum mechanical wave packet in various 1D potentials."
+        path: "https://20akshay00.github.io/Summer2021/"
+        image: "images/projects/wavepacketdynamics.png"
+        categories: [Python, "2021"]
+    type: grid
+    fields: [title, description, categories, image]
+    grid-columns: 3
+    image-height: 250px
+---
+
+::: {.project-section}
+## Research Software
+*Specialized libraries and scripts developed during my research involving computational quantum many-body physics.*
+
+:::{#research-software}
+:::
+:::
+
+::: {.project-section}
+## General Software
+*Game engines, web tools, and community projects.*
+
+:::{#software-projects}
+:::
+:::
+
+::: {.project-section}
+## Undergraduate Coursework
+*Selected academic projects from my time at IISER Mohali.*
+
+:::{#coursework-projects}
+:::
+:::
+
+::: {.project-section}
+## Game Development
+*Video games! More projects can be found on my [itch.io profile](https://20akshay00.itch.io/).*
+
+:::{#gamedev-projects}
+:::
+:::
+
+::: {.project-section}
+## Miscellaneous Projects
+*Interactive sketches and physics visualizations from my early days of programming.*
+
+:::{#misc-projects}
+:::
+:::

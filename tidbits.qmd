@@ -1,0 +1,20 @@
+---
+title: "/ˈtɪdbɪt/"
+subtitle: "a small and particularly interesting item of information."
+listing:
+  contents: tidbits
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+::: {.mb-4}
+Over the course of my PhD, I've found that my research seems to involve solving many tiny problems which have _some_ insight to offer but not enough to share in any usual platforms of scientific discourse. As an attempt to preserve these tidbits from fading into obscurity as I inevitably forget about them, I have begun documenting them here.
+:::
+
+<br>

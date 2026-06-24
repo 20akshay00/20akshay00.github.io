@@ -1,0 +1,10 @@
+---
+title: "Constructing a localized basis"
+author: "Akshay Shankar"
+date: "2025-09-25"
+categories: [chunk, code]
+image: "julia.png"
+draft: true
+---
+
+hermite -> fourier transform, roots relation
