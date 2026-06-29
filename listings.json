@@ -1,0 +1,24 @@
+[
+  {
+    "listing": "/tidbits.html",
+    "items": [
+      "/tidbits/harmonic-oscillator-thermal-state-1/index.html",
+      "/tidbits/bogoliubov-transformations/index.html",
+      "/tidbits/phase-twists/index.html",
+      "/tidbits/callbacks/index.html",
+      "/tidbits/linear-indexing/index.html",
+      "/tidbits/image-crop/index.html",
+      "/tidbits/phase-diagram/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/blog/post1/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
+  }
+]

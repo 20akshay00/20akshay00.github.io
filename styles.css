@@ -1,0 +1,486 @@
+/* ==========================================================================
+   GLOBAL & LAYOUT
+   ========================================================================== */
+
+p {
+    text-align: justify;
+}
+
+/* Center SVG outputsfrom code cells */
+.cell-output-display svg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Reusable Grey Background Section */
+.project-section {
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 3.5rem;
+    background-color: #f8f9fa;
+}
+
+.project-section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .project-section {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   TAGS & PILLS
+   ========================================================================== */
+
+/* Container for listing pills */
+.quarto-categories {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* Base Pill Style */
+.listing-category {
+    border: none !important;
+    padding: 3px 10px !important;
+    border-radius: 6px !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white !important;
+    background-color: #6c757d;
+    margin-right: 6px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+/* Year Bubble */
+.year-pill {
+    margin-left: auto !important;
+    background-color: transparent !important;
+    color: #6c757d !important;
+    border: 1px solid #ced4da !important;
+    font-weight: 600 !important;
+}
+
+@media (max-width: 768px) {
+    .year-pill {
+        margin-left: 0 !important;
+    }
+}
+
+.lang-julia {
+    background-color: #9558b2 !important;
+}
+
+.lang-python {
+    background-color: #3572A5 !important;
+}
+
+.lang-gdscript {
+    background-color: #478cbf !important;
+}
+
+.lang-p5-js,
+.lang-javascript {
+    background-color: #ed225d !important;
+}
+
+.lang-c--,
+.lang-c {
+    background-color: #00599c !important;
+}
+
+.lang-comsol {
+    background-color: #007cc0 !important;
+}
+
+.lang-html {
+    background-color: #e34c26 !important;
+}
+
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+
+.quarto-grid-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #ffffff !important;
+    border: 1.5px solid #adb5bd !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: all 0.25s ease-in-out !important;
+}
+
+.quarto-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    border-color: #6c757d !important;
+}
+
+.quarto-grid-item .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1.5px solid #adb5bd !important;
+    /* Separator line */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.quarto-grid-item .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.25rem;
+}
+
+.quarto-grid-item .card-title {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 800 !important;
+    color: #222;
+}
+
+
+/* ==========================================================================
+   RESEARCH & PUBLICATIONS
+   ========================================================================== */
+
+/* --- Research Interests --- */
+.interest-tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.interest-tile {
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1.5px solid #adb5bd;
+    border-radius: 12px;
+    border-left: 6px solid #adb5bd;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interest-tile:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-left-color: #6c757d;
+}
+
+.interest-tile h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #222;
+}
+
+.interest-tile p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Styling images specifically inside interest tiles */
+.interest-tile img {
+    border: 1px solid #dee2e6;
+    /* Subtle border */
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+/* Ensure captions are centered and professional */
+.interest-tile figure figcaption {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Adjust the layout gap inside the tile */
+.interest-tile .quarto-layout-panel {
+    margin: 1.5rem 0;
+}
+
+/* --- Publications --- */
+.pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pub-row {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background: #ffffff;
+    border: 1.5px solid #adb5bd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.pub-row:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pub-image-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-right: 1.5px solid #adb5bd;
+}
+
+.pub-image-small img {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.pub-info-compact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.pub-info-compact h4 {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #222;
+}
+
+.pub-info-compact p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .pub-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pub-image-small {
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1.5px solid #adb5bd;
+    }
+}
+
+/* --- Publication Link Badges --- */
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.pub-links a {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pub-links a[href*="pdf"] {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.pub-links a[href*="pdf"]:hover {
+    background-color: #fecaca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(185, 28, 28, 0.15);
+}
+
+.pub-links a[href*="github.com"] {
+    background-color: #f3f4f6;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.pub-links a[href*="github.com"]:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(55, 65, 81, 0.15);
+}
+
+.pub-links a[href*="zenodo.org"] {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border-color: #7dd3fc;
+}
+
+.pub-links a[href*="zenodo.org"]:hover {
+    background-color: #bae6fd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(3, 105, 161, 0.15);
+}
+
+/* --- Legacy Publication Floating Image --- */
+.publication-image {
+    float: left;
+    width: 40%;
+    max-width: 400px;
+    margin: 0 2rem 1.5rem 0;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .publication-image {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+}
+
+
+/* ==========================================================================
+   ART GALLERY
+   ========================================================================== */
+
+.art-column-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .art-column-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 700px) {
+    .art-column-grid {
+        column-count: 1;
+    }
+}
+
+/* The Masonry Card */
+.art-card figure {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    background-color: #ffffff;
+    border: 1.5px solid #adb5bd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s ease;
+}
+
+.art-card figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #6c757d;
+}
+
+.art-card figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1.5px solid #adb5bd !important;
+    cursor: zoom-in;
+}
+
+.art-card figure figcaption {
+    margin: 0;
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+    text-align: left;
+}
+
+.art-card figure figcaption strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.quarto-figure {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff !important;
+    border: 1.5px solid #adb5bd !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+    border-color: #6c757d !important;
+}
+
+@media (min-width: 992px) {
+    .grid-wide {
+        grid-column: span 2;
+    }
+}
+
+#gpe-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.quarto-container,
+#quarto-content,
+main.content,
+.quarto-about-jolla {
+    background: transparent !important;
+}
