@@ -1,4 +1,8 @@
 /.quarto/
 /_site/
 /_freeze/
-**/*.quarto_ipynb
+
+# **/*.quarto_ipynb*
+# */.cache
+# */.jupyter_cache
+# */index.quarto_*
