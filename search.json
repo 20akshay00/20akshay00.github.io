@@ -2,7 +2,7 @@
   {
     "objectID": "tidbits.html",
     "href": "tidbits.html",
-    "title": "/ˈtɪdbɪt/",
+    "title": " /ˈtɪdbɪt/",
     "section": "",
     "text": "Over the course of my PhD, I’ve found that my research seems to involve solving many tiny problems which have some insight to offer but not enough to share in any usual platforms of scientific discourse. As an attempt to preserve these tidbits from fading into obscurity as I inevitably forget about them, I have begun documenting them here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThermal states in a quantum harmonic oscillator (I)\n\n\n\nchunk\n\nbec\n\nquantum\n\n\n\nRemember that course when you learnt a ton of identities related to the Hermite polynomials? Turns out they’re not completely useless.\n\n\n\n\n\nDec 5, 2025\n\n\nAkshay Shankar\n\n\n\n\n\n\n\n\n\n\n\n\nDemystifying Bogoliubov transformations\n\n\n\ntidbit\n\ntheory\n\n\n\nSolving quadratic Hamiltonians can be way more fun when linear algebra exposes the symmetries behind Bogoliubov transformations.\n\n\n\n\n\nNov 25, 2025\n\n\nAkshay Shankar\n\n\n\n\n\n\n\n\n\n\n\n\nSuperfluidity as a response to phase twists\n\n\n\nchunk\n\ntheory\n\n\n\nForget frictionless flow for a moment. Have you ever wondered if there is a microscopic indicator of whether a state exhibits superfluidity?\n\n\n\n\n\nMay 7, 2025\n\n\nAkshay Shankar\n\n\n\n\n\n\n\n\n\n\n\n\nThe callback pattern\n\n\n\nchunk\n\ncode\n\n\n\nWhy write a simple loop when you can over-engineer a flexible interface? Let us dive into using the Callback pattern in Julia to inject custom logic mid-simulation.\n\n\n\n\n\nJan 27, 2025\n\n\nAkshay Shankar\n\n\n\n\n\n\n\n\n\n\n\n\nLinearly indexing a 2D grid\n\n\n\nnibble\n\nnumber theory\n\n\n\nRunning into a number theory problem while writing scientific code isn’t as uncommon as one would imagine.\n\n\n\n\n\nSep 15, 2024\n\n\nAkshay Shankar\n\n\n\n\n\n\n\n\n\n\n\n\nAutomating image cropping\n\n\n\ntidbit\n\ncode\n\nbec\n\n\n\nA scrappy approach to automatically crop an image without human input.\n\n\n\n\n\nNov 21, 2023\n\n\nAkshay Shankar, Dhruva Sambrani\n\n\n\n\n\n\n\n\n\n\n\n\nDetermining phase boundaries\n\n\n\ntidbit\n\ncode\n\n\n\nPlotting phase boundaries shouldn’t require solving the full many-body problem. Turns out that a handful of iterations can have more information than you’d think.\n\n\n\n\n\nJun 1, 2023\n\n\nAkshay Shankar\n\n\n\n\n\nNo matching items"
   },
@@ -121,7 +121,7 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Blog",
+    "title": " Blog",
     "section": "",
     "text": "Summon Squad: A weekend of spaghetti\n\n\nA retrospective of my first Ludum Dare game jam.\n\n\n\n\n\nApr 30, 2024\n\n\nAkshay Shankar\n\n\n\n\n\nNo matching items"
   },
