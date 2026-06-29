@@ -5,21 +5,26 @@ website:
   title: "Akshay Shankar"
   site-url: "https://20akshay00.github.io/"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: blog.qmd
-        text: Blog
+    search: true
+    collapse-below: lg
+    right:
+      - href: research.qmd
+        text: Research
       - href: tidbits.qmd
         text: Tidbits
       - href: projects.qmd
         text: Projects
+      - href: blog.qmd
+        text: Blog
       - href: gallery.qmd
-        text: Gallery
-      - href: resources.qmd
-        text: Resources
-      - href: research.qmd
-        text: Research
+      - text: "{{< ai google-scholar >}}"
+        href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
+      - text: "{{< ai orcid >}}"
+        href: https://orcid.org/0009-0009-9521-1188
+      - icon: github
+        href: https://github.com/20akshay00
+      - icon: linkedin
+        href: https://linkedin.com/in/20akshay00
 
 format:
   html:
@@ -29,4 +34,6 @@ format:
     css: styles.css
 
 execute:
-  freeze: true
+  freeze: false
+  cache: true
+  

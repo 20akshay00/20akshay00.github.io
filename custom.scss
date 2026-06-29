@@ -1,3 +1,4 @@
+/*-- scss:defaults --*/
 $primary: #2c3e50;
 $link-color: #18bc9c;
 
@@ -7,6 +8,7 @@ $info: #3498db;
 $warning: #f39c12;
 $danger: #e74c3c;
 
+/*-- scss:rules --*/
 .quarto-title-banner {
     background-color: mix(white, $primary, 15%) !important;
 }

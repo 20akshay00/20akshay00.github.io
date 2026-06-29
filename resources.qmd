@@ -11,6 +11,10 @@ format:
 
 In today's world, there is no limit to the content that we can access for learning new things. I have often burnt many days simply collecting and vetting these resources, making it quite hard to make tangible progress in actually learning the content. This page is dedicated to compiling any useful resources that I have found, in the hopes that someone else may find it helpful.
 
+::: {.callout-note appearance="simple"}
+**Note:** This list was curated before the ubiquity of generative AI. While the landscape of learning has since changed, I still maintain this collection for my own reference.
+:::
+
 ::: {.panel-tabset}
 
 ## Julia
@@ -133,4 +137,4 @@ In today's world, there is no limit to the content that we can access for learni
 - [**Git Fix Um**](http://sukima.github.io/GitFixUm/): A [TiddlyWiki](https://tiddlywiki.com/) website in a choose-your-own-adventure format to fix all your git troubles.
 - [**Ryan's tutorials**](https://ryanstutorials.net/regular-expressions-tutorial/): A series of text tutorials to learn [RegEx](https://en.wikipedia.org/wiki/Regular_expression).
 
-:::
+:::x

@@ -3,7 +3,7 @@ title: 'Summon Squad: A weekend of spaghetti'
 author: "Akshay Shankar"
 date: "2024-04-30"
 image: "SummonSquad.webp"
-description: "Hm. Idk"
+description: "A retrospective of my first Ludum Dare game jam."
 ---
 
 Around two weeks ago, something caught my eye while I was mindlessly scrolling my Twitter feed; someone had just mentioned that the [Ludum Dare 55](https://ludumdare.com/) game jam was happening that weekend. Knowing that it was one of the largest bi-annual game jams ever, I had a sudden burst of motivation to clear out my schedule and make an honest attempt at participating. This would only be my second jam (the [first](https://20akshay00.itch.io/trickshot) was the [GMTK 2023](https://itch.io/jam/gmtk-2023)) and I had not touched [Godot](https://godotengine.org/), my game engine of choice, in quite a few months at that point. The perfect opportunity for an interesting weekend!

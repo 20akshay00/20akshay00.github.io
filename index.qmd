@@ -4,11 +4,9 @@ about:
   template: jolla
   image: images/profile.png
   links:
-    - icon: google-scholar
-      text: Google Scholar
+    - text: "{{< ai google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
-    - icon: orcid
-      text: ORCID
+    - text: "{{< ai orcid >}} ORCID"
       href: https://orcid.org/0009-0009-9521-1188
     - icon: github
       text: Github
@@ -18,4 +16,8 @@ about:
       href: https://linkedin.com/20akshay00
 ---
 
+<canvas id="atom-canvas"></canvas>
+
 Hi! I'm Akshay, a third-year PhD student at [QuantumGroup@UGent](https://quantumghent.github.io/) with an interest in the exotic physics of Bose-Einstein condensates and programming. I am currently working on utilizing Tensor Network techniques to study BEC systems in the context of quantum simulation experiments. When I'm not performing research, I enjoy [making games](https://20akshay00.itch.io/) with the [Godot engine](https://godotengine.org/).
+
+<script src="./atom_simulation.js"></script>

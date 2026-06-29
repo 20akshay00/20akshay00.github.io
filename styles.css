@@ -1,12 +1,12 @@
 /* ==========================================================================
-   1. GLOBAL & LAYOUT
+   GLOBAL & LAYOUT
    ========================================================================== */
 
 p {
     text-align: justify;
 }
 
-/* Center SVG outputs (plots) from code cells */
+/* Center SVG outputsfrom code cells */
 .cell-output-display svg {
     display: block;
     margin: 0 auto;
@@ -36,7 +36,7 @@ p {
 }
 
 /* ==========================================================================
-   2. TAGS & PILLS (Languages, Years, Link Badges)
+   TAGS & PILLS
    ========================================================================== */
 
 /* Container for listing pills */
@@ -49,7 +49,7 @@ p {
     padding-top: 10px;
 }
 
-/* Base Pill Style (Languages) */
+/* Base Pill Style */
 .listing-category {
     border: none !important;
     padding: 3px 10px !important;
@@ -65,7 +65,7 @@ p {
     display: inline-block;
 }
 
-/* Year Bubble - Pushed to the Right */
+/* Year Bubble */
 .year-pill {
     margin-left: auto !important;
     background-color: transparent !important;
@@ -80,7 +80,6 @@ p {
     }
 }
 
-/* Language Color Coding */
 .lang-julia {
     background-color: #9558b2 !important;
 }
@@ -113,7 +112,7 @@ p {
 
 
 /* ==========================================================================
-   3. PROJECTS LISTING (Card Grid)
+   PROJECTS
    ========================================================================== */
 
 .quarto-grid-item {
@@ -124,7 +123,6 @@ p {
     border: 1.5px solid #adb5bd !important;
     border-radius: 12px !important;
     overflow: hidden !important;
-    /* Stops image from peeking out */
     transition: all 0.25s ease-in-out !important;
 }
 
@@ -161,10 +159,10 @@ p {
 
 
 /* ==========================================================================
-   4. RESEARCH & PUBLICATIONS
+   RESEARCH & PUBLICATIONS
    ========================================================================== */
 
-/* --- Research Interests (Tiles) --- */
+/* --- Research Interests --- */
 .interest-tiles {
     display: flex;
     flex-direction: column;
@@ -178,7 +176,6 @@ p {
     border: 1.5px solid #adb5bd;
     border-radius: 12px;
     border-left: 6px solid #adb5bd;
-    /* Accent strip */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -202,7 +199,29 @@ p {
     color: #444;
 }
 
-/* --- Publications (Compact Row List) --- */
+/* Styling images specifically inside interest tiles */
+.interest-tile img {
+    border: 1px solid #dee2e6;
+    /* Subtle border */
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+/* Ensure captions are centered and professional */
+.interest-tile figure figcaption {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Adjust the layout gap inside the tile */
+.interest-tile .quarto-layout-panel {
+    margin: 1.5rem 0;
+}
+
+/* --- Publications --- */
 .pub-list {
     display: flex;
     flex-direction: column;
@@ -211,7 +230,7 @@ p {
 
 .pub-row {
     display: grid;
-    grid-template-columns:30% 70%;
+    grid-template-columns: 30% 70%;
     background: #ffffff;
     border: 1.5px solid #adb5bd;
     border-radius: 12px;
@@ -350,10 +369,9 @@ p {
 
 
 /* ==========================================================================
-   5. ART GALLERY
+   ART GALLERY
    ========================================================================== */
 
-/* --- Masonry Grid (Preferred Art Layout) --- */
 .art-column-grid {
     column-count: 3;
     column-gap: 1.5rem;
@@ -395,7 +413,6 @@ p {
     display: block;
     width: 100%;
     height: auto;
-    /* Preserves original aspect ratio */
     border-bottom: 1.5px solid #adb5bd !important;
     cursor: zoom-in;
 }
@@ -417,13 +434,11 @@ p {
     color: #111;
 }
 
-/* Remove Quarto figure defaults that disrupt the card */
 .quarto-figure {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-/* --- Alternative Grid (Used for square/fixed layouts) --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -451,4 +466,21 @@ p {
     .grid-wide {
         grid-column: span 2;
     }
+}
+
+#gpe-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.quarto-container,
+#quarto-content,
+main.content,
+.quarto-about-jolla {
+    background: transparent !important;
 }
