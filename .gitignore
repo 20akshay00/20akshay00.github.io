@@ -2,7 +2,7 @@
 /_site/
 /_freeze/
 
-# **/*.quarto_ipynb*
-# */.cache
-# */.jupyter_cache
-# */index.quarto_*
+**/*.quarto_ipynb*
+*/.cache
+*/.jupyter_cache
+*/index.quarto_*
