@@ -1,9 +1,12 @@
 project:
   type: website
+  resources:
+    - files/AkshayShankarCV.pdf
 
 website:
   title: "Akshay Shankar"
   site-url: "https://20akshay00.github.io/"
+  description: "A personal website with the latest updates on my research, projects, and thoughts."
   navbar:
     search: true
     collapse-below: lg
@@ -25,7 +28,8 @@ website:
         href: https://github.com/20akshay00
       - icon: linkedin
         href: https://linkedin.com/in/20akshay00
-
+      - text: "{{< fa brands itch-io >}}"
+        href: https://20akshay00.itch.io/
 format:
   html:
     theme: 

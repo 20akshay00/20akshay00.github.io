@@ -1,5 +1,6 @@
 ---
-title: "/ˈtɪdbɪt/"
+title: "<a href='tidbits.xml' class='rss-link'><i class='bi bi-rss'></i></a> /ˈtɪdbɪt/"
+pagetitle: "/ˈtɪdbɪt/"
 subtitle: "a small and particularly interesting item of information."
 listing:
   contents: tidbits
@@ -11,6 +12,9 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: true
+include-in-header:
+  text: |
+    <link rel="alternate" type="application/rss+xml" title="Research Tidbits" href="tidbits.xml">
 ---
 
 ::: {.mb-4}

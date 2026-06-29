@@ -4,6 +4,9 @@ about:
   template: jolla
   image: images/profile.png
   links:
+    - icon: file-earmark-pdf
+      text: "CV"
+      href: files/AkshayShankarCV.pdf
     - text: "{{< ai google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
     - text: "{{< ai orcid >}} ORCID"
@@ -14,6 +17,8 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/20akshay00
+    - text: "{{< fa brands itch-io >}} Itch.io"
+      href: https://20akshay00.itch.io/
 ---
 
 <canvas id="atom-canvas"></canvas>

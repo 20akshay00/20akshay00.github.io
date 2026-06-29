@@ -1,5 +1,6 @@
 ---
-title: "Blog"
+title: "<a href='blog.xml' class='rss-link'><i class='bi bi-rss'></i></a> Blog"
+pagetitle: "Blog"
 subtitle: "A not-so-actively maintained collection of thoughts and experiences."
 listing:
   contents: blog
@@ -11,6 +12,9 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: true
+include-in-header:
+  text: |
+    <link rel="alternate" type="application/rss+xml" title="Research Tidbits" href="blog.xml">
 ---
 
 <!-- ::: {.mb-4}
