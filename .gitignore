@@ -6,3 +6,4 @@
 */.cache
 */.jupyter_cache
 */index.quarto_*
+**/*.quarto_ipynb
