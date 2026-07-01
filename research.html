@@ -77,8 +77,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/tikzjax.css">
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -241,25 +239,24 @@ window.Quarto = {
 <section id="computational-quantum-many-body-physics" class="level3 interest-tile">
 <h3 class="anchored" data-anchor-id="computational-quantum-many-body-physics">Computational quantum many-body physics</h3>
 <p>When describing systems involving thousands of particles, one often writes down an effective field theory that captures the essential features of the physics while maintaining analytical tractability. I focus instead on ab initio descriptions where we work with the full microscopic Hamiltonian. These systems generally have no exact solution for more than two particles (excluding <a href="https://en.wikipedia.org/wiki/Bethe_ansatz">integrable systems</a>, which serve as our benchmarks). In these cases, we instead turn to smartly engineered numerical algorithms to solve the problem for a specified set of parameters on a computer. One may argue whether such solutions constitute genuine “understanding”, so it is important to complement them with effective theories and other frameworks to truly gain predictive insight. Most of my experience is with (path integral-) quantum Monte Carlo methods and tensor network algorithms for many-body systems.</p>
-<div style="margin: 3rem 0; display: flex; gap: 20px; align-items: flex-start;">
-  <div style="flex: 1.33; display: flex; flex-direction: column;">
-    <video controls="" muted="" style="width: 100%; border-radius: 12px; border: 1.5px solid #adb5bd;">
-      <source src="images/research/tdse_wavepacket.mp4" type="video/mp4">
+<div class="video-grid">
+  <div class="video-item large">
+    <video controls="">
+        <source src="images/research/tdse_wavepacket.mp4" type="video/mp4">
     </video>
-    <div style="text-align: center; font-size: 0.9rem; color: #6c757d; margin-top: 8px;">
-      Real time evolution of a quantum wave-packet in 1D.
+    <div class="video-caption">
+        Real time evolution of a quantum wave-packet in 1D.
     </div>
   </div>
 
-  <div style="flex: 2; display: flex; flex-direction: column;">
-    <video controls="" muted="" style="width: 100%; border-radius: 12px; border: 1.5px solid #adb5bd;">
+  <div class="video-item x-large">
+    <video controls="">
       <source src="images/research/gpe_imag_time.mp4" type="video/mp4">
     </video>
-    <div style="text-align: center; font-size: 0.9rem; color: #6c757d; margin-top: 8px;">
+    <div class="video-caption">
       Imaginary time evolution of a Bose-Einstein condensate in 1D.
     </div>
   </div>
-
 </div>
 <p>I also believe that numerical methods are only as good as their accessibility to other practitioners. As a result, my work also involves building performant and <a href="./projects.html#research-software">open source numerical packages</a> that implement these algorithms.</p>
 </section>
@@ -268,61 +265,10 @@ window.Quarto = {
 <p>Suppose we would like to find the ground state of some Hamiltonian with an inherent discrete label (e.g., a lattice structure): <span class="math display">\[
 |\Psi\rangle = \sum C_{n_1, n_2, \dots, n_L} \, |n_1, n_2, \dots, n_L\rangle,
 \]</span> where <span class="math inline">\(\{|n_1, n_2, \dots, n_L\rangle\}\)</span> is some natural many-body basis such that each index can take <span class="math inline">\(d\)</span> values (for e.g, <span class="math inline">\(d=2\)</span> for a spin-<span class="math inline">\(1/2\)</span> model). A primary difficulty arises in even representing this state on a computer, since the coefficient tensor <span class="math inline">\(C\)</span> contains exponentially many entries (<span class="math inline">\(\sim d^L\)</span>), thereby limiting us to small system sizes <span class="math inline">\(L\)</span>. It turns out to be useful to decompose <span class="math inline">\(C\)</span> with a sequence of singular value decompositions as follows:</p>
-<div style="display: flex; justify-content: center; margin: 2rem 0; width: 100%;">
-  <div style="overflow-x: auto;">
-    <script type="text/tikz">
-  \begin{tikzpicture}[
-    tensor/.style={rectangle, draw, thick, fill=blue!5, rounded corners, minimum width=1.2cm, minimum height=0.9cm, font=\small},
-    node distance=2.2cm,
-    >=stealth
-  ]
-
-    % Equation Prefix
-    \node (EQ) at (-2.8, 0) {\large $C_{n_1, \dots, n_L} = $};
-
-    % Left side tensors
-    \node[tensor] (C1) at (0,0) {$C^{(1)}$};
-    \node[tensor] (C2) [right of=C1] {$C^{(2)}$};
-    \node[tensor] (C3) [right of=C2] {$C^{(3)}$};
-    
-    % Ellipsis
-    \node (dots) [right of=C3, xshift=-0.2cm] {$\cdots$};
-
-    % Right side tensors
-    \node[tensor] (CL2) [right of=dots, xshift=-0.2cm] {$C^{(L-2)}$};
-    \node[tensor] (CL1) [right of=CL2] {$C^{(L-1)}$};
-    \node[tensor] (CL) [right of=CL1] {$C^{(L)}$};
-
-    % Physical indices (legs pointing down)
-    \draw[thick] (C1.south) -- +(0,-0.6) node[below] {$n_1$};
-    \draw[thick] (C2.south) -- +(0,-0.6) node[below] {$n_2$};
-    \draw[thick] (C3.south) -- +(0,-0.6) node[below] {$n_3$};
-    \draw[thick] (CL2.south) -- +(0,-0.6) node[below] {$n_{L-2}$};
-    \draw[thick] (CL1.south) -- +(0,-0.6) node[below] {$n_{L-1}$};
-    \draw[thick] (CL.south) -- +(0,-0.6) node[below] {$n_L$};
-
-    % Virtual bonds (horizontal)
-    \draw[thick] (C1.east) -- (C2.west);
-    \draw[thick] (C2.east) -- (C3.west);
-    \draw[thick] (C3.east) -- (dots.west);
-    \draw[thick] (dots.east) -- (CL2.west);
-    \draw[thick] (CL2.east) -- (CL1.west);
-    \draw[thick] (CL1.east) -- (CL.west);
-
-    % Bond Dimension Growth Labels
-    \begin{scope}[font=\footnotesize, color=darkgray]
-      \node at (1.1, 0.3) {$d$};
-      \node at (3.3, 0.3) {$d^2$};
-      \node at (5.5, 0.3) {$d^3$};
-
-      \node at (7.2, 0.3) {$d^3$};
-      \node at (9.4, 0.3) {$d^2$};
-      \node at (11.6, 0.3) {$d$};
-    \end{scope}
-
-  \end{tikzpicture}
-</script>
-  </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/research/matrixproductstate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/research/matrixproductstate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
+</figure>
 </div>
 <p>Here we use a <a href="https://arxiv.org/abs/1603.03039">common diagrammatic notation</a> where lines between two tensors indicate a contraction (i.e., a summation over indices) and the free legs represent physical indices. The exponential growth is indicated by the growing dimension of the contracted “virtual” indices through the chain. The ingenuity of tensor network methods arises from the observation that the ground states of a large class of physically relevant Hamiltonians obey an <a href="https://arxiv.org/abs/0808.3773">area law of entanglement entropy</a>, thereby possessing additional structure that we may exploit. In fact, this directly implies that the ground state can be accurately captured even if we truncate the virtual index dimensions to some constant <span class="math inline">\(D\)</span>, thereby removing the exponential scaling. This constitutes the <strong><a href="https://arxiv.org/abs/2606.24803">matrix product state</a> (MPS)</strong> variational ansatz which has seen enormous success in describing 1D lattice models. It also has the unique advantage of not running into sign problems, as often encountered in Quantum Monte Carlo.</p>
 <div style="margin-top: 1.5rem;">
@@ -332,46 +278,58 @@ window.Quarto = {
 </section>
 </div>
 <hr>
-<section id="masters-thesis" class="level2 project-section">
+<section id="masters-thesis" class="level2 pub-section">
 <h2 class="anchored" data-anchor-id="masters-thesis">Master’s thesis</h2>
 <div class="pub-list">
 <div class="pub-row">
 <div class="pub-image-small">
-<p><a href="images/misc/phasediagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/misc/phasediagram.png" class="img-fluid"></a></p>
+<p><a href="images/misc/phasediagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/misc/phasediagram.png" class="img-fluid"></a></p>
 </div>
 <section id="low-temperature-phases-of-interacting-bosons-in-a-lattice" class="level4 pub-info-compact">
 <h4 class="anchored" data-anchor-id="low-temperature-phases-of-interacting-bosons-in-a-lattice">Low-temperature phases of interacting bosons in a lattice</h4>
 <p>supervised by Prof.&nbsp;Sanjeev Kumar, and Prof.&nbsp;Tilman Pfau</p>
+<div class="abstract-toggle">
+<input type="checkbox" id="pub-thesis" class="toggle-input">
+<div class="abstract-content">
 <p>In this thesis, we explore the phase diagram arising from interacting bosons in a lattice at absolute zero temperatures. Using a large variety of numerical tools like exact diagonalization, self-consistent mean-field theories, cluster mean-field theories, stochastic series expansions, and neural quantum states, we attempt to characterize and capture the quantum phases arising due to dipolar interactions between the atoms. During this thesis, I also spent a few months with the <a href="https://www.pi5.uni-stuttgart.de/research/dipolar-quantum-gases/">Dysprosium group</a> at the University of Stuttgart where I saw my first cold atom experiment.</p>
 <div class="pub-links">
 <p><a href="images/misc/MS18117_PRJ502.pdf">PDF</a> <a href="https://github.com/20akshay00/MSThesis">Code</a></p>
+</div>
+</div>
+<p><label for="pub-thesis" class="toggle-button"></label></p>
 </div>
 </section>
 </div>
 </div>
 </section>
 <hr>
-<section id="publications-preprints" class="level2 project-section">
+<section id="publications-preprints" class="level2 pub-section">
 <h2 class="anchored" data-anchor-id="publications-preprints">Publications &amp; Preprints</h2>
 <div class="pub-list">
 <div class="pub-row">
 <div class="pub-image-small">
-<p><a href="images/research/tentmps.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/research/tentmps.png" class="img-fluid"></a></p>
+<p><a href="images/research/tentmps.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/research/tentmps.png" class="img-fluid"></a></p>
 </div>
 <section id="finite-element-matrix-product-states-for-continuum-models-in-one-dimension" class="level4 pub-info-compact">
 <h4 class="anchored" data-anchor-id="finite-element-matrix-product-states-for-continuum-models-in-one-dimension">Finite-Element Matrix Product States for Continuum Models in One Dimension</h4>
 <p><strong>Akshay Shankar</strong>, Karel Van Acoleyen, and Jutho Haegeman<br>
 <em><a href="https://arxiv.org/abs/2606.14873">arXiv:2606.14873</a> [quant-ph, cond-mat.quant-gas]</em> (2026)</p>
+<div class="abstract-toggle">
+<input type="checkbox" id="pub-1" class="toggle-input">
+<div class="abstract-content">
 <p>In an attempt to explore alternate ways to utilize MPS for continuum models, we consider a single particle basis expansion in terms of piecewise linear finite element orbitals. Although this basis has strictly local support, it loses orthogonality which is a key assumption in standard DMRG implementations. In this work, we extend the framework of MPS for usage with non-orthogonal basis sets and study the properties of a finite element expansion in comparison to the standard finite differences for a Lieb-Liniger gas.</p>
 <div class="pub-links">
-<p><a href="https://arxiv.org/pdf/2606.14873.pdf">PDF</a> <a href="https://github.com/20akshay00/TentMPSAnalysis">Code</a> <a href="https://zenodo.org/records/20600026">Zenodo</a></p>
+<p><a href="https://arxiv.org/pdf/2606.14873.pdf">PDF</a> <a href="https://github.com/20akshay00/TentMPSAnalysis">Code</a> <!-- [Zenodo](https://zenodo.org/records/20600026) --></p>
+</div>
+</div>
+<p><label for="pub-1" class="toggle-button"></label></p>
 </div>
 </section>
 </div>
 </div>
+
+
 </section>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
