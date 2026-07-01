@@ -5,7 +5,7 @@ let width, height;
 let atoms = [];
 const numAtoms = 600;
 const atomColor = "rgba(44, 62, 80, 0.175)";
-const gridColor = "rgba(44, 62, 80, 0.04)";
+const gridColor = "rgba(44, 62, 80, 0.075)";
 const mouseRadius = 150; // radius of influence for mouse stirring
 const gridSize = 100;
 const interactionRadius = 50; // radius of repulsion between atoms
@@ -32,19 +32,24 @@ window.addEventListener('mousemove', (e) => {
     mouse.y = e.clientY;
 });
 
-function drawGrid() {
+function drawGrid(angle = Math.PI / 180 * 30) {
+    const diag = Math.sqrt(width ** 2 + height ** 2);
+    ctx.save();
+    ctx.translate(width / 2, height / 2);
+    ctx.rotate(angle);
     ctx.strokeStyle = gridColor;
     ctx.lineWidth = 1;
     ctx.beginPath();
-    for (let x = 0; x <= width; x += gridSize) {
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
+    for (let x = -diag / 2; x <= diag / 2; x += gridSize) {
+        ctx.moveTo(x, -diag / 2);
+        ctx.lineTo(x, diag / 2);
     }
-    for (let y = 0; y <= height; y += gridSize) {
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
+    for (let y = -diag / 2; y <= diag / 2; y += gridSize) {
+        ctx.moveTo(-diag / 2, y);
+        ctx.lineTo(diag / 2, y);
     }
     ctx.stroke();
+    ctx.restore();
 }
 
 function animate() {

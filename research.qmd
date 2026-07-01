@@ -4,10 +4,6 @@ subtitle: "Understanding and leveraging the behavior of ultra‑cold matter usin
 page-layout: full
 title-block-banner: true
 engine: markdown
-include-in-header:
-  - text: |
-      <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/tikzjax.css">
-      <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 ---
 
 Physics is often framed as a search for the fundamental laws of the universe, and like many, I was first drawn to the field [by the search for the building blocks of our universe](https://www.nature.com/articles/nature.2012.10940). However, I soon found that the most captivating mysteries aren't just in the particles themselves, but in what happens [when you bring them together](https://cse-robotics.engr.tamu.edu/dshell/cs689/papers/anderson72more_is_different.pdf).
@@ -38,25 +34,24 @@ Additionally, over the past decade, we have made huge experimental progress in r
 When describing systems involving thousands of particles, one often writes down an effective field theory that captures the essential features of the physics while maintaining analytical tractability. I focus instead on ab initio descriptions where we work with the full microscopic Hamiltonian. These systems generally have no exact solution for more than two particles (excluding [integrable systems](https://en.wikipedia.org/wiki/Bethe_ansatz), which serve as our benchmarks). In these cases, we instead turn to smartly engineered numerical algorithms to solve the problem for a specified set of parameters on a computer. One may argue whether such solutions constitute genuine "understanding", so it is important to complement them with effective theories and other frameworks to truly gain predictive insight. Most of my experience is with (path integral-) quantum Monte Carlo methods and tensor network algorithms for many-body systems.
 
 ```{=html}
-<div style="margin: 3rem 0; display: flex; gap: 20px; align-items: flex-start;">
-  <div style="flex: 1.33; display: flex; flex-direction: column;">
-    <video controls muted style="width: 100%; border-radius: 12px; border: 1.5px solid #adb5bd;">
-      <source src="images/research/tdse_wavepacket.mp4" type="video/mp4">
+<div class="video-grid">
+  <div class="video-item large">
+    <video controls>
+        <source src="images/research/tdse_wavepacket.mp4" type="video/mp4">
     </video>
-    <div style="text-align: center; font-size: 0.9rem; color: #6c757d; margin-top: 8px;">
-      Real time evolution of a quantum wave-packet in 1D.
+    <div class="video-caption">
+        Real time evolution of a quantum wave-packet in 1D.
     </div>
   </div>
 
-  <div style="flex: 2; display: flex; flex-direction: column;">
-    <video controls muted style="width: 100%; border-radius: 12px; border: 1.5px solid #adb5bd;">
+  <div class="video-item x-large">
+    <video controls>
       <source src="images/research/gpe_imag_time.mp4" type="video/mp4">
     </video>
-    <div style="text-align: center; font-size: 0.9rem; color: #6c757d; margin-top: 8px;">
+    <div class="video-caption">
       Imaginary time evolution of a Bose-Einstein condensate in 1D.
     </div>
   </div>
-
 </div>
 ```
 
@@ -71,64 +66,7 @@ $$
 $$
 where $\{|n_1, n_2, \dots, n_L\rangle\}$ is some natural many-body basis such that each index can take $d$ values (for e.g, $d=2$ for a spin-$1/2$ model). A primary difficulty arises in even representing this state on a computer, since the coefficient tensor $C$ contains exponentially many entries ($\sim d^L$), thereby limiting us to small system sizes $L$. It turns out to be useful to decompose $C$ with a sequence of singular value decompositions as follows:
 
-```{=html}
-<div style="display: flex; justify-content: center; margin: 2rem 0; width: 100%;">
-  <div style="overflow-x: auto;">
-    <script type="text/tikz">
-  \begin{tikzpicture}[
-    tensor/.style={rectangle, draw, thick, fill=blue!5, rounded corners, minimum width=1.2cm, minimum height=0.9cm, font=\small},
-    node distance=2.2cm,
-    >=stealth
-  ]
-
-    % Equation Prefix
-    \node (EQ) at (-2.8, 0) {\large $C_{n_1, \dots, n_L} = $};
-
-    % Left side tensors
-    \node[tensor] (C1) at (0,0) {$C^{(1)}$};
-    \node[tensor] (C2) [right of=C1] {$C^{(2)}$};
-    \node[tensor] (C3) [right of=C2] {$C^{(3)}$};
-    
-    % Ellipsis
-    \node (dots) [right of=C3, xshift=-0.2cm] {$\cdots$};
-
-    % Right side tensors
-    \node[tensor] (CL2) [right of=dots, xshift=-0.2cm] {$C^{(L-2)}$};
-    \node[tensor] (CL1) [right of=CL2] {$C^{(L-1)}$};
-    \node[tensor] (CL) [right of=CL1] {$C^{(L)}$};
-
-    % Physical indices (legs pointing down)
-    \draw[thick] (C1.south) -- +(0,-0.6) node[below] {$n_1$};
-    \draw[thick] (C2.south) -- +(0,-0.6) node[below] {$n_2$};
-    \draw[thick] (C3.south) -- +(0,-0.6) node[below] {$n_3$};
-    \draw[thick] (CL2.south) -- +(0,-0.6) node[below] {$n_{L-2}$};
-    \draw[thick] (CL1.south) -- +(0,-0.6) node[below] {$n_{L-1}$};
-    \draw[thick] (CL.south) -- +(0,-0.6) node[below] {$n_L$};
-
-    % Virtual bonds (horizontal)
-    \draw[thick] (C1.east) -- (C2.west);
-    \draw[thick] (C2.east) -- (C3.west);
-    \draw[thick] (C3.east) -- (dots.west);
-    \draw[thick] (dots.east) -- (CL2.west);
-    \draw[thick] (CL2.east) -- (CL1.west);
-    \draw[thick] (CL1.east) -- (CL.west);
-
-    % Bond Dimension Growth Labels
-    \begin{scope}[font=\footnotesize, color=darkgray]
-      \node at (1.1, 0.3) {$d$};
-      \node at (3.3, 0.3) {$d^2$};
-      \node at (5.5, 0.3) {$d^3$};
-
-      \node at (7.2, 0.3) {$d^3$};
-      \node at (9.4, 0.3) {$d^2$};
-      \node at (11.6, 0.3) {$d$};
-    \end{scope}
-
-  \end{tikzpicture}
-</script>
-  </div>
-</div>
-```
+![](images/research/matrixproductstate.png){.lightbox width="70%" fig-align="center"}
 
 Here we use a [common diagrammatic notation](https://arxiv.org/abs/1603.03039) where lines between two tensors indicate a contraction (i.e., a summation over indices) and the free legs represent physical indices. The exponential growth is indicated by the growing dimension of the contracted "virtual" indices through the chain. The ingenuity of tensor network methods arises from the observation that the ground states of a large class of physically relevant Hamiltonians obey an [area law of entanglement entropy](https://arxiv.org/abs/0808.3773), thereby possessing additional structure that we may exploit. In fact, this directly implies that the ground state can be accurately captured even if we truncate the virtual index dimensions to some constant $D$, thereby removing the exponential scaling. This constitutes the **[matrix product state](https://arxiv.org/abs/2606.24803) (MPS)** variational ansatz which has seen enormous success in describing 1D lattice models. It also has the unique advantage of not running into sign problems, as often encountered in Quantum Monte Carlo.
 
@@ -141,7 +79,7 @@ Tensor network research typically involves finding novel ways to work with this 
 
 ---
 
-::: {.project-section}
+::: {.pub-section}
 ## Master's thesis
 
 ::: {.pub-list}
@@ -155,21 +93,28 @@ Tensor network research typically involves finding novel ways to work with this 
 #### Low-temperature phases of interacting bosons in a lattice
 supervised by Prof. Sanjeev Kumar, and Prof. Tilman Pfau
 
+::: {.abstract-toggle}
+<input type="checkbox" id="pub-thesis" class="toggle-input">
+<div class="abstract-content">
 In this thesis, we explore the phase diagram arising from interacting bosons in a lattice at absolute zero temperatures. Using a large variety of numerical tools like exact diagonalization, self-consistent mean-field theories, cluster mean-field theories, stochastic series expansions, and neural quantum states, we attempt to characterize and capture the quantum phases arising due to dipolar interactions between the atoms. During this thesis, I also spent a few months with the [Dysprosium group](https://www.pi5.uni-stuttgart.de/research/dipolar-quantum-gases/) at the University of Stuttgart where I saw my first cold atom experiment.
 
 ::: {.pub-links}
 [PDF](images/misc/MS18117_PRJ502.pdf)
 [Code](https://github.com/20akshay00/MSThesis)
 :::
+
+</div>
+<label for="pub-thesis" class="toggle-button"></label>
 :::
 
+:::
 :::
 :::
 :::
 
 ---
 
-::: {.project-section}
+::: {.pub-section}
 ## Publications & Preprints
 
 ::: {.pub-list}
@@ -184,13 +129,19 @@ In this thesis, we explore the phase diagram arising from interacting bosons in 
 **Akshay Shankar**, Karel Van Acoleyen, and Jutho Haegeman  
 *[arXiv:2606.14873](https://arxiv.org/abs/2606.14873) [quant-ph, cond-mat.quant-gas]* (2026)
 
+::: {.abstract-toggle}
+<input type="checkbox" id="pub-1" class="toggle-input">
+<div class="abstract-content">
 In an attempt to explore alternate ways to utilize MPS for continuum models, we consider a single particle basis expansion in terms of piecewise linear finite element orbitals. Although this basis has strictly local support, it loses orthogonality which is a key assumption in standard DMRG implementations. In this work, we extend the framework of MPS for usage with non-orthogonal basis sets and study the properties of a finite element expansion in comparison to the standard finite differences for a Lieb-Liniger gas.
 
 ::: {.pub-links}
 [PDF](https://arxiv.org/pdf/2606.14873.pdf)
 [Code](https://github.com/20akshay00/TentMPSAnalysis)
-[Zenodo](https://zenodo.org/records/20600026)
+<!-- [Zenodo](https://zenodo.org/records/20600026) -->
 :::
+
+</div>
+<label for="pub-1" class="toggle-button"></label>
 :::
 
 :::
