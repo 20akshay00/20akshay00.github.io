@@ -655,11 +655,3 @@ p {
 .description {
     margin-top: 1rem !important;
 }
-
-span.math.inline {
-    display: inline-block;
-    max-width: 100%;
-    overflow-x: auto;
-    vertical-align: middle;
-    padding: 2px 0;
-}

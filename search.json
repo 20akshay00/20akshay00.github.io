@@ -109,7 +109,7 @@
     "href": "research.html#publications-preprints",
     "title": "Research",
     "section": "Publications & Preprints",
-    "text": "Publications & Preprints\n\n\n\n\n\n\nFinite-Element Matrix Product States for Continuum Models in One Dimension\nAkshay Shankar, Karel Van Acoleyen, and Jutho Haegeman\narXiv:2606.14873 [quant-ph, cond-mat.quant-gas] (2026)\n\n\n\nIn an attempt to explore alternate ways to utilize MPS for continuum models, we consider a single particle basis expansion in terms of piecewise linear finite element orbitals. Although this basis has strictly local support, it loses orthogonality which is a key assumption in standard DMRG implementations. In this work, we extend the framework of MPS for usage with non-orthogonal basis sets and study the properties of a finite element expansion in comparison to the standard finite differences for a Lieb-Liniger gas.\n\nPDF Code"
+    "text": "Publications & Preprints\n\n\n\n\n\n\nFinite-Element Matrix Product States for Continuum Models in One Dimension\nAkshay Shankar, Karel Van Acoleyen, and Jutho Haegeman\narXiv:2606.14873 [quant-ph, cond-mat.quant-gas] (2026)\n\n\n\nIn an attempt to explore alternate ways to utilize MPS for continuum models, we consider a single particle basis expansion in terms of piecewise linear finite element orbitals. Although this basis has strictly local support, it loses orthogonality which is a key assumption in standard DMRG implementations. In this work, we extend the framework of MPS for usage with non-orthogonal basis sets and study the properties of a finite element expansion in comparison to the standard finite difference method for a Lieb-Liniger gas.\n\nPDF Code"
   },
   {
     "objectID": "index.html",
