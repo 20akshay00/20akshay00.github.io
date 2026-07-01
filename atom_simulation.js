@@ -1,21 +1,24 @@
 const canvas = document.getElementById('atom-canvas');
 const ctx = canvas.getContext('2d');
 
-let width, height;
+let width, height, isMobile;
 let atoms = [];
 const numAtoms = 600;
 const atomColor = "rgba(44, 62, 80, 0.175)";
 const gridColor = "rgba(44, 62, 80, 0.075)";
-const mouseRadius = 150; // radius of influence for mouse stirring
+const mouseRadius = 150;
 const gridSize = 100;
-const interactionRadius = 50; // radius of repulsion between atoms
+const interactionRadius = 50;
 
 function init() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    isMobile = width < 768;
+
+    const currentNumAtoms = isMobile ? 250 : numAtoms;
 
     atoms = [];
-    for (let i = 0; i < numAtoms; i++) {
+    for (let i = 0; i < currentNumAtoms; i++) {
         atoms.push({
             x: Math.random() * width,
             y: Math.random() * height,
@@ -28,8 +31,10 @@ function init() {
 
 let mouse = { x: -1000, y: -1000 };
 window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+    if (!isMobile) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    }
 });
 
 function drawGrid(angle = Math.PI / 180 * 30) {
@@ -61,13 +66,11 @@ function animate() {
     for (let i = 0; i < atoms.length; i++) {
         let a = atoms[i];
 
-        // gently nudges particles back if they leave the screen
         if (a.x < 50) a.vx += 0.05;
         if (a.x > width - 50) a.vx -= 0.05;
         if (a.y < 50) a.vy += 0.05;
         if (a.y > height - 50) a.vy -= 0.05;
 
-        // particle repulsion within some range
         for (let j = i + 1; j < atoms.length; j++) {
             let b = atoms[j];
             let dx = b.x - a.x;
@@ -88,19 +91,21 @@ function animate() {
             }
         }
 
-        // mouse stirring
-        let dxMouse = mouse.x - a.x;
-        let dyMouse = mouse.y - a.y;
-        let distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        if (distMouse < mouseRadius) {
-            let force = (mouseRadius - distMouse) / mouseRadius;
-            let angle = Math.atan2(dyMouse, dxMouse);
-            // pushes particles away
-            a.vx -= Math.cos(angle) * force * 0.6;
-            a.vy -= Math.sin(angle) * force * 0.6;
+        if (!isMobile) {
+            let dxMouse = mouse.x - a.x;
+            let dyMouse = mouse.y - a.y;
+            let distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+            if (distMouse < mouseRadius) {
+                let force = (mouseRadius - distMouse) / mouseRadius;
+                let angle = Math.atan2(dyMouse, dxMouse);
+                a.vx -= Math.cos(angle) * force * 0.6;
+                a.vy -= Math.sin(angle) * force * 0.6;
+            }
+        } else {
+            a.vx += (Math.random() - 0.5) * 0.1;
+            a.vy += (Math.random() - 0.5) * 0.1;
         }
 
-        // damping to slow down particles over time
         a.vx *= 0.99;
         a.vy *= 0.99;
 

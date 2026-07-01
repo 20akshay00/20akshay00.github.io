@@ -7,13 +7,13 @@ about:
     - icon: file-earmark-pdf
       text: "CV"
       href: files/AkshayShankarCV.pdf
-    - text: "{{< ai google-scholar >}} Google Scholar"
-      href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
-    - text: "{{< ai orcid >}} ORCID"
-      href: https://orcid.org/0009-0009-9521-1188
     - icon: github
       text: Github
       href: https://github.com/20akshay00
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0009-0009-9521-1188
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/20akshay00
@@ -23,6 +23,6 @@ about:
 
 <canvas id="atom-canvas"></canvas>
 
-Hi! I'm Akshay, a third-year PhD student at [QuantumGroup@UGent](https://quantumghent.github.io/) with an interest in the exotic physics of Bose-Einstein condensates and programming. I am currently working on utilizing Tensor Network techniques to study BEC systems in the context of quantum simulation experiments. When I'm not performing research, I enjoy [making games](https://20akshay00.itch.io/) with the [Godot engine](https://godotengine.org/).
+Hi! I'm Akshay, a third-year PhD student at [QuantumGroup@UGent](https://quantumghent.github.io/) with an interest in quantum gases and computational physics. I am currently working on utilizing Tensor Network techniques to numerically study ultracold bosonic systems in the continuum. When I'm not performing research, I enjoy [making games](https://20akshay00.itch.io/) with the [Godot engine](https://godotengine.org/).
 
 <script src="./atom_simulation.js"></script>
