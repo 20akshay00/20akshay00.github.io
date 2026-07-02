@@ -2,7 +2,7 @@
 title: "Akshay Shankar"
 about:
   template: jolla
-  image: images/profile.png
+  image: images/profile.jpg
   links:
     - icon: file-earmark-pdf
       text: "CV"
