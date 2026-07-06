@@ -1,6 +1,6 @@
 ---
 title: "Research"
-subtitle: "Understanding and leveraging the behavior of ultra‑cold matter using numerical simulations."
+subtitle: "Understanding the behaviour of ultra-cold matter through numerical simulations to enable practical quantum tech."
 page-layout: full
 title-block-banner: true
 engine: markdown
