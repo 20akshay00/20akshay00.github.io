@@ -4,7 +4,9 @@ const ctx = canvas.getContext('2d');
 let width, height, isMobile;
 let atoms = [];
 const numAtoms = 600;
+// const atomColor = "rgba(2, 107, 89, 0.18)";
 const atomColor = "rgba(44, 62, 80, 0.175)";
+
 const gridColor = "rgba(44, 62, 80, 0.075)";
 const mouseRadius = 150;
 const gridSize = 100;
@@ -121,6 +123,19 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-window.addEventListener('resize', init);
+
+let lastWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+
+    if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        init();
+    } else {
+        height = canvas.height = window.innerHeight;
+    }
+});
+
 init();
 animate();
