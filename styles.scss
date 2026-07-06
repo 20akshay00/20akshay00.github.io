@@ -1,7 +1,102 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,400&family=Lora:ital,wght@0,600;0,700;1,600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,600;0,700;1,600&display=swap');
+
+$font-family-sans-serif: "Source Sans 3", sans-serif;
+$presentation-heading-font: "Lora", serif;
+
+$body-bg: #fcfcf9;
+$body-color: #2c3e50;
+$primary: #006d77;
+$link-color: $primary;
+$navbar-bg: #026b59;
+$navbar-fg: #ffffff;
+
+$text-strong: #1a1a1a;
+$secondary: mix($body-color, #ffffff, 65%);
+$card-bg: $body-bg;
+$card-border: rgba($body-color, 0.25);
+$card-border-hover: rgba($body-color, 0.6);
+$card-border-light: rgba($body-color, 0.15);
+
+// shared Tile Variables (Projects, Pubs, Interests)
+$tile-bg-opacity: 5%;
+$tile-border-opacity: 10%;
+$tile-bg: mix($primary, $body-bg, $tile-bg-opacity);
+$tile-border: rgba($primary, $tile-border-opacity);
+
+$color-pdf: #b91c1c;
+$color-git: $body-color;
+$color-zen: #0369a1;
+
+/*-- scss:rules --*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.quarto-title-banner h1,
+.quarto-title,
+.navbar-brand,
+.nav-link {
+    font-family: "Lora", serif !important;
+    font-weight: 700;
+    font-style: normal;
+    color: $primary;
+    letter-spacing: -0.02em;
+}
+
+.navbar-brand,
+.nav-link {
+    color: $navbar-fg;
+}
+
+p.subtitle,
+.description {
+    color: #1e3a40 !important;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.math {
+    color: $text-strong;
+}
+
+.quarto-title-banner {
+    background-color: mix($primary, $body-bg, 10%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.quarto-title-banner a {
+    color: $primary !important;
+}
+
+#quarto-margin-sidebar {
+    padding-left: 3rem;
+}
+
+#title-block-header.quarto-title-block.banner .title {
+    color: $text-strong !important;
+}
+
 /* --- Global & Layout --- */
 p {
     text-align: justify;
     hyphens: auto;
+    font-size: 18px;
 }
 
 @media (max-width: 480px) {
@@ -18,32 +113,32 @@ p {
 }
 
 .project-section {
-    border: 1px solid #dee2e6;
+    border: 1.5px solid $tile-border;
     border-radius: 15px;
     padding: 2.5rem;
     margin-bottom: 3.5rem;
-    background-color: #f8f9fa;
+    background-color: $tile-bg;
 }
 
 .project-section h2 {
     margin-top: 0;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid $tile-border;
     padding-bottom: 10px;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
 .pub-section {
-    border: 1px solid #dee2e6;
+    border: 1.5px solid $tile-border;
     border-radius: 15px;
     padding: 2.5rem;
     margin-bottom: 3.5rem;
-    background-color: #f8f9fa;
+    background-color: $tile-bg;
 }
 
 .pub-section h2 {
     margin-top: 0;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid $tile-border;
     padding-bottom: 10px;
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -68,19 +163,23 @@ p {
     font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: white !important;
-    background-color: #6c757d;
+    color: $navbar-fg !important;
+    background-color: $primary;
     margin-right: 2px;
     margin-top: 5px;
     display: inline-block;
     white-space: nowrap;
 }
 
+.listing-description {
+    margin-top: 1rem;
+}
+
 .year-pill {
     margin-left: auto !important;
     background-color: transparent !important;
-    color: #6c757d !important;
-    border: 1px solid #ced4da !important;
+    color: $secondary !important;
+    border: 1px solid $card-border-light !important;
     font-weight: 600 !important;
 }
 
@@ -119,8 +218,8 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #ffffff !important;
-    border: 1.5px solid #adb5bd !important;
+    background-color: $card-bg !important;
+    border: 1.5px solid $card-border !important;
     border-radius: 12px !important;
     overflow: hidden !important;
     transition: all 0.25s ease-in-out !important;
@@ -130,7 +229,7 @@ p {
     .quarto-grid-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-        border-color: #6c757d !important;
+        border-color: $card-border-hover !important;
     }
 }
 
@@ -139,7 +238,7 @@ p {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-bottom: 1.5px solid #adb5bd !important;
+    border-bottom: 1.5px solid $card-border !important;
 }
 
 .quarto-grid-item .card-body {
@@ -153,7 +252,7 @@ p {
     margin-top: 0;
     font-size: 1.2rem;
     font-weight: 800 !important;
-    color: #222;
+    color: $text-strong;
 }
 
 /* --- Research Interests & Tiles --- */
@@ -166,13 +265,15 @@ p {
 
 .interest-tile {
     padding: 2rem;
-    background-color: #ffffff;
-    border: 1.5px solid #adb5bd;
+    background-color: $tile-bg !important;
+    border: 1.5px solid $tile-border;
     border-radius: 12px;
-    border-top: 3px solid #adb5bd;
-    border-bottom: 3px solid #adb5bd;
+    border-top: 3px solid $tile-border;
+    border-bottom: 3px solid $tile-border;
     transition: box-shadow 0.2s ease;
     box-sizing: border-box !important;
+    line-height: 1.6 !important;
+    color: $body-color;
 }
 
 .interest-tile *,
@@ -194,7 +295,7 @@ p {
 }
 
 .interest-tile img {
-    border: 1px solid #dee2e6;
+    border: 1px solid $card-border-light;
     border-radius: 8px;
     margin-bottom: 0.5rem;
     max-width: 100%;
@@ -203,7 +304,7 @@ p {
 
 .interest-tile figure figcaption {
     font-size: 0.8rem;
-    color: #6c757d;
+    color: $secondary;
     text-align: center;
     margin-top: 5px;
 }
@@ -218,8 +319,8 @@ p {
 .pub-row {
     display: grid;
     grid-template-columns: 30% 70%;
-    background: #ffffff;
-    border: 1.5px solid #adb5bd;
+    background: $card-bg;
+    border: 1.5px solid $card-border;
     border-radius: 12px;
     overflow: hidden;
     transition: box-shadow 0.2s ease;
@@ -234,8 +335,8 @@ p {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: #fff;
-    border-right: 1.5px solid #adb5bd;
+    background-color: $card-bg;
+    border-right: 1.5px solid $card-border;
 }
 
 .pub-image-small img {
@@ -271,21 +372,21 @@ p {
 }
 
 .pub-links a[href*="pdf"] {
-    background-color: #fee2e2;
-    color: #b91c1c;
-    border: 1px solid #fca5a5;
+    background-color: mix($color-pdf, $card-bg, 15%);
+    color: $color-pdf;
+    border: 1px solid mix($color-pdf, $card-bg, 30%);
 }
 
 .pub-links a[href*="github.com"] {
-    background-color: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
+    background-color: mix($color-git, $card-bg, 10%);
+    color: $color-git;
+    border: 1px solid mix($color-git, $card-bg, 25%);
 }
 
 .pub-links a[href*="zenodo.org"] {
-    background-color: #e0f2fe;
-    color: #0369a1;
-    border: 1px solid #7dd3fc;
+    background-color: mix($color-zen, $card-bg, 15%);
+    color: $color-zen;
+    border: 1px solid mix($color-zen, $card-bg, 30%);
 }
 
 /* --- Videos & Media --- */
@@ -315,12 +416,12 @@ p {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    border: 1.5px solid #adb5bd;
+    border: 1.5px solid $card-border;
 }
 
 .video-caption {
     font-size: 0.8rem !important;
-    color: #6c757d !important;
+    color: $secondary !important;
     margin-top: 0.75rem !important;
     line-height: 1.5 !important;
     display: block;
@@ -339,12 +440,10 @@ p {
     display: inline-block;
     width: 100%;
     margin: 0 0 1.5rem 0;
-
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
-
-    background-color: #ffffff;
-    border: 1.5px solid #adb5bd;
+    background-color: $card-bg;
+    border: 1.5px solid $card-border;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
@@ -354,30 +453,23 @@ p {
     display: block;
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid mix($card-border, $card-bg, 40%);
 }
 
 .art-card figure figcaption {
     padding: 1rem 1.25rem;
     font-size: 0.85rem;
-    color: #444;
+    color: mix($body-color, $text-strong, 60%);
     line-height: 1.5;
-    background: #fff;
+    background: $card-bg;
 }
 
 .art-card figure figcaption strong,
 .art-card figure figcaption b {
     display: block;
     margin-bottom: 0.3rem;
-    color: #111;
+    color: $text-strong;
     font-size: 0.9rem;
-}
-
-.art-card figure figcaption {
-    padding: 1rem 1.25rem;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #555;
 }
 
 @media (max-width: 1100px) {
@@ -478,7 +570,7 @@ p {
     .pub-image-small {
         width: 100% !important;
         border-right: none !important;
-        border-bottom: 1.5px solid #adb5bd;
+        border-bottom: 1.5px solid $card-border;
         height: auto !important;
         padding: 0.5rem;
     }
@@ -519,7 +611,6 @@ p {
 }
 
 @media (max-width: 768px) {
-
     .abstract-toggle {
         display: flex;
         flex-direction: column;
@@ -529,7 +620,6 @@ p {
         max-height: 0;
         opacity: 0;
         overflow: hidden;
-        /* Smooth slide and fade transition */
         transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
         pointer-events: none;
     }
@@ -541,12 +631,12 @@ p {
         padding: 8px 25px;
         font-size: 0.8rem;
         font-weight: 700;
-        color: #3572A5;
+        color: $primary;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        border: 1.5px solid #adb5bd;
+        border: 1.5px solid $card-border;
         border-radius: 25px;
-        background-color: #ffffff;
+        background-color: $card-bg;
         cursor: pointer;
         text-align: center;
     }
@@ -554,7 +644,6 @@ p {
     .toggle-button::before {
         content: "Show more/less";
     }
-
 
     .toggle-input:checked~.abstract-content {
         max-height: 2000px;
@@ -564,7 +653,7 @@ p {
     }
 
     .toggle-button:active {
-        background-color: #f0f0f0;
+        background-color: mix($card-border, $card-bg, 20%);
         transform: scale(0.98);
     }
 
@@ -583,14 +672,13 @@ p {
         padding: 0 !important;
         margin: 0 !important;
         text-decoration: none !important;
+        color: $primary !important;
     }
 
-    /* Hide the text by setting font-size to 0 */
     .about-link-text {
         font-size: 0 !important;
     }
 
-    /* Restore visibility and size specifically for the icons */
     .about-link i,
     .about-link svg,
     .about-link span.ai,
@@ -599,8 +687,7 @@ p {
         line-height: 1 !important;
         visibility: visible !important;
         display: inline-block !important;
-        color: #444;
-        /* Adjust color as needed */
+        color: mix($body-color, $text-strong, 60%);
     }
 
     .about-link:active {
@@ -627,10 +714,10 @@ p {
     }
 
     .navbar-nav .nav-link.active {
-        background-color: rgba(255, 255, 255, 0.04) !important;
-        border-left: 3px solid #3572A5 !important;
+        background-color: rgba($navbar-fg, 0.04) !important;
+        border-left: 3px solid $primary !important;
         padding-left: calc(1.2rem - 3px) !important;
-        color: #ffffff !important;
+        color: $navbar-fg !important;
     }
 
     .navbar-nav .nav-link::after {
@@ -647,7 +734,7 @@ p {
 }
 
 .quarto-post {
-    background-color: #4c5b6a1A !important;
+    background-color: mix($primary, $body-bg, 8%) !important;
     padding: 1.5rem !important;
     border-radius: 12px !important;
 }
