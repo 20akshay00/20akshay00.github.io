@@ -128,12 +128,19 @@ let lastWidth = window.innerWidth;
 
 window.addEventListener('resize', () => {
     const currentWidth = window.innerWidth;
+    const currentHeight = window.innerHeight;
 
-    if (currentWidth !== lastWidth) {
+    if (isMobile) {
+        if (Math.abs(currentWidth - lastWidth) > 50) {
+            lastWidth = currentWidth;
+            init();
+        } else {
+            width = canvas.width = currentWidth;
+            height = canvas.height = currentHeight;
+        }
+    } else {
         lastWidth = currentWidth;
         init();
-    } else {
-        height = canvas.height = window.innerHeight;
     }
 });
 
