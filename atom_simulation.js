@@ -60,7 +60,7 @@ function drawGrid(angle = Math.PI / 180 * 30) {
 }
 
 function animate() {
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#fcfcf9';
     ctx.fillRect(0, 0, width, height);
 
     drawGrid();
