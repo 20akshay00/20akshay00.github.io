@@ -16,7 +16,7 @@ about:
       href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com/20akshay00
+      href: https://linkedin.com/in/20akshay00
     - text: "{{< fa brands itch-io >}} Itch.io"
       href: https://20akshay00.itch.io/
 ---
