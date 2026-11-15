@@ -5,6 +5,9 @@ project:
     - listing.js
     - tdse_demos.js
     - tdse_widget.js
+    - tn_widget.js
+    - bec_widget.js
+    - data/bec_shots.bin
 
 website:
   title: "Akshay Shankar"

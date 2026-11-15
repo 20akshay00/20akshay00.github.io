@@ -1470,8 +1470,246 @@ $acc-bad: #c53030;
     color: #ffffff;
 }
 
+/* --- MPS compression widget (tn_widget.js), built on the .tdse styles --- */
+// the MPS, drawn like the usual tensor-network diagram
+.tn-mps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0.25rem 0.4rem;
+    color: $body-color;
+}
+
+.tn-lhs {
+    flex: none;
+    padding-top: 0.55rem;
+    font-size: 0.95rem;
+}
+
+.tn-chain {
+    --tn-site: clamp(2.2rem, 8vw, 3.4rem);
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: 2.3rem 1.2rem auto;
+}
+
+.tn-box {
+    grid-row: 1;
+    width: var(--tn-site);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: mix($primary, $card-bg, 9%);
+    border: 1.5px solid $primary;
+    border-radius: $radius;
+    color: $primary;
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+}
+
+.tn-box.tn-rest {
+    width: auto;
+    z-index: 1;
+    border-style: dashed;
+    background: mix($primary, $card-bg, 4%);
+}
+
+.tn-box[hidden],
+.tn-rest span[hidden] {
+    display: none;
+}
+
+.tn-leg {
+    grid-row: 2;
+    justify-self: center;
+    width: 1.5px;
+    background: rgba($body-color, 0.6);
+}
+
+.tn-n {
+    grid-row: 3;
+    justify-self: center;
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+}
+
+.tn-bond {
+    grid-row: 1;
+    position: relative;
+}
+
+.tn-bond::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 0.75px);
+    height: 1.5px;
+    background: rgba($body-color, 0.6);
+}
+
+.tn-bond span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(50% + 2px);
+    text-align: center;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+.tn-bond span.tn-cut {
+    color: $primary;
+    font-weight: 700;
+}
+
+// stepping through the construction
+.tn-build {
+    margin: 0.1rem 0 0.7rem;
+    padding: 0.6rem 0.7rem;
+    background: mix($primary, $card-bg, 3%);
+    border: 1px solid $card-border-light;
+    border-radius: $radius;
+}
+
+.tn-build-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.45rem;
+}
+
+.tn-build-title {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    color: $primary;
+}
+
+.tn-build .tdse-note {
+    margin: 0;
+}
+
+.tn-amp-cap {
+    margin: 0;
+    padding: 0.45rem 0.5rem 0;
+    border-top: 1px dashed $card-border-light;
+    font-size: 0.78rem !important;
+    color: $secondary;
+}
+
+.tn .tn-amp {
+    display: block;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .tn-lhs {
+        display: none;
+    }
+}
+
+.tn .tn-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid $card-border-light;
+}
+
+.tn-params {
+    margin: 0.1rem 0 0;
+    color: $secondary;
+}
+
+.tn-params b {
+    color: $body-color;
+}
+
+// the overlap, large, next to the naive alternative
+.tn-score {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid $card-border-light;
+    border-radius: $radius;
+    overflow: hidden;
+}
+
+.tn-score > div {
+    padding: 0.55rem 0.7rem 0.5rem;
+    background: mix($primary, $card-bg, 7%);
+}
+
+.tn-score > .tn-score-alt {
+    background: $card-bg;
+    border-left: 1px solid $card-border-light;
+}
+
+.tn-score-v {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    color: $primary;
+    white-space: nowrap;
+}
+
+.tn-score-alt .tn-score-v {
+    color: $secondary;
+}
+
+.tn-score-l {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    color: $secondary;
+}
+
+/* --- raw absorption images (bec_widget.js): a figure, not a card --- */
+.tdse.bec {
+    background: none;
+    border: none;
+    margin: 0;
+    overflow: visible;
+}
+
+.bec figure {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.bec-frame {
+    display: block;
+    width: 100%;
+}
+
+.bec-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+// notes that change keep the height of their longest version (see setNote)
+.tn-stable {
+    display: grid;
+}
+
+.tn-stable > span {
+    grid-area: 1 / 1;
+}
+
+.tn .tdse-field.tn-off {
+    opacity: 0.4;
+}
+
+.tn .tdse-field {
+    grid-template-columns: 8.75rem minmax(0, 1fr) 2.5rem;
+}
+
+
+
 @media (max-width: 991.98px) {
-    .tdse-panel {
+    .tdse-panel,
+    .tn .tn-panel {
         grid-template-columns: 1fr;
     }
 

@@ -23,7 +23,10 @@ In our search for quantum-ness, we find that the world gets a lot more interesti
 ::: {layout-ncol=2}
 ![Table-top cold atom experiment at UGent.](images/research/coldatomlabgent.png){.lightbox group="quantum-gas" width=70%}
 
-![Experimental absorption image of Rb87 atoms.](images/research/bec.png){.lightbox group="quantum-gas" width=70%}
+```{=html}
+<div id="bec-widget"></div>
+<script src="bec_widget.js"></script>
+```
 :::
 
 Additionally, over the past decade, we have made huge experimental progress in realizing and controlling these setups at increasingly lower temperatures. One can induce a variety of interactions between the atoms, manufacture an arbitrary potential landscape and even introduce multiple distinct atomic species. This unprecedented level of control motivates their usage as [quantum simulators](https://arxiv.org/abs/2303.00814) that allow us to gain insight into a wide range of unrelated physical systems ranging from solid state physics to cosmology. I generally enjoy collaborating with experimentalists to explore new realizations of such simulators as well.
@@ -50,7 +53,10 @@ $$
 $$
 where $\{|n_1, n_2, \dots, n_L\rangle\}$ is some natural many-body basis such that each index can take $d$ values (for e.g, $d=2$ for a spin-$1/2$ model). A primary difficulty arises in even representing this state on a computer, since the coefficient tensor $C$ contains exponentially many entries ($\sim d^L$), thereby limiting us to small system sizes $L$. It turns out to be useful to decompose $C$ with a sequence of singular value decompositions as follows:
 
-![](images/research/matrixproductstate.png){.lightbox width="70%" fig-align="center"}
+```{=html}
+<div id="tn-widget"></div>
+<script src="tn_widget.js"></script>
+```
 
 Here we use a [common diagrammatic notation](https://arxiv.org/abs/1603.03039) where lines between two tensors indicate a contraction (i.e., a summation over indices) and the free legs represent physical indices. The exponential growth is indicated by the growing dimension of the contracted "virtual" indices through the chain. The ingenuity of tensor network methods arises from the observation that the ground states of a large class of physically relevant Hamiltonians obey an [area law of entanglement entropy](https://arxiv.org/abs/0808.3773), thereby possessing additional structure that we may exploit. In fact, this directly implies that the ground state can be accurately captured even if we truncate the virtual index dimensions to some constant $D$, thereby removing the exponential scaling. This constitutes the **[matrix product state](https://arxiv.org/abs/2606.24803) (MPS)** variational ansatz which has seen enormous success in describing 1D lattice models. It also has the unique advantage of not running into sign problems, as often encountered in Quantum Monte Carlo.
 
