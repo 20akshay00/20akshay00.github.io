@@ -168,7 +168,6 @@ data = compute_density(inputs.T, inputs.n)
 
 ```{ojs}
 //| echo: false
-//| column: page
 viewof inputs = {
   const form = Inputs.form({
     T: Inputs.range([0.1, 10], {step: 0.01, label: "Temperature (kT/hw)", value: 8.}),
