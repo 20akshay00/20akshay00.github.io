@@ -9,6 +9,51 @@ lightbox:
 ---
 
 ::: {.project-section}
+## Games
+*Games I've made with the [Godot engine](https://godotengine.org/), most of them for game jams with friends. All of them live on my [itch.io page](https://20akshay00.itch.io/), and most can be played right in the browser.*
+
+::: {.art-column-grid}
+
+::: {.art-card}
+![**Not Dead Yet** Your heart is stopping. The countdown has begun. Cling to life and fight to survive.<br><span class="game-meta">GMTK Game Jam 2026 · [Play on itch.io](https://20akshay00.itch.io/notdeadyet)</span>](/images/gamedev/covers/notdeadyet.png){group="games"}
+:::
+
+::: {.art-card}
+![**Repressed** A memory repressed. A memory freed.<br><span class="game-meta">Brackeys Game Jam 2026.1 · [Play on itch.io](https://20akshay00.itch.io/repressed)</span>](/images/gamedev/covers/repressed.png){group="games"}
+:::
+
+::: {.art-card}
+![**Cyberloop** Your trail's a weapon and every tight turn could be your last. Outsmart, outlive and outloop.<br><span class="game-meta">GMTK Game Jam 2025 · [Play on itch.io](https://20akshay00.itch.io/cyberloop)</span>](/images/gamedev/covers/cyberloop.png){group="games"}
+:::
+
+::: {.art-card}
+![**V1RUS.exe** Infect the system. Avoid detection. Deliver the payload.<br><span class="game-meta">Beginner's Jam Winter 2024 · [Play on itch.io](https://20akshay00.itch.io/v1rusexe)</span>](/images/gamedev/covers/v1rusexe.png){group="games"}
+:::
+
+::: {.art-card}
+![**Sketchometry** Bend, twist, and stretch your way to geometric perfection!<br><span class="game-meta">GMTK Game Jam 2024 · [Play on itch.io](https://20akshay00.itch.io/sketchometry)</span>](/images/gamedev/covers/sketchometry.png){group="games"}
+:::
+
+::: {.art-card}
+![**Lest Ye Falter** You sense defiance brewing among your followers. Their faith must be restored... NO MATTER THE COST.<br><span class="game-meta">The Secret Cult Horror Jam · [Play on itch.io](https://quantum-forge-games.itch.io/lest-ye-falter)</span>](/images/gamedev/covers/lestyefalter.png){group="games"}
+:::
+
+::: {.art-card}
+![**Cellular Conquest** A cell in a petri dish, trying to grow and escape the lab.<br><span class="game-meta">Godot Jam 2024 · [Download on itch.io](https://quantum-forge-games.itch.io/cellular-conquest)</span>](/images/gamedev/covers/cellularconquest.png){group="games"}
+:::
+
+::: {.art-card}
+![**Summon Squad** Explore the crumbling ruins of forgotten treasures by solving puzzles with a little help from your summoned friends.<br><span class="game-meta">Ludum Dare 55 · [Play on itch.io](https://roman-hyacinths.itch.io/summon-squad)</span>](/images/gamedev/covers/summonsquad.png){group="games"}
+:::
+
+::: {.art-card}
+![**Trickshot** In this world, you are not the wielder but the weapon itself! Are you worthy of making the trickiest shots of them all?<br><span class="game-meta">GMTK Game Jam 2023 · [Play on itch.io](https://20akshay00.itch.io/trickshot)</span>](/images/gamedev/covers/trickshot.png){group="games"}
+:::
+
+:::
+:::
+
+::: {.project-section}
 ## Origami
 *Modular (3D) origami, where many small folded paper units are slotted together into the final shape.*
 

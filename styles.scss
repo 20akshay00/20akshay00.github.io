@@ -485,6 +485,14 @@ p {
     border-bottom: 1px solid mix($card-border, $card-bg, 40%);
 }
 
+// a game card's jam and link line, under the tagline
+.art-card .game-meta {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
 // keep pixel art crisp when upscaled
 .art-card img[src*="pixelart"] {
     image-rendering: pixelated;
