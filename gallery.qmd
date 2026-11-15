@@ -144,7 +144,7 @@ listing:
 <img class="sticker float" src="images/sprites/island.png" alt="" style="top: -40px; right: 3%; width: 230px; transform: rotate(-2deg);">
 ```
 
-*Games I've made, most of them with the [Godot engine](https://godotengine.org/) for game jams with friends. Those live on my [itch.io page](https://20akshay00.itch.io/), and most can be played right in the browser.*
+*Games I've made, most of them with the [Godot engine](https://godotengine.org/) for game jams as part of a team. These are all hosted on my [itch.io page](https://20akshay00.itch.io/), and most can be played right in the browser.*
 
 :::{#games-arcade}
 :::
@@ -157,7 +157,7 @@ listing:
 <img class="sticker float" src="images/sprites/Halves.png" alt="" style="top: -18px; right: 22%; width: 74px; transform: rotate(9deg); animation-delay: 0.8s;">
 ```
 
-*Modular (3D) origami, where many small folded paper units are slotted together into the final shape.*
+*Modular origami (golden venture folding), where many small folded paper units are slotted together to form three-dimensional shapes.*
 
 ::: {.art-column-grid}
 
