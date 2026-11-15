@@ -26,21 +26,16 @@ website:
       - href: blog.qmd
         text: Blog
       - href: gallery.qmd
-      - text: "{{< ai google-scholar >}}"
-        href: https://scholar.google.com/citations?user=8XmbbYgAAAAJ
-      - text: "{{< ai orcid >}}"
-        href: https://orcid.org/0009-0009-9521-1188
-      - icon: github
-        href: https://github.com/20akshay00
-      - icon: linkedin
-        href: https://linkedin.com/in/20akshay00
-      - text: "{{< fa brands itch-io >}}"
-        href: https://20akshay00.itch.io/
 format:
   html:
-    theme: 
-      - journal
-      - styles.scss
+    theme:
+      light:
+        - journal
+        - styles.scss
+      dark:
+        - journal
+        - styles.scss
+        - styles-dark.scss
 
 execute:
   freeze: false

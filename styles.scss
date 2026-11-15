@@ -3,38 +3,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,600;0,700;1,600&display=swap');
 
-$font-family-sans-serif: "Source Sans 3", sans-serif;
-$presentation-heading-font: "Lora", serif;
+$font-family-sans-serif: "Source Sans 3", sans-serif !default;
+$presentation-heading-font: "Lora", serif !default;
 
-$body-bg: #fcfcf9;
-$body-color: #2c3e50;
-$primary: #006d77;
-$link-color: $primary;
-$navbar-bg: #026b59;
-$navbar-fg: #ffffff;
+$body-bg: #fcfcf9 !default;
+$body-color: #2c3e50 !default;
+$primary: #006d77 !default;
+$link-color: $primary !default;
+$navbar-bg: #026b59 !default;
+$navbar-fg: #ffffff !default;
 
-$text-strong: #1a1a1a;
-$secondary: mix($body-color, #ffffff, 65%);
-$card-bg: $body-bg;
-$card-border: rgba($body-color, 0.25);
-$card-border-hover: rgba($body-color, 0.6);
-$card-border-light: rgba($body-color, 0.15);
+$text-strong: #1a1a1a !default;
+$secondary: mix($body-color, #ffffff, 65%) !default;
+$card-bg: $body-bg !default;
+$card-border: rgba($body-color, 0.25) !default;
+$card-border-hover: rgba($body-color, 0.6) !default;
+$card-border-light: rgba($body-color, 0.15) !default;
 
 // shared Tile Variables (Projects, Pubs, Interests)
-$tile-bg-opacity: 5%;
-$tile-border-opacity: 10%;
-$tile-bg: mix($primary, $body-bg, $tile-bg-opacity);
-$tile-border: rgba($primary, $tile-border-opacity);
+$tile-bg-opacity: 5% !default;
+$tile-border-opacity: 10% !default;
+$tile-bg: mix($primary, $body-bg, $tile-bg-opacity) !default;
+$tile-border: rgba($primary, $tile-border-opacity) !default;
 
-$radius: 6px;
-$rule: 1px solid $card-border-light;
-$panel-bg: mix($primary, $body-bg, 4%);
-$panel-border: rgba($primary, 0.16);
-$lattice: rgba($body-color, 0.045);
+$radius: 6px !default;
+$rule: 1px solid $card-border-light !default;
+$panel-bg: mix($primary, $body-bg, 4%) !default;
+$panel-border: rgba($primary, 0.16) !default;
+$lattice: rgba($body-color, 0.045) !default;
 
-$color-pdf: #b91c1c;
-$color-git: $body-color;
-$color-zen: #0369a1;
+$color-pdf: #b91c1c !default;
+$color-git: $body-color !default;
+$color-zen: #0369a1 !default;
+
+// colours the light and dark themes set differently (styles-dark.scss)
+$subtitle-color: #1e3a40 !default;
+$warn-color: #975a16 !default;
+$accent: #c2410c !default;          // the second colour of plots (orange)
+$on-primary: #ffffff !default;      // text on a $primary background
+$image-blend: multiply !default;    // white figure backgrounds take on the tint behind them
+$shadow: rgba(0, 0, 0, 0.05) !default;
 
 /*-- scss:rules --*/
 
@@ -74,11 +82,11 @@ h5,
 
 p.subtitle,
 .description {
-    color: #1e3a40 !important;
+    color: $subtitle-color !important;
 }
 
 .navbar {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid $shadow;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
@@ -94,7 +102,7 @@ p.subtitle,
 
 .quarto-title-banner {
     background-color: mix($primary, $body-bg, 10%) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid $shadow;
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
@@ -797,7 +805,7 @@ p {
 .interest-tile img,
 .interest-tile video,
 .pub-image-small img {
-    mix-blend-mode: multiply;
+    mix-blend-mode: $image-blend;
 }
 
 // left column: entry number, date, size, reading time (see listing.js)
@@ -886,7 +894,8 @@ p {
     --tdse-rho: #{$primary};
     --tdse-rho-fill: #{rgba($primary, 0.18)};
     --tdse-re: #{$body-color};
-    --tdse-im: #c2410c;
+    --tdse-im: #{$accent};
+    --tdse-backing: #{rgba($body-bg, 0.92)};
     --tdse-pot: #{rgba($body-color, 0.09)};
     --tdse-pot-line: #{rgba($body-color, 0.45)};
     --tdse-axis: #{rgba($body-color, 0.25)};
@@ -994,7 +1003,7 @@ p {
 .tdse-chip[aria-pressed="true"] {
     background-color: $primary;
     border-color: $primary;
-    color: #ffffff;
+    color: $on-primary;
 }
 
 .tdse-demo-caption {
@@ -1037,7 +1046,7 @@ p {
 
 // a choice that cannot work as set up, explained in place
 .tdse-note.tdse-warn {
-    color: #975a16;
+    color: $warn-color;
 }
 
 .tdse-stage {
@@ -1097,7 +1106,7 @@ p {
 
 .tdse-seg button[aria-pressed="true"] {
     background-color: $primary;
-    color: #ffffff;
+    color: $on-primary;
 }
 
 // full-width segmented choices in the initial-state panel
@@ -1337,8 +1346,8 @@ $acc-bad: #c53030;
 
 .tdse-check .sw-rho { background: $primary; height: 9px; opacity: 0.6; }
 .tdse-check .sw-re { background: $body-color; }
-.tdse-check .sw-im { background: #c2410c; }
-.tdse-check .sw-e { border-top: 2px dashed #c2410c; height: 0; }
+.tdse-check .sw-im { background: $accent; }
+.tdse-check .sw-e { border-top: 2px dashed $accent; height: 0; }
 .tdse-check .sw-p { background: $primary; height: 9px; width: 4px; margin: 0 5px; opacity: 0.6; box-shadow: -5px 3px 0 -1px rgba($primary, 0.6), 5px 3px 0 -1px rgba($primary, 0.6); }
 
 // strips under the main plot (momentum, phase)
@@ -1382,7 +1391,7 @@ $acc-bad: #c53030;
     margin-bottom: 0.35rem;
 }
 
-.tdse-check .sw-cl { width: 10px; height: 10px; margin: 0 2px; border: 2px solid #c2410c; border-radius: 50%; }
+.tdse-check .sw-cl { width: 10px; height: 10px; margin: 0 2px; border: 2px solid $accent; border-radius: 50%; }
 
 .tdse-eq {
     margin: 0.1rem 0 0.35rem;
@@ -1467,7 +1476,7 @@ $acc-bad: #c53030;
 .tdse-btn[aria-pressed="true"] {
     background-color: $primary;
     border-color: $primary;
-    color: #ffffff;
+    color: $on-primary;
 }
 
 /* --- MPS compression widget (tn_widget.js), built on the .tdse styles --- */

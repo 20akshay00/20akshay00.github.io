@@ -42,7 +42,9 @@
     const ui = {};
     root.querySelectorAll("[data-ui]").forEach((el) => (ui[el.dataset.ui] = el));
     const cv = root.querySelector(".bec-frame"), cx = cv.getContext("2d");
-    const TEXT = getComputedStyle(root).getPropertyValue("--tdse-text").trim() || "#5b6b78";
+    // axis text colour, following the light/dark theme
+    const readText = () => getComputedStyle(root).getPropertyValue("--tdse-text").trim() || "#5b6b78";
+    let TEXT = readText();
 
     // ------------------------------------------------------------------
     // state: t the hold time shown, shot -1 for the mean or the run shown
@@ -201,6 +203,12 @@
         fit();
         draw();
     }).observe(cv);
+
+    // light/dark toggle: Quarto swaps the stylesheet and the body's class
+    new MutationObserver(() => requestAnimationFrame(() => {
+        TEXT = readText();
+        draw();
+    })).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
     updatePlay();
 })();

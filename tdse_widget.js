@@ -1854,19 +1854,32 @@
     // ------------------------------------------------------------------
     // drawing
     // ------------------------------------------------------------------
+    // The palette comes from CSS custom properties on the widget (styles.scss), so
+    // it follows the light/dark theme; it is read again whenever the theme flips.
     const css = getComputedStyle(root);
     const color = (name, fallback) => css.getPropertyValue(name).trim() || fallback;
-    const C = {
-        rho: color("--tdse-rho", "#006d77"),
-        rhoFill: color("--tdse-rho-fill", "rgba(0, 109, 119, 0.2)"),
-        re: color("--tdse-re", "#2c3e50"),
-        im: color("--tdse-im", "#c2410c"),
-        pot: color("--tdse-pot", "rgba(44, 62, 80, 0.10)"),
-        potLine: color("--tdse-pot-line", "rgba(44, 62, 80, 0.45)"),
-        axis: color("--tdse-axis", "rgba(44, 62, 80, 0.25)"),
-        text: color("--tdse-text", "#5b6b78"),
-        backing: color("--tdse-backing", "rgba(252, 252, 249, 0.92)"),
+    const rgbOf = (hex, fallback) => {
+        const m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex);
+        return m ? m.slice(1).map((h) => parseInt(h, 16)) : fallback;
     };
+    const C = {};
+    let rhoRGB, dipRGB;                     // the same two colours as RGB, for the space-time strip
+    function readColors() {
+        Object.assign(C, {
+            rho: color("--tdse-rho", "#006d77"),
+            rhoFill: color("--tdse-rho-fill", "rgba(0, 109, 119, 0.2)"),
+            re: color("--tdse-re", "#2c3e50"),
+            im: color("--tdse-im", "#c2410c"),
+            pot: color("--tdse-pot", "rgba(44, 62, 80, 0.10)"),
+            potLine: color("--tdse-pot-line", "rgba(44, 62, 80, 0.45)"),
+            axis: color("--tdse-axis", "rgba(44, 62, 80, 0.25)"),
+            text: color("--tdse-text", "#5b6b78"),
+            backing: color("--tdse-backing", "rgba(252, 252, 249, 0.92)"),
+        });
+        rhoRGB = rgbOf(C.rho, [0, 109, 119]);
+        dipRGB = rgbOf(C.im, [194, 65, 12]);
+    }
+    readColors();
 
     let w = 0, h = 0, y0 = 0, eTop = 1;
     const top = 24;
@@ -2045,11 +2058,6 @@
     // denser, orange where thinner): small waves on a big condensate stand out.
     const history = { cv: document.createElement("canvas"), dt: 0.5, next: 0, mode: "density", ref: null };
     history.cx = history.cv.getContext("2d");
-    const rgbOf = (hex, fallback) => {
-        const m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex);
-        return m ? m.slice(1).map((h) => parseInt(h, 16)) : fallback;
-    };
-    const rhoRGB = rgbOf(C.rho, [0, 109, 119]), dipRGB = rgbOf(C.im, [194, 65, 12]);
 
     // the density at t = 0, for the "change" mode
     function snapshotHistory() {
@@ -2529,6 +2537,12 @@
     document.addEventListener("visibilitychange", wake);
 
     new ResizeObserver(resize).observe(canvas);
+
+    // light/dark toggle: Quarto swaps the stylesheet and the body's class
+    new MutationObserver(() => requestAnimationFrame(() => {
+        readColors();
+        draw();
+    })).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
     if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([root]);
 

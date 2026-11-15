@@ -5,12 +5,26 @@ let width, height, isMobile;
 let atoms = [];
 const numAtoms = 600;
 
-const bgColor = '#fcfcf9';
-const gridColor = "rgba(44, 62, 80, 0.075)";
-// atoms fade from slate (hot gas) to teal (condensate) as they cool
-const hotColor = [44, 62, 80, 0.175];
-const coldColor = [0, 109, 119, 0.45];
+// Atoms fade from slate (hot gas) to teal (condensate) as they cool. One palette
+// per site theme (light, dark), picked from the class Quarto puts on the body.
+const PALETTES = {
+    light: { bg: '#fcfcf9', grid: 'rgba(44, 62, 80, 0.075)', hot: [44, 62, 80, 0.175], cold: [0, 109, 119, 0.45] },
+    dark: { bg: '#14181b', grid: 'rgba(213, 221, 226, 0.06)', hot: [213, 221, 226, 0.16], cold: [92, 184, 194, 0.5] },
+};
 const colorBins = 6;
+let bgColor, gridColor, binColors;
+function readPalette() {
+    const p = document.body.classList.contains('quarto-dark') ? PALETTES.dark : PALETTES.light;
+    bgColor = p.bg;
+    gridColor = p.grid;
+    binColors = Array.from({ length: colorBins }, (_, k) => {
+        const cold = k / (colorBins - 1);
+        const c = p.hot.map((h, i) => h + (p.cold[i] - h) * cold);
+        return `rgba(${c[0] | 0}, ${c[1] | 0}, ${c[2] | 0}, ${c[3].toFixed(3)})`;
+    });
+}
+readPalette();
+new MutationObserver(readPalette).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
 const gridSize = 100;
 const interactionRadius = 50;
@@ -89,12 +103,6 @@ function drawGrid(angle = Math.PI / 180 * 30) {
     ctx.stroke();
     ctx.restore();
 }
-
-const binColors = Array.from({ length: colorBins }, (_, k) => {
-    const cold = k / (colorBins - 1);
-    const c = hotColor.map((h, i) => h + (coldColor[i] - h) * cold);
-    return `rgba(${c[0] | 0}, ${c[1] | 0}, ${c[2] | 0}, ${c[3].toFixed(3)})`;
-});
 
 function animate() {
     ctx.fillStyle = bgColor;

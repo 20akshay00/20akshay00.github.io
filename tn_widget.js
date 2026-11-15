@@ -328,13 +328,18 @@
     const amp = { cv: root.querySelector(".tn-amp") };
     amp.cx = amp.cv.getContext("2d");
 
+    // the palette follows the light/dark theme (CSS custom properties, styles.scss)
     const css = getComputedStyle(root);
     const color = (name, fallback) => css.getPropertyValue(name).trim() || fallback;
-    const C = {
-        teal: color("--tdse-rho", "#006d77"),
-        ink: color("--tdse-re", "#2c3e50"),
-        axis: color("--tdse-axis", "rgba(44, 62, 80, 0.25)"),
-    };
+    const C = {};
+    function readColors() {
+        Object.assign(C, {
+            teal: color("--tdse-rho", "#006d77"),
+            ink: color("--tdse-re", "#2c3e50"),
+            axis: color("--tdse-axis", "rgba(44, 62, 80, 0.25)"),
+        });
+    }
+    readColors();
 
     // ------------------------------------------------------------------
     // state
@@ -574,6 +579,12 @@
         fit(amp);
         if (S.psiD) drawAmps();
     }).observe(root);
+
+    // light/dark toggle: Quarto swaps the stylesheet and the body's class
+    new MutationObserver(() => requestAnimationFrame(() => {
+        readColors();
+        if (S.psiD) drawAmps();
+    })).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
     ui.dOut.textContent = String(S.D);
     if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([root]);

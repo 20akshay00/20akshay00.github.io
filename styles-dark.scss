@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+// The dark theme: layered after styles.scss (see _quarto.yml), whose variables
+// are all !default, so these win and every rule there follows them.
+
+$body-bg: #14181b;
+$body-color: #d5dde2;
+$primary: #5cb8c2;
+$navbar-bg: #0f2a2c;
+$navbar-fg: #e6f2f3;
+
+$text-strong: #eef2f4;
+$secondary: mix($body-color, $body-bg, 68%);
+
+$subtitle-color: #a8cdd1;
+$warn-color: #e0a458;
+$accent: #f08a4b;
+$on-primary: #0f1416;
+$image-blend: normal;
+$shadow: rgba(255, 255, 255, 0.06);
+$lattice: rgba($body-color, 0.035);
+
+$color-pdf: #f87171;
+$color-zen: #60a5fa;
+
+// Bootstrap and Quarto pieces that the light journal theme would leave light
+$light: #1f2428;
+$dark: #e6ebee;
+$input-bg: #1b2024;
+$input-color: $body-color;
+$input-border-color: rgba($body-color, 0.25);
+$dropdown-bg: #1b2024;
+$dropdown-color: $body-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-bg: rgba($primary, 0.15);
+$dropdown-link-hover-color: $body-color;
+$code-color: #f4a6c1;
+$code-bg: #1d2226;
+$code-block-bg: #1b2024;              // code blocks (light theme: translucent grey)
+$code-block-border-color: rgba($body-color, 0.12);
+$table-color: $body-color;
+$border-color: rgba($body-color, 0.15);
+$modal-content-bg: #1b2024;
+$popover-bg: #1b2024;
+$tooltip-bg: #2a3036;
