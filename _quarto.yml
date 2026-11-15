@@ -3,6 +3,8 @@ project:
   resources:
     - files/AkshayShankarCV.pdf
     - listing.js
+    - tdse_demos.js
+    - tdse_widget.js
 
 website:
   title: "Akshay Shankar"

@@ -34,25 +34,9 @@ Additionally, over the past decade, we have made huge experimental progress in r
 When describing systems involving thousands of particles, one often writes down an effective field theory that captures the essential features of the physics while maintaining analytical tractability. I focus instead on ab initio descriptions where we work with the full microscopic Hamiltonian. These systems generally have no exact solution for more than two particles (excluding [integrable systems](https://en.wikipedia.org/wiki/Bethe_ansatz), which serve as our benchmarks). In these cases, we instead turn to smartly engineered numerical algorithms to solve the problem for a specified set of parameters on a computer. One may argue whether such solutions constitute genuine "understanding", so it is important to complement them with effective theories and other frameworks to truly gain predictive insight. Most of my experience is with (path integral-) quantum Monte Carlo methods and tensor network algorithms for many-body systems.
 
 ```{=html}
-<div class="video-grid">
-  <div class="video-item large">
-    <video controls>
-        <source src="images/research/tdse_wavepacket.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-        Real time evolution of a quantum wave-packet in 1D.
-    </div>
-  </div>
-
-  <div class="video-item x-large">
-    <video controls>
-      <source src="images/research/gpe_imag_time.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      Imaginary time evolution of a Bose-Einstein condensate in 1D.
-    </div>
-  </div>
-</div>
+<div id="tdse-widget"></div>
+<script src="tdse_demos.js"></script>
+<script src="tdse_widget.js"></script>
 ```
 
 I believe that numerical methods are only as good as their accessibility to other practitioners. As a result, my work also involves building performant and [open source numerical packages](projects.qmd#research-software) that implement these algorithms.
