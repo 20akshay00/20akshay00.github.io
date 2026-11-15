@@ -3,58 +3,160 @@ title: "Gallery"
 subtitle: "A creative outlet complementing my academic activities."
 page-layout: full
 title-block-banner: true
+body-classes: gallery-page
 lightbox: 
   match: auto
   effect: zoom
+listing:
+  - id: games-arcade
+    contents:
+      - title: "Not Dead Yet"
+        description: "Your heart is stopping. The countdown has begun. Cling to life and fight to survive."
+        image: "images/gamedev/covers/notdeadyet.png"
+        path: "https://20akshay00.itch.io/notdeadyet"
+        jam: "GMTK Game Jam 2026"
+        cta: "Play"
+      - title: "Repressed"
+        description: "A memory repressed. A memory freed."
+        image: "images/gamedev/covers/repressed.png"
+        path: "https://20akshay00.itch.io/repressed"
+        jam: "Brackeys Game Jam 2026.1"
+        cta: "Play"
+      - title: "Cyberloop"
+        description: "Your trail's a weapon and every tight turn could be your last. Outsmart, outlive and outloop."
+        image: "images/gamedev/covers/cyberloop.png"
+        path: "https://20akshay00.itch.io/cyberloop"
+        jam: "GMTK Game Jam 2025"
+        cta: "Play"
+      - title: "V1RUS.exe"
+        description: "Infect the system. Avoid detection. Deliver the payload."
+        image: "images/gamedev/covers/v1rusexe.png"
+        path: "https://20akshay00.itch.io/v1rusexe"
+        jam: "Beginner's Jam Winter 2024"
+        cta: "Play"
+      - title: "Sketchometry"
+        description: "Bend, twist, and stretch your way to geometric perfection!"
+        image: "images/gamedev/covers/sketchometry.png"
+        path: "https://20akshay00.itch.io/sketchometry"
+        jam: "GMTK Game Jam 2024"
+        cta: "Play"
+      - title: "Lest Ye Falter"
+        description: "You sense defiance brewing among your followers. Their faith must be restored... NO MATTER THE COST."
+        image: "images/gamedev/covers/lestyefalter.png"
+        path: "https://quantum-forge-games.itch.io/lest-ye-falter"
+        jam: "The Secret Cult Horror Jam"
+        cta: "Play"
+      - title: "Cellular Conquest"
+        description: "A cell in a petri dish, trying to grow and escape the lab."
+        image: "images/gamedev/covers/cellularconquest.png"
+        path: "https://quantum-forge-games.itch.io/cellular-conquest"
+        jam: "Godot Jam 2024"
+        cta: "Download"
+      - title: "Summon Squad"
+        description: "Explore the crumbling ruins of forgotten treasures by solving puzzles with a little help from your summoned friends."
+        image: "images/gamedev/covers/summonsquad.png"
+        path: "https://roman-hyacinths.itch.io/summon-squad"
+        jam: "Ludum Dare 55"
+        cta: "Play"
+      - title: "Trickshot"
+        description: "In this world, you are not the wielder but the weapon itself! Are you worthy of making the trickiest shots of them all?"
+        image: "images/gamedev/covers/trickshot.png"
+        path: "https://20akshay00.itch.io/trickshot"
+        jam: "GMTK Game Jam 2023"
+        cta: "Play"
+      - title: "Radar Defender"
+        description: "A retro arcade-style game made using AlphaZero.jl where players must defend their base from incoming threats."
+        image: "images/projects/radar-defender.png"
+        path: "https://github.com/20akshay00/RadarDefender"
+        jam: "Julia · 2022"
+        cta: "Source"
+      - title: "GTA: Stress City"
+        description: "A treasure hunt event built using the Tetra game engine."
+        image: "images/projects/gta.png"
+        path: "https://iiserm.github.io/GTA-Stress-City/"
+        jam: "IISER Mohali · 2021"
+        cta: "Play in browser"
+    type: custom
+    template: _templates/arcade.ejs
+
+  - id: pixel-editor
+    contents:
+      - title: "Phi@I logo #1"
+        description: "And God said, let there be Phi."
+        image: "images/pixelart/phi1.png"
+        path: "images/pixelart/phi1.png"
+      - title: "Phi@I logo #2"
+        description: "Any sufficiently advanced technology is indistinguishable from magic."
+        image: "images/pixelart/phi2.png"
+        path: "images/pixelart/phi2.png"
+      - title: "Phi@I logo #3"
+        description: "The future is now, old man."
+        image: "images/pixelart/phi3.png"
+        path: "images/pixelart/phi3.png"
+      - title: "Choices"
+        description: "The bad and the ugly of a competitive environment."
+        image: "images/pixelart/choices.png"
+        path: "images/pixelart/choices.png"
+      - title: "Trapped"
+        description: "A different perspective of the previous piece, Choices."
+        image: "images/pixelart/trapped.png"
+        path: "images/pixelart/trapped.png"
+      - title: "Entwined"
+        description: "The struggles within. Inseparable. Ensnared. Entwined."
+        image: "images/pixelart/entwined.png"
+        path: "images/pixelart/entwined.png"
+      - title: "Adventure"
+        description: "Inspired by Terraria. Exploring the unknown is strangely addictive."
+        image: "images/pixelart/adventure.png"
+        path: "images/pixelart/adventure.png"
+    type: custom
+    template: _templates/aseprite.ejs
+
+  - id: models-blender
+    contents:
+      - title: "Bow and Arrow"
+        image: "images/blender/arrow.png"
+        path: "images/blender/arrow.png"
+      - title: "Roulette"
+        image: "images/blender/roulette.png"
+        path: "images/blender/roulette.png"
+      - title: "Futuristic"
+        image: "images/blender/cyberpunk.png"
+        path: "images/blender/cyberpunk.png"
+      - title: "Rocking Horse"
+        image: "images/blender/horse.png"
+        path: "images/blender/horse.png"
+      - title: "Windmill"
+        image: "images/blender/windmill.png"
+        path: "images/blender/windmill.png"
+      - title: "Grandfather Clock"
+        image: "images/blender/clock.png"
+        path: "images/blender/clock.png"
+    type: custom
+    template: _templates/blender.ejs
+
 ---
 
 ::: {.project-section}
 ## Games
-*Games I've made with the [Godot engine](https://godotengine.org/), most of them for game jams with friends. All of them live on my [itch.io page](https://20akshay00.itch.io/), and most can be played right in the browser.*
 
-::: {.art-column-grid}
+```{=html}
+<img class="sticker float" src="images/sprites/island.png" alt="" style="top: -40px; right: 3%; width: 230px; transform: rotate(-2deg);">
+```
 
-::: {.art-card}
-![**Not Dead Yet** Your heart is stopping. The countdown has begun. Cling to life and fight to survive.<br><span class="game-meta">GMTK Game Jam 2026 · [Play on itch.io](https://20akshay00.itch.io/notdeadyet)</span>](/images/gamedev/covers/notdeadyet.png){group="games"}
-:::
+*Games I've made, most of them with the [Godot engine](https://godotengine.org/) for game jams with friends. Those live on my [itch.io page](https://20akshay00.itch.io/), and most can be played right in the browser.*
 
-::: {.art-card}
-![**Repressed** A memory repressed. A memory freed.<br><span class="game-meta">Brackeys Game Jam 2026.1 · [Play on itch.io](https://20akshay00.itch.io/repressed)</span>](/images/gamedev/covers/repressed.png){group="games"}
-:::
-
-::: {.art-card}
-![**Cyberloop** Your trail's a weapon and every tight turn could be your last. Outsmart, outlive and outloop.<br><span class="game-meta">GMTK Game Jam 2025 · [Play on itch.io](https://20akshay00.itch.io/cyberloop)</span>](/images/gamedev/covers/cyberloop.png){group="games"}
-:::
-
-::: {.art-card}
-![**V1RUS.exe** Infect the system. Avoid detection. Deliver the payload.<br><span class="game-meta">Beginner's Jam Winter 2024 · [Play on itch.io](https://20akshay00.itch.io/v1rusexe)</span>](/images/gamedev/covers/v1rusexe.png){group="games"}
-:::
-
-::: {.art-card}
-![**Sketchometry** Bend, twist, and stretch your way to geometric perfection!<br><span class="game-meta">GMTK Game Jam 2024 · [Play on itch.io](https://20akshay00.itch.io/sketchometry)</span>](/images/gamedev/covers/sketchometry.png){group="games"}
-:::
-
-::: {.art-card}
-![**Lest Ye Falter** You sense defiance brewing among your followers. Their faith must be restored... NO MATTER THE COST.<br><span class="game-meta">The Secret Cult Horror Jam · [Play on itch.io](https://quantum-forge-games.itch.io/lest-ye-falter)</span>](/images/gamedev/covers/lestyefalter.png){group="games"}
-:::
-
-::: {.art-card}
-![**Cellular Conquest** A cell in a petri dish, trying to grow and escape the lab.<br><span class="game-meta">Godot Jam 2024 · [Download on itch.io](https://quantum-forge-games.itch.io/cellular-conquest)</span>](/images/gamedev/covers/cellularconquest.png){group="games"}
-:::
-
-::: {.art-card}
-![**Summon Squad** Explore the crumbling ruins of forgotten treasures by solving puzzles with a little help from your summoned friends.<br><span class="game-meta">Ludum Dare 55 · [Play on itch.io](https://roman-hyacinths.itch.io/summon-squad)</span>](/images/gamedev/covers/summonsquad.png){group="games"}
-:::
-
-::: {.art-card}
-![**Trickshot** In this world, you are not the wielder but the weapon itself! Are you worthy of making the trickiest shots of them all?<br><span class="game-meta">GMTK Game Jam 2023 · [Play on itch.io](https://20akshay00.itch.io/trickshot)</span>](/images/gamedev/covers/trickshot.png){group="games"}
-:::
-
+:::{#games-arcade}
 :::
 :::
 
 ::: {.project-section}
 ## Origami
+
+```{=html}
+<img class="sticker float" src="images/sprites/Halves.png" alt="" style="top: -18px; right: 22%; width: 74px; transform: rotate(9deg); animation-delay: 0.8s;">
+```
+
 *Modular (3D) origami, where many small folded paper units are slotted together into the final shape.*
 
 ::: {.art-column-grid}
@@ -72,70 +174,28 @@ lightbox:
 
 ::: {.project-section}
 ## Pixel Art
+
+```{=html}
+<img class="sticker float" src="images/sprites/Wizard1.png" alt="" style="top: -26px; right: 5%; width: 68px; transform: rotate(-7deg); animation-delay: 2s;">
+```
+
 *To make these, I use [Aseprite](https://www.aseprite.org/) which used to be FOSS till 2016, but is currently a paid (but source-available) software. It can be built locally from the source, by following [these](https://www.reddit.com/r/PixelArt/comments/on9pw6/guide_how_to_build_aseprite_from_source_aseprite/) instructions, but it is certainly worth purchasing as well.*
 
-::: {.art-column-grid}
-
-::: {.art-card}
-![**Phi@I logo #1** And God said, let there be Phi.](/images/pixelart/phi1.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Phi@I logo #2** Any sufficiently advanced technology is indistinguishable from magic.](/images/pixelart/phi2.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Phi@I logo #3** The future is now, old man.](/images/pixelart/phi3.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Choices** The bad and the ugly of a competitive environment.](/images/pixelart/choices.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Trapped** A different perspective of the previous piece, *Choices*.](/images/pixelart/trapped.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Entwined** The struggles within. Inseparable. Ensnared. Entwined.](/images/pixelart/entwined.png){group="pixel"}
-:::
-
-::: {.art-card}
-![**Adventure** Inspired by Terraria. Exploring the unknown is strangely addictive.](/images/pixelart/adventure.png){group="pixel"}
-:::
-
+:::{#pixel-editor}
 :::
 :::
 
 ::: {.project-section}
 ## 3D Models
+
+```{=html}
+<img class="sticker float" src="images/sprites/Bot1.png" alt="" style="top: -4px; right: 9%; width: 66px; transform: rotate(5deg); animation-delay: 1.1s;">
+```
+
 *Exploring the third dimension with [Blender](https://www.blender.org/).*
 
-::: {.art-column-grid}
-
-::: {.art-card}
-![**Bow and Arrow**](/images/blender/arrow.png){group="3d"}
+:::{#models-blender}
+:::
 :::
 
-::: {.art-card}
-![**Roulette**](/images/blender/roulette.png){group="3d"}
-:::
-
-::: {.art-card}
-![**Futuristic**](/images/blender/cyberpunk.png){group="3d"}
-:::
-
-::: {.art-card}
-![**Rocking Horse**](/images/blender/horse.png){group="3d"}
-:::
-
-::: {.art-card}
-![**Windmill**](/images/blender/windmill.png){group="3d"}
-:::
-
-::: {.art-card}
-![**Grandfather Clock**](/images/blender/clock.png){group="3d"}
-:::
-
-:::
-:::
+<script src="gallery_widgets.js"></script>

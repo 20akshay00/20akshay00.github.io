@@ -1,0 +1,131 @@
+// Phones: overrides for narrow screens. Imported last so it wins over the rules above.
+
+/* =====================================================================
+   Phones. The rule of thumb: on a narrow screen, the "paper" containers
+   (notebook pages, the letter, the research sheets) run edge to edge
+   instead of sitting inside the page's gutter, and their decoration gets
+   thinner, so the text keeps a readable line length. It stays last in the
+   file so it overrides the desktop rules above.
+   ===================================================================== */
+@media (max-width: 767.98px) {
+    // full bleed: from the left edge of the screen to the right. The article is a
+    // cell of Quarto's page grid, so it is stretched to the grid's outer lines; the
+    // research sheets sit inside the article, so they reach out over its gutters
+    // (1.5em each side on a phone)
+    .tidbit-post main.content,
+    .blog-post main.content {
+        grid-column: screen-start / screen-end;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    .research-page .interest-tile,
+    .research-page .pub-section {
+        margin-left: -1.5em;
+        margin-right: -1.5em;
+        border-radius: 0;
+    }
+
+    // the site name in the navbar: small enough to fit beside the toggle and search
+    .navbar-brand .navbar-title {
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+    }
+
+    // the coursework contents page: less padding, and the title gets the width
+    .toc-list {
+        margin: 1rem 0 0.5rem;
+        padding: 2.8rem 1.1rem 1.4rem 1rem;
+    }
+
+    .toc-list::before { left: 1rem; right: 1.1rem; }
+
+    .toc-entry a { grid-template-columns: 1.6rem minmax(0, 1fr) auto; }
+    .toc-num { grid-column: 1; }
+    .toc-title { grid-column: 2; }
+    .toc-year { grid-column: 3; }
+    .toc-desc { grid-column: 2 / -1; }
+
+    // a tidbit page: narrow punched margin, a single pink line, less padding
+    .tidbit-post main.content {
+        padding: 1.4rem 1rem 1.6rem 2.4rem;
+        background-image:
+            radial-gradient(circle at 11px 20px, $body-bg 4px, rgba($primary, 0.18) 4.5px, transparent 5.5px),
+            linear-gradient(90deg, transparent 24px, rgba($pink, 0.4) 24px 25px, transparent 25px),
+            repeating-linear-gradient(180deg, transparent 0 31px, $index-rule 31px 32px);
+        background-size: 22px 40px, 100% 100%, 100% 100%;
+        background-position: 0 10px, 0 0, 0 1rem;
+    }
+
+    .tidbit-post main.content p,
+    .tidbit-post main.content li,
+    .blog-post main.content p,
+    .blog-post main.content li {
+        font-size: 1rem;
+    }
+
+    // the letter: thinner airmail edge, a smaller stamp
+    .blog-post main.content {
+        padding: 1.4rem 1.1rem 1.6rem;
+        border-width: 7px;
+    }
+
+    .blog-post .post-head { padding-right: 70px; }
+
+    .blog-post .post-head::before {
+        top: -0.2rem;
+        width: 58px;
+        height: 70px;
+        background-size: 36px auto, auto;
+        outline-offset: -4px;
+    }
+
+    // author and date on one line instead of two cramped columns
+    .post-head .quarto-title-meta {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 0.6rem 1.6rem;
+    }
+
+    // research sheets: edge to edge, with just enough padding for the text
+    .research-page .interest-tile,
+    .research-page .pub-section {
+        padding: 1.4rem 1.1rem !important;
+        border-left: none;
+        border-right: none;
+    }
+
+    // the Aseprite menu bar: let the last items fall off quietly instead of overflowing
+    .ase-menu { overflow: hidden; white-space: nowrap; }
+
+    // the blog's postcards: photo on top, the stamp stuck on the photo's corner,
+    // the note across the full width (no empty address lines)
+    .blog-page .quarto-post {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "img" "body";
+        gap: 1rem;
+        padding: 1rem !important;
+    }
+
+    .blog-page .quarto-post .body { padding: 0; border-left: none; background: none; }
+
+    .blog-page .quarto-post .metadata {
+        position: absolute;
+        top: 0.4rem;
+        right: 0.4rem;
+        width: 86px;
+        padding: 0.45rem 0.3rem;
+        background: mix($pink, $card-bg, 14%);
+        font-size: 0.7rem;
+    }
+
+    .blog-page .listing-number { font-size: 1.3rem; }
+    .blog-page .quarto-post .metadata::after { display: none; }
+
+    // origami: the two polaroids side by side on the line
+    #origami .art-column-grid { gap: 0.9rem; padding-top: 40px; }
+    #origami .art-card { width: calc(50% - 0.5rem); }
+    #origami .art-card figure { padding: 7px 7px 0; }
+    #origami .art-card figcaption { padding: 0.5rem 0.2rem 0.7rem; font-size: 0.9rem; }
+}

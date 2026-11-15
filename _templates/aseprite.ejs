@@ -1,0 +1,31 @@
+<%
+// Pixel art in an Aseprite-like editor: the pieces are frames in the timeline, the
+// canvas shows the current one (click it for the lightbox), and the play button
+// runs through them like an animation (gallery_widgets.js).
+const file = (src) => src.split("/").pop().replace(/\.png$/, ".aseprite");
+const PALETTE = ["#14101c", "#2b2236", "#3d3150", "#5a2a9c", "#7b4fc4", "#b48cf0", "#d14081", "#e05a7a", "#e2b24f", "#f2dd8c", "#5fd3a6", "#2c7a73", "#478cbf", "#9ac3f0", "#d9cfe8", "#ffffff"];
+%>
+```{=html}
+<div class="ase" data-ase tabindex="0" aria-label="Pixel art">
+<div class="ase-bar"><span class="ase-file"><%= file(items[0].image) %></span></div>
+<div class="ase-menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Sprite</span><span>Layer</span><span>Frame</span><span>Select</span><span>View</span></div>
+<div class="ase-body">
+<div class="ase-tools" aria-hidden="true"><% ["▣", "✎", "◌", "▧", "⬚", "✥", "◐", "⌖"].forEach((t, k) => { %><span class="<%= k === 1 ? "is-on" : "" %>"><%= t %></span><% }) %></div>
+<div class="ase-canvas">
+<% items.forEach((item, i) => { %><a class="lightbox ase-art<%= i === 0 ? " is-on" : "" %>" data-gallery="pixel" data-file="<%= file(item.image) %>" href="<%- item.image %>" title="<%= item.title %>"><img src="<%- item.image %>" alt="<%= item.title %>" loading="lazy"></a>
+<% }) %></div>
+<div class="ase-side">
+<div class="ase-panel-head">Palette</div>
+<div class="ase-palette" aria-hidden="true"><% PALETTE.forEach((c) => { %><span style="background: <%= c %>"></span><% }) %></div>
+<div class="ase-panel-head">Properties</div>
+<% items.forEach((item, i) => { %><div class="ase-props<%= i === 0 ? " is-on" : "" %>"><div class="ase-props-title"><%= item.title %></div><div class="ase-props-desc"><%= item.description || "" %></div></div>
+<% }) %></div>
+</div>
+<div class="ase-timeline">
+<div class="ase-frames">
+<% items.forEach((item, i) => { %><button class="ase-frame<%= i === 0 ? " is-on" : "" %>" type="button" data-index="<%= i %>" aria-label="<%= item.title %>"><img src="<%- item.image %>" alt="" loading="lazy"><span><%= i + 1 %></span></button>
+<% }) %></div>
+<div class="ase-controls"><button class="ase-step" type="button" data-step="-1" aria-label="Previous piece">&#9664;</button><button class="ase-play" type="button" aria-label="Play through the pieces">&#9654;</button><button class="ase-step" type="button" data-step="1" aria-label="Next piece">&#9654;</button></div>
+</div>
+</div>
+```

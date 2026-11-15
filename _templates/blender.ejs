@@ -1,0 +1,32 @@
+<%
+// The 3D renders in a Blender-like render window: the models are objects in the
+// Outliner, and picking one shows its render in the image editor
+// (gallery_widgets.js). Click the render for the lightbox.
+%>
+```{=html}
+<div class="bl" data-blender tabindex="0" aria-label="3D renders">
+<div class="bl-top" aria-hidden="true">
+<span class="bl-logo"></span><span>File</span><span>Edit</span><span>Render</span><span>Window</span><span>Help</span>
+<span class="bl-tabs"><span>Layout</span><span>Modeling</span><span>Shading</span><span class="is-on">Rendering</span></span>
+</div>
+<div class="bl-body">
+<div class="bl-editor">
+<div class="bl-head"><span class="bl-chip">&#9635; Render Result</span><span class="bl-chip">Slot 1</span><span class="bl-head-name"><%= items[0].title %></span></div>
+<div class="bl-view">
+<% items.forEach((item, i) => { %><a class="lightbox bl-render<%= i === 0 ? " is-on" : "" %>" data-gallery="3d" href="<%- item.image %>" title="<%= item.title %>"><img src="<%- item.image %>" alt="<%= item.title %>" loading="lazy"></a>
+<% }) %></div>
+</div>
+<div class="bl-side">
+<div class="bl-panel-head">Outliner</div>
+<div class="bl-tree">
+<div class="bl-row bl-root"><span class="bl-ico bl-ico-col"></span>Scene Collection</div>
+<% items.forEach((item, i) => { %><button class="bl-row bl-obj<%= i === 0 ? " is-on" : "" %>" type="button" data-index="<%= i %>"><span class="bl-ico bl-ico-mesh"></span><%= item.title %></button>
+<% }) %></div>
+<div class="bl-panel-head">Object</div>
+<% items.forEach((item, i) => { %><div class="bl-props<%= i === 0 ? " is-on" : "" %>"><div class="bl-prop"><span>Name</span><b><%= item.title %></b></div><% if (item.description) { %><div class="bl-prop-desc"><%= item.description %></div><% } %></div>
+<% }) %><div class="bl-step"><button type="button" data-step="-1" aria-label="Previous render">&#9664;</button><button type="button" data-step="1" aria-label="Next render">&#9654;</button></div>
+</div>
+</div>
+<div class="bl-status"><span>Render Result</span><span class="bl-count">1 / <%= items.length %></span></div>
+</div>
+```

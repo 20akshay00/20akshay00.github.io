@@ -1,0 +1,496 @@
+// Projects: the Julia terminal, the code editor, the contents page and the film strip
+// (templates in _templates/).
+
+/* =====================================================================
+   Projects: each section in its own form (templates in _templates/)
+   ===================================================================== */
+
+// research software: a Julia package-manager session
+.pkg-terminal {
+    background: #1d1428;
+    border: 3px solid #14101c;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 rgba(35, 9, 63, 0.18);
+    overflow: hidden;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.84rem;
+    color: #e6def2;
+}
+
+.pkg-terminal-bar {
+    height: 28px;
+    padding-left: 54px;
+    background:
+        radial-gradient(circle at 14px 14px, #e05a7a 4px, transparent 5px),
+        radial-gradient(circle at 27px 14px, #e2b24f 4px, transparent 5px),
+        radial-gradient(circle at 40px 14px, #5fd3a6 4px, transparent 5px),
+        #3d3150;
+    border-bottom: 3px solid #14101c;
+}
+
+.pkg-terminal-title {
+    font-size: 0.76rem;
+    line-height: 28px;
+    color: #b9aecb;
+}
+
+.pkg-terminal-body {
+    padding: 1rem 1.25rem 1.1rem;
+}
+
+.pkg-entry {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 0.7rem 0.6rem;
+    margin: 0 -0.6rem 0.4rem;
+    border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.pkg-entry:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+}
+
+.pkg-text { flex: 1; min-width: 0; }
+.pkg-prompt { color: #6fa8ff; font-weight: 600; }
+.pkg-name { color: #c9a6ff; font-weight: 600; }
+.pkg-entry:hover .pkg-name { text-decoration: underline; text-underline-offset: 3px; }
+.pkg-comment, .pkg-year { color: #8f84a3; margin-top: 0.3rem; line-height: 1.5; }
+.pkg-year { margin-top: 0.1rem; }
+
+// the package's logo (images/projects/*.svg), in a small pane of its own
+.pkg-plot {
+    flex: none;
+    width: 170px;
+    padding: 4px;
+    background: #251b33;
+    border: 1px solid #3d3150;
+    border-radius: 6px;
+}
+
+.pkg-idle { margin-top: 0.2rem; }
+
+.pkg-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.05em;
+    vertical-align: text-bottom;
+    background: #e6def2;
+    animation: pkg-blink 1.1s steps(1) infinite;
+}
+
+@keyframes pkg-blink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+    .pkg-cursor { animation: none; }
+}
+
+// coursework: the contents page of a stapled report, the other pages fanned out
+// under it; hovering an entry brings up its figure
+.toc-list {
+    position: relative;
+    list-style: none;
+    margin: 1.25rem 0.5rem 0.75rem;
+    padding: 3.4rem 2.5rem 2rem;
+    background: $card-bg;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.06),
+        6px 7px 0 -1px mix($card-bg, $body-bg, 60%),
+        6px 7px 0 0 rgba($body-color, 0.1),
+        12px 13px 0 -1px mix($card-bg, $body-bg, 30%),
+        12px 13px 0 0 rgba($body-color, 0.1),
+        0 16px 30px rgba($primary, 0.1);
+    transform: rotate(-0.4deg);
+}
+
+// the heading printed on the page
+.toc-list::before {
+    content: "Contents";
+    position: absolute;
+    top: 1.2rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba($body-color, 0.2);
+    font-family: "Lora", serif;
+    font-variant: small-caps;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    color: $secondary;
+}
+
+// and a staple through the top-left corner
+.toc-list::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    width: 26px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #d9d6e0, #8f8a99);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transform: rotate(-38deg);
+}
+
+.toc-entry a {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.2rem auto 1fr auto;
+    align-items: baseline;
+    column-gap: 0.5rem;
+    padding: 0.55rem 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.toc-num { font-family: "Lora", serif; font-weight: 700; color: $pink; }
+.toc-title { font-family: "Lora", serif; font-weight: 700; font-size: 1.12rem; color: $primary; }
+.toc-dots { border-bottom: 2px dotted rgba($body-color, 0.3); transform: translateY(-4px); }
+.toc-year { font-family: "JetBrains Mono", $font-family-monospace; font-size: 0.82rem; color: $secondary; }
+
+.toc-desc {
+    grid-column: 2 / -1;
+    font-size: 0.92rem;
+    font-style: italic;
+    color: $secondary;
+}
+
+.toc-langs {
+    font-style: normal;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.72rem;
+    margin-left: 0.4rem;
+    text-transform: lowercase;
+}
+
+.toc-entry a:hover .toc-title {
+    text-decoration: underline;
+    text-decoration-color: rgba($pink, 0.6);
+    text-underline-offset: 4px;
+}
+
+.toc-peek {
+    position: absolute;
+    z-index: 5;
+    right: 4.5rem;
+    top: 50%;
+    width: 230px;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 12px 26px rgba($primary, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) rotate(3deg) scale(0.92);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+    .toc-entry a:hover .toc-peek {
+        opacity: 1;
+        transform: translateY(-50%) rotate(3deg) scale(1);
+    }
+}
+
+@media (hover: none) {
+    .toc-peek { display: none; }
+}
+
+// visualizations: frames on a strip of film (they are animations, after all)
+.film-strip {
+    --sprocket: #{$body-bg};
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    padding: 26px 8px;
+    background:
+        repeating-linear-gradient(90deg, transparent 0 9px, var(--sprocket) 9px 19px, transparent 19px 28px) 0 7px / 100% 9px no-repeat,
+        repeating-linear-gradient(90deg, transparent 0 9px, var(--sprocket) 9px 19px, transparent 19px 28px) 0 calc(100% - 7px) / 100% 9px no-repeat,
+        #1a1320;
+    border-radius: 3px;
+    box-shadow: 0 8px 22px rgba(35, 9, 63, 0.25);
+    transform: rotate(-0.6deg);
+}
+
+.film-frame {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 14px;
+    border-left: 2px solid #0e0a13;
+    color: #e6def2;
+    text-decoration: none;
+}
+
+.film-frame:first-child { border-left: none; }
+.film-frame:hover { color: #ffffff; }
+
+.film-edge {
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: #e2a54f;
+    padding: 0 2px 5px;
+}
+
+.film-edge-bottom { margin-top: auto; padding: 6px 2px 0; }
+
+.film-pic {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #000;
+}
+
+.film-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.film-frame:hover .film-pic img { transform: scale(1.05); }
+
+.film-title {
+    margin-top: 0.7rem;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.film-desc {
+    margin: 0.35rem 0 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #b9aecb;
+    text-align: left;
+}
+
+@media (max-width: 991.98px) {
+    .pkg-plot { width: 120px; }
+}
+
+@media (max-width: 575.98px) {
+    .film-strip { grid-auto-flow: row; row-gap: 1.5rem; }
+    .film-frame { border-left: none; padding: 0 8px; }
+    .pkg-entry { flex-direction: column; }
+    .toc-dots { display: none; }
+}
+
+// the projects page: each section has its own form already, so they sit straight
+// on the dotted paper instead of on a ruled notebook sheet
+.projects-page .project-section {
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 4.5rem;
+}
+
+/* =====================================================================
+   General software: a code editor (_templates/editor.ejs). The projects
+   are files in the explorer; radio buttons pick which README is open.
+   ===================================================================== */
+.ide {
+    position: relative;
+    background: $card-bg;
+    border: 1px solid rgba($primary, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 14px 32px rgba($primary, 0.12);
+    overflow: hidden;
+}
+
+// the radios themselves stay out of sight but keep working with the keyboard
+.ide-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ide-bar {
+    height: 30px;
+    padding-left: 60px;
+    background:
+        radial-gradient(circle at 16px 15px, #e05a7a 4.5px, transparent 5.5px),
+        radial-gradient(circle at 30px 15px, #e2b24f 4.5px, transparent 5.5px),
+        radial-gradient(circle at 44px 15px, #5fd3a6 4.5px, transparent 5.5px),
+        mix($primary, $card-bg, 10%);
+    border-bottom: 1px solid rgba($primary, 0.18);
+}
+
+.ide-bar-title {
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.74rem;
+    line-height: 30px;
+    color: $secondary;
+}
+
+.ide-body {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    min-height: 360px;
+}
+
+.ide-explorer {
+    padding: 0.6rem 0;
+    background: mix($primary, $card-bg, 6%);
+    border-right: 1px solid rgba($primary, 0.15);
+}
+
+.ide-explorer-head {
+    padding: 0.2rem 1rem 0.5rem;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $secondary;
+}
+
+.ide-file {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.38rem 1rem;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.8rem;
+    color: $body-color;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.ide-file:hover { background: rgba($primary, 0.07); }
+
+.ide-dot {
+    display: inline-block;
+    flex: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+}
+
+.ide-file .ide-dot { margin-right: 0; }
+
+.ide-main { display: grid; }
+
+// every README sits in the same cell; the open one fades in over the last one
+// (the editor keeps the height of the tallest, so nothing jumps)
+.ide-panel {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: $card-bg;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ide-panel { transition: none; }
+}
+
+.ide-tabs {
+    display: flex;
+    background: mix($primary, $card-bg, 6%);
+    border-bottom: 1px solid rgba($primary, 0.15);
+}
+
+.ide-tab {
+    padding: 0.45rem 1rem;
+    background: $card-bg;
+    border-right: 1px solid rgba($primary, 0.15);
+    border-top: 2px solid $pink;
+    margin-bottom: -1px;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.76rem;
+    color: $body-color;
+}
+
+.ide-tab-dir { color: $secondary; }
+
+.ide-doc {
+    flex: 1;
+    padding: 1.3rem 1.6rem 1.4rem;
+}
+
+.ide-h {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.ide-hash { color: rgba($pink, 0.7); font-family: "JetBrains Mono", $font-family-monospace; font-weight: 400; }
+
+.ide-desc {
+    max-width: 62ch;
+    text-align: left;
+    color: $body-color;
+}
+
+.ide-shot {
+    display: block;
+    max-width: min(100%, 520px);
+    max-height: 260px;
+    object-fit: contain;
+    margin: 0.4rem 0 1rem;
+    border: 1px solid rgba($primary, 0.18);
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba($primary, 0.1);
+}
+
+.ide-open {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: $primary;
+    color: $on-primary;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.78rem;
+    text-decoration: none;
+}
+
+.ide-open:hover { background: $pink; color: #ffffff; }
+
+.ide-status {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+    background: $primary;
+    color: $on-primary;
+    font-family: "JetBrains Mono", $font-family-monospace;
+    font-size: 0.7rem;
+    text-transform: lowercase;
+}
+
+// file k checked: its README shows and its explorer entry lights up
+@for $k from 1 through 16 {
+    .ide-radio:nth-of-type(#{$k}):checked ~ .ide-body .ide-panel:nth-of-type(#{$k}) {
+        z-index: 1;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.4s ease, visibility 0s;
+    }
+    .ide-radio:nth-of-type(#{$k}):checked ~ .ide-body .ide-file:nth-of-type(#{$k}) {
+        background: rgba($primary, 0.12);
+        border-left-color: $pink;
+        color: $primary;
+        font-weight: 600;
+    }
+    .ide-radio:nth-of-type(#{$k}):focus-visible ~ .ide-body .ide-file:nth-of-type(#{$k}) {
+        outline: 2px solid $pink;
+        outline-offset: -2px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ide-body { grid-template-columns: 1fr; }
+    .ide-explorer { border-right: none; border-bottom: 1px solid rgba($primary, 0.15); }
+}

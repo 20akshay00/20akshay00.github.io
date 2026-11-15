@@ -26,3 +26,28 @@ about:
 Hi! I'm Akshay, a PhD student at [QuantumGroup@UGent](https://quantumghent.github.io/) with an interest in quantum gases and computational physics. These days I mostly develop *Tensor Network* algorithms to numerically study *ultracold bosonic systems in the continuum*. When I'm not performing research, I enjoy [making games](https://20akshay00.itch.io/) with the [Godot engine](https://godotengine.org/).
 
 <script src="./atom_simulation.js"></script>
+
+```{=html}
+<!-- the stickers sit at a distance from the centre that grows with the window
+     (max(px, vw)): on a normal screen the px values hold, on a big monitor they spread out -->
+<div id="landing-art" hidden>
+    <img class="sticker float" src="images/sprites/flyer.png" alt="" style="top: max(50px, 3.6vw); right: calc(50% + max(205px, 15.8vw)); width: clamp(124px, 9.5vw, 190px); transform: rotate(-6deg);">
+    <img class="sticker float" src="images/sprites/cage.png" alt="" style="top: clamp(200px, 11vw, 290px); left: calc(50% + max(215px, 16.5vw)); width: clamp(126px, 9.7vw, 190px); animation-delay: 1.6s;">
+    <img class="sticker float" src="images/sprites/terminal.png" alt="" style="top: 580px; right: calc(50% + max(400px, 28vw)); width: clamp(70px, 5.2vw, 104px); transform: rotate(5deg); animation-delay: 2.4s;">
+    <div class="sticker-trail float" style="top: 520px; left: calc(50% + max(430px, 29vw)); animation-delay: 0.7s;">
+        <svg viewBox="0 0 170 120" aria-hidden="true"><path d="M30 34 C 70 6, 96 70, 70 84 S 40 70, 70 52 S 130 96, 166 112"/></svg>
+        <img class="sticker" src="images/sprites/jet1.png" alt="">
+    </div>
+</div>
+<script>
+// the about template has no slot for these: float the sprites around the photo
+(function () {
+    const box = document.getElementById("landing-art"), about = document.querySelector(".quarto-about-jolla");
+    if (!box || !about) return;
+    about.style.position = "relative";
+    [...box.children].forEach((el) => about.appendChild(el));
+    box.remove();
+})();
+</script>
+<script src="robot_walker.js"></script>
+```

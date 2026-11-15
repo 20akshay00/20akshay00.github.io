@@ -1,0 +1,54 @@
+// The landing page: its links, the dotted divider and the robot walking on it.
+
+// the landing page's links fill with the accent colour on hover
+.quarto-about-jolla .about-links .about-link {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .quarto-about-jolla .about-links .about-link:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $on-primary;
+    }
+
+    .quarto-about-jolla .about-links .about-link:hover i,
+    .quarto-about-jolla .about-links .about-link:hover span { color: $on-primary; }
+}
+
+// the divider the robot walks on: a row of dots like the paper's own, only darker
+// and closer together, fading out at both ends
+.quarto-about-jolla hr.about-sep {
+    border: none;
+    height: 6px;
+    background: radial-gradient(circle, rgba($primary, 0.55) 1.5px, transparent 2.1px) 0 50% / 8px 6px repeat-x;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+    opacity: 1;
+}
+
+// the robot that walks along the divider above the landing-page links (robot_walker.js)
+.robot-walker {
+    position: absolute;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    background: url("/images/sprites/robot_walk.png") 0 0 / 640px 64px no-repeat;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+.robot-walker[data-sheet="idle"] {
+    background-image: url("/images/sprites/robot_idle.png");
+    background-size: 128px 64px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sticker.float,
+    .sticker-trail.float { animation: none; }
+}
+
+@media (max-width: 900px) {
+    .sticker,
+    .sticker-trail { display: none; }
+}

@@ -6,3 +6,9 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# each tidbit is written on a notebook page (see .tidbit-post in styles.scss)
+body-classes: tidbit-post
+include-after-body:
+  text: |
+    <script src="../../post_page.js"></script>

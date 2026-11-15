@@ -7,7 +7,12 @@ project:
     - tdse_widget.js
     - tn_widget.js
     - bec_widget.js
+    - robot_walker.js
+    - research_cooling.js
+    - post_page.js
+    - gallery_widgets.js
     - data/bec_shots.bin
+    - images/sprites/*
 
 website:
   title: "Akshay Shankar"

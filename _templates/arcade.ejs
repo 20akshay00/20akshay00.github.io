@@ -1,0 +1,37 @@
+<%
+// The games in a pixel-art arcade cabinet (images/sprites/arcade.png): the current game lights the marquee and fills the screen,
+// the blue buttons step through the games and the gold one starts the current game.
+// Beside the cabinet: what the game is, and every cover to jump straight to one
+// (gallery_widgets.js). Without the script the first game shows and the covers link out.
+const pad = (n) => String(n).padStart(2, "0");
+%>
+```{=html}
+<div class="arcade" data-arcade tabindex="0" aria-roledescription="carousel" aria-label="Games">
+<div class="arcade-cab">
+<div class="arcade-marquee"><% items.forEach((item, i) => { %><span class="arcade-sign<%= i === 0 ? " is-on" : "" %>"><%= item.title %></span><% }) %></div>
+<div class="arcade-screen">
+<% items.forEach((item, i) => { %><img class="arcade-slide<%= i === 0 ? " is-on" : "" %>" src="<%- item.image %>" alt="<%= item.title %>" loading="lazy">
+<% }) %><div class="arcade-glass" aria-hidden="true"></div>
+</div>
+<button class="arcade-hit arcade-prev" type="button" data-step="-1" aria-label="Previous game"></button>
+<button class="arcade-hit arcade-next" type="button" data-step="1" aria-label="Next game"></button>
+<a class="arcade-hit arcade-go" href="<%- items[0].path %>" aria-label="Start <%= items[0].title %>"></a>
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 60px; --y: 14%;">
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 118px; --y: 30%; width: 32px; animation-delay: 1.2s;">
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 48px; --y: 47%; width: 34px; animation-delay: 2.3s;">
+<span class="arcade-blob" aria-hidden="true"></span>
+</div>
+<div class="arcade-side">
+<div class="arcade-count">01 / <%= pad(items.length) %></div>
+<% items.forEach((item, i) => { %><div class="arcade-about<%= i === 0 ? " is-on" : "" %>" data-href="<%- item.path %>" data-title="<%= item.title %>">
+<div class="arcade-title"><%= item.title %></div>
+<div class="arcade-jam"><%= item.jam || "" %></div>
+<p class="arcade-tag"><%= item.description %></p>
+<a class="arcade-start" href="<%- item.path %>"><%= item.cta || "Play" %></a>
+</div>
+<% }) %><div class="arcade-select" aria-label="Select a game">
+<% items.forEach((item, i) => { %><a class="arcade-pick<%= i === 0 ? " is-on" : "" %>" href="<%- item.path %>" data-index="<%= i %>" title="<%= item.title %>"><img src="<%- item.image %>" alt="" loading="lazy"></a>
+<% }) %></div>
+</div>
+</div>
+```

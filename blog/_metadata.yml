@@ -6,3 +6,9 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# each post is written as an airmail letter (see .blog-post in styles.scss)
+body-classes: blog-post
+include-after-body:
+  text: |
+    <script src="../../post_page.js"></script>

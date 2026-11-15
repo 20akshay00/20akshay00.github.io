@@ -19,6 +19,7 @@ Let us consider a simple and perhaps a bit over-engineered example using Julia t
 #| echo: false
 begin
     using Plots
+    include("../_plot_style.jl")
 end
 ```
 

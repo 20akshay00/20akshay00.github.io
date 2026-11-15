@@ -80,6 +80,7 @@ Numerical simulations of 1D systems readily have access to the ground state ener
 using Pkg
 using Plots, LinearAlgebra
 theme(:dao)
+include("../_plot_style.jl")
 ```
 
 ```{julia}

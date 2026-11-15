@@ -1,0 +1,178 @@
+// The page itself: notebook paper, the navbar waves, the theme's base type and layout.
+
+// notebook paper: a dot grid with a little grain
+body {
+    background-color: $body-bg;
+    background-image:
+        radial-gradient(circle at 1px 1px, $dots 1.1px, transparent 1.6px),
+        url("/images/sprites/paper-grain.svg");
+    background-size: 22px 22px, 240px 240px;
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.quarto-title-banner h1,
+.quarto-title,
+.navbar-brand,
+.nav-link {
+    font-family: "Lora", serif !important;
+    font-weight: 700;
+    font-style: normal;
+    color: $primary;
+    letter-spacing: -0.02em;
+}
+
+.navbar-brand,
+.nav-link {
+    color: $navbar-fg;
+}
+
+p.subtitle,
+.description {
+    color: $subtitle-color !important;
+}
+
+.navbar {
+    position: relative;
+    overflow: visible !important;
+    border-bottom: none;
+}
+
+// itch-style purple waves, stepped in pixels, rolling out under the navbar
+.navbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 36px;
+    background: url("/images/sprites/navbar-waves.svg") no-repeat top / 100% 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.math {
+    color: $text-strong;
+}
+
+// the page title block: one deliberate gap between it and the content, instead of
+// Quarto's padding under the banner, a margin under it and another under the block
+.quarto-title-banner {
+    background: transparent !important;
+    border-bottom: none;
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#title-block-header {
+    margin-block-end: 1.75rem;
+}
+
+// Quarto also pushes the article down from the title; the gap above is the only one
+// (tidbit and blog posts set their own spacing, later in the cascade)
+main.content.quarto-banner-title-block {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.quarto-title-banner .subtitle,
+.quarto-title-banner .description {
+    margin-bottom: 0;
+}
+
+// the first section heading on a page sits right under the title gap
+.project-section:first-of-type h2 {
+    margin-top: 0;
+}
+
+.quarto-title-banner a {
+    color: $primary !important;
+}
+
+#quarto-margin-sidebar {
+    padding-left: 3rem;
+}
+
+#title-block-header.quarto-title-block.banner .title {
+    color: $text-strong !important;
+}
+
+/* --- Global & Layout --- */
+// the page scrollbar, in the site's colours: a slim purple thumb on the paper
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba($primary, 0.45) $body-bg;
+}
+
+html::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track { background: $body-bg; }
+
+html::-webkit-scrollbar-thumb {
+    background: rgba($primary, 0.4);
+    border: 2px solid $body-bg;
+    border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover { background: rgba($primary, 0.6); }
+
+p {
+    text-align: justify;
+    hyphens: auto;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    p {
+        text-align: left;
+    }
+}
+
+.cell-output-display svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.project-section {
+    background-color: $panel-bg;
+    border: 1px solid $panel-border;
+    border-radius: $radius;
+    padding: 2rem 2.25rem;
+    margin-bottom: 3rem;
+}
+
+.project-section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid $panel-border;
+    padding-bottom: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.pub-section {
+    background-color: $panel-bg;
+    border: 1px solid $panel-border;
+    border-radius: $radius;
+    padding: 2rem 2.25rem;
+    margin-bottom: 3rem;
+}
+
+.pub-section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid $panel-border;
+    padding-bottom: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}

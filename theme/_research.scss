@@ -1,0 +1,133 @@
+// The research page: the cooling background, the thermometer scrollbar, the fringes
+// behind the title and the taped pictures.
+
+/* =====================================================================
+   Research page: lighter touch. The page cools as you scroll, with a
+   thermometer for a scrollbar (research_cooling.js); the title sits on a
+   band of interference fringes, and
+   pictures are taped on like printouts.
+   ===================================================================== */
+// the same dotted paper as everywhere else (research_cooling.js only shifts its colour)
+.research-page {
+    background-image:
+        radial-gradient(circle at 1px 1px, $dots 1.1px, transparent 1.6px),
+        url("/images/sprites/paper-grain.svg");
+    background-size: 22px 22px, 240px 240px;
+}
+
+
+
+// the thermometer, bottom left: it doubles as a scrollbar
+.gas-meter {
+    position: fixed;
+    left: 12px;
+    bottom: 22px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column-reverse;   // the reading sits above the tube, keeping it narrow
+    align-items: center;
+    gap: 6px;
+    width: 64px;
+    text-align: center;
+    pointer-events: none;
+    font-family: "Pixelify Sans", monospace;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    color: $primary;
+}
+
+.gas-tube {
+    position: relative;
+    width: 14px;
+    height: 160px;
+    pointer-events: auto;
+    cursor: ns-resize;
+    touch-action: none;
+    border: 2px solid rgba($primary, 0.55);
+    border-radius: 8px;
+    background: rgba($card-bg, 0.7);
+    overflow: hidden;
+}
+
+.gas-fill {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, $primary, $pink);
+    transition: height 0.15s linear;
+}
+
+.gas-tc {
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    height: 2px;
+    background: rgba($body-color, 0.55);
+}
+
+.gas-meter.bec .gas-read {
+    color: $pink;
+}
+
+@media (max-width: 900px) {
+    .gas-meter { display: none; }
+}
+
+// matter-wave interference fringes under a Gaussian envelope, behind the title
+.research-page .quarto-title-banner {
+    position: relative;
+}
+
+.research-page .quarto-title-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgba($primary, 0.13) 0 7px, transparent 7px 18px);
+    -webkit-mask-image: radial-gradient(60% 75% at 70% 55%, #000 0%, transparent 72%);
+    mask-image: radial-gradient(60% 75% at 70% 55%, #000 0%, transparent 72%);
+}
+
+.research-page .quarto-title-banner > * {
+    position: relative;
+    z-index: 1;
+}
+
+// tiles and publication lists as sheets of paper, all on the same lilac
+.research-page .interest-tile,
+.research-page .pub-section {
+    background-color: $panel-bg;
+    border: 1px solid rgba($body-color, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 28px rgba($primary, 0.07);
+}
+
+.research-page .pub-section h2 {
+    display: inline-block;
+    border-bottom: none;
+    background: linear-gradient(100deg, transparent 2%, rgba($pink, 0.2) 4%, rgba($pink, 0.24) 92%, transparent 96%) no-repeat 0 72% / 100% 46%;
+}
+
+// pictures taped on, slightly askew
+.research-page .interest-tile .quarto-figure figure > p,
+.research-page .pub-image-small > p {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    transform: rotate(-1deg);
+}
+
+.research-page .interest-tile .quarto-layout-cell:nth-child(2n) .quarto-figure figure > p,
+.research-page .pub-row:nth-child(2n) .pub-image-small > p {
+    transform: rotate(0.9deg);
+}
+
+@include fastener-cycle(".research-page .interest-tile", ".quarto-figure figure > p::before");
+@include fastener-cycle(".research-page .pub-row", ".pub-image-small > p::before", 1);
+
+.research-page .pub-image-small img {
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba($primary, 0.14);
+}

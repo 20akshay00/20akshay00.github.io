@@ -15,6 +15,7 @@ begin
     using Pkg
     Pkg.activate("./")
     using Plots, DataFrames, JSON
+    include("../_plot_style.jl")
 end
 ```
 

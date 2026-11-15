@@ -43,6 +43,7 @@ We will solve this self-consistent system using the most naive technique; [fixed
 using Pkg
 using Plots, LinearAlgebra
 theme(:dao)
+include("../_plot_style.jl")
 ```
 
 ```{julia}

@@ -2,22 +2,24 @@
 // The dark theme: layered after styles.scss (see _quarto.yml), whose variables
 // are all !default, so these win and every rule there follows them.
 
-$body-bg: #14181b;
-$body-color: #d5dde2;
-$primary: #5cb8c2;
-$navbar-bg: #0f2a2c;
-$navbar-fg: #e6f2f3;
+$body-bg: #17111f;                    // night-plum notebook paper
+$body-color: #ddd5e8;
+$primary: #b48cf0;
+$navbar-bg: #23093f;
+$navbar-fg: #f1e9fb;
+$card-bg: #211a2c;
+$index-rule: rgba(#8fb0ff, 0.09);       // index-card lines (tidbits)
 
 $text-strong: #eef2f4;
 $secondary: mix($body-color, $body-bg, 68%);
 
-$subtitle-color: #a8cdd1;
+$subtitle-color: #cdbbe8;
 $warn-color: #e0a458;
 $accent: #f08a4b;
 $on-primary: #0f1416;
 $image-blend: normal;
 $shadow: rgba(255, 255, 255, 0.06);
-$lattice: rgba($body-color, 0.035);
+$dots: rgba($primary, 0.16);
 
 $color-pdf: #f87171;
 $color-zen: #60a5fa;

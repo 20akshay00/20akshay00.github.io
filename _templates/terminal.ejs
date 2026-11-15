@@ -1,0 +1,26 @@
+<%
+// Research software as a Julia package-manager session: each package is an
+// `add` command, its description a comment, its figure the plot pane beside it.
+const split = (item) => {
+const cats = item.categories || [];
+return { year: cats.find((c) => /^\d{4}$/.test(c)), langs: cats.filter((c) => !/^\d{4}$/.test(c)) };
+};
+%>
+```{=html}
+<div class="pkg-terminal">
+<div class="pkg-terminal-bar"><span class="pkg-terminal-title">julia &mdash; ~/research</span></div>
+<div class="pkg-terminal-body">
+<% for (const item of items) { const { year } = split(item); %>
+<a class="pkg-entry" href="<%- item.path %>">
+<div class="pkg-text">
+<div class="pkg-cmd"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> add <span class="pkg-name"><%= item.title.replace(/\.jl$/, "") %></span></div>
+<div class="pkg-comment"># <%= item.description %></div>
+<% if (year) { %>        <div class="pkg-year"># since <%= year %></div>
+<% } %>      </div>
+<% if (item.image) { %>      <img class="pkg-plot" src="<%- item.image %>" alt="" loading="lazy">
+<% } %>    </a>
+<% } %>
+<div class="pkg-cmd pkg-idle"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> <span class="pkg-cursor"></span></div>
+</div>
+</div>
+```

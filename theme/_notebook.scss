@@ -1,0 +1,158 @@
+// The notebook kit used across pages: paper sheets, tilted pieces, tape (the
+// fastener mixins), and the floating pixel-art stickers.
+
+/* =====================================================================
+   Notebook: each kind of thing has its own physical form
+   ===================================================================== */
+
+// section pages: a sheet of paper with a pink margin line, headings swiped with highlighter
+.project-section {
+    position: relative;
+    background-color: $card-bg;
+    // a pink margin line and pale ruled lines, like a notebook page
+    background-image:
+        linear-gradient(90deg, transparent 26px, rgba($pink, 0.35) 26px, rgba($pink, 0.35) 27px, transparent 27px),
+        repeating-linear-gradient(180deg, transparent 0 31px, rgba($primary, 0.1) 31px 32px);
+    background-position: 0 0, 0 18px;
+    border: 1px solid rgba($body-color, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 28px rgba($primary, 0.08);
+    padding-left: 3.2rem;
+}
+
+.project-section h2 {
+    display: inline-block;
+    border-bottom: none;
+    padding: 0 0.3rem;
+    margin-left: -0.3rem;
+    background: linear-gradient(100deg, transparent 2%, rgba($pink, 0.2) 4%, rgba($pink, 0.24) 92%, transparent 96%) no-repeat 0 72% / 100% 46%;
+}
+
+// gallery pieces: slightly askew, straightening on hover
+.art-card figure {
+    position: relative;
+    overflow: visible;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.art-card:nth-child(3n + 1) figure { transform: rotate(-1.1deg); }
+.art-card:nth-child(3n + 2) figure { transform: rotate(0.9deg); }
+.art-card:nth-child(3n) figure { transform: rotate(-0.4deg); }
+.art-card figure:hover { transform: rotate(0deg) translateY(-3px); }
+
+// --- fasteners: how things are stuck to the page ---------------------------------
+// A strip of tape: $offset nudges it off-centre, $bg is its material.
+@mixin tape($w: 78px, $angle: -3deg, $bg: $tape, $offset: 0px) {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: -11px;
+    left: 50%;
+    width: $w;
+    height: 24px;
+    margin-left: -$w * 0.5 + $offset;
+    background: $bg;
+    border-radius: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    transform: rotate($angle);
+    clip-path: polygon(2% 0, 98% 4%, 100% 100%, 0 96%);
+}
+
+$washi-pink: repeating-linear-gradient(45deg, rgba($pink, 0.55) 0 7px, rgba(255, 220, 235, 0.7) 7px 14px);
+$washi-mint: repeating-linear-gradient(90deg, rgba(108, 207, 79, 0.42) 0 6px, rgba(222, 245, 215, 0.75) 6px 12px);
+$washi-dots: radial-gradient(circle, rgba($primary, 0.4) 1.4px, transparent 2px) 0 0 / 8px 8px, rgba(228, 214, 246, 0.85);
+$clear-tape: linear-gradient(180deg, rgba(226, 234, 248, 0.8), rgba(206, 218, 238, 0.55));   // a faint blue-grey, or it vanishes on white
+
+// seven ways of sticking something on, cycled through with :nth-child so that
+// neighbouring pieces rarely look alike (7 is prime, so the gallery's columns of
+// three or four never line up the same fastener side by side)
+@mixin fastener($i) {
+    @if $i == 1 { @include tape(74px, -4deg, $tape, -10px); }
+    @else if $i == 2 { @include tape(58px, -8deg, $washi-pink, 8px); }
+    @else if $i == 3 { @include tape(90px, 3deg, $washi-pink, 14px); }
+    @else if $i == 4 { @include tape(52px, 7deg, $clear-tape, 4px); }
+    @else if $i == 5 { @include tape(80px, -2deg, $washi-mint, -18px); }
+    @else if $i == 6 { @include tape(62px, 9deg, $tape, 24px); }
+    @else { @include tape(68px, 5deg, $washi-dots, -6px); }
+}
+
+@mixin fastener-cycle($item, $target, $shift: 0) {
+    @for $i from 1 through 7 {
+        // a bare pseudo-element ("::before") belongs to the item itself, anything else to a descendant
+        $sel: if(str-index($target, "::") == 1, "#{$item}:nth-child(7n + #{$i})#{$target}", "#{$item}:nth-child(7n + #{$i}) #{$target}");
+        #{$sel} { @include fastener(($i + $shift - 1) % 7 + 1); }
+    }
+}
+
+// origami: polaroids (they hang on a line: see the gallery section further down)
+#origami .art-card figure {
+    background: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 12px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 20px rgba($primary, 0.12);
+}
+#origami .art-card figure img { border: none; border-radius: 0; }
+#origami .art-card figcaption {
+    background: #ffffff;
+    color: #2a2338;           // the polaroid stays white in dark mode, so its ink stays dark
+    padding: 0.9rem 0.4rem 1.2rem;
+    text-align: center;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+// floating pixel-art stickers: crisp pixels, a white sticker edge and a soft shadow
+.sticker {
+    position: absolute;
+    z-index: 3;
+    image-rendering: pixelated;
+    pointer-events: none;
+    filter:
+        drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
+        drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.22));
+}
+
+.sticker.float {
+    animation: sticker-float 4.5s ease-in-out infinite;
+}
+
+// a jet with a dashed flight path behind it
+.sticker-trail {
+    position: absolute;
+    z-index: 3;
+    width: 170px;
+    height: 120px;
+    pointer-events: none;
+}
+
+.sticker-trail svg {
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+}
+
+.sticker-trail path {
+    fill: none;
+    stroke: #6ccf4f;
+    stroke-width: 2.5;
+    stroke-dasharray: 7 7;
+    stroke-linecap: round;
+    opacity: 0.8;
+}
+
+.sticker-trail .sticker {
+    top: 6px;
+    left: 0;
+    width: 44px;
+}
+
+.sticker-trail.float {
+    animation: sticker-float 4.5s ease-in-out infinite;
+}
+
+@keyframes sticker-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}

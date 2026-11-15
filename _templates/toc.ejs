@@ -1,0 +1,24 @@
+<%
+// Coursework as a table of contents: numbered entries with dotted leaders to the
+// year; hovering an entry brings up its figure beside it.
+const split = (item) => {
+const cats = item.categories || [];
+return { year: cats.find((c) => /^\d{4}$/.test(c)), langs: cats.filter((c) => !/^\d{4}$/.test(c)) };
+};
+%>
+```{=html}
+<ol class="toc-list">
+<% items.forEach((item, i) => { const { year, langs } = split(item); %>
+<li class="toc-entry">
+<a href="<%- item.path %>">
+<span class="toc-num"><%= i + 1 %>.</span>
+<span class="toc-title"><%= item.title %></span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year"><%= year || "" %></span>
+<span class="toc-desc"><%= item.description %> <span class="toc-langs"><%= langs.join(" · ") %></span></span>
+<% if (item.image) { %>      <img class="toc-peek" src="<%- item.image %>" alt="" loading="lazy">
+<% } %>    </a>
+</li>
+<% }) %>
+</ol>
+```

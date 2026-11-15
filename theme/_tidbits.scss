@@ -1,0 +1,173 @@
+// Tidbits: the index cards in the list, and each post as a ring-bound notebook page.
+
+// tidbits: index cards. Pale blue ruled lines, a pink rule under the title, a
+// strip of tape on top and the figure stuck on as a little print.
+.tidbits-page .quarto-post {
+    position: relative;
+    border: none !important;
+    border-radius: 2px;
+    background-color: $card-bg;
+    background-image: repeating-linear-gradient(180deg, transparent 0 27px, $index-rule 27px 28px);
+    background-position: 0 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 22px rgba($primary, 0.09);
+    margin-bottom: 2.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tidbits-page .quarto-post:nth-child(odd) { transform: rotate(-0.35deg); }
+.tidbits-page .quarto-post:nth-child(even) { transform: rotate(0.3deg); }
+
+@include fastener-cycle(".tidbits-page .quarto-post", "::before", 3);
+// one piece of tape is enough: a card with a figure hangs from the figure's
+.tidbits-page .quarto-post:has(.thumbnail)::before { display: none; }
+
+@media (hover: hover) {
+    .tidbits-page .quarto-post:hover {
+        transform: rotate(0deg) translateY(-3px);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06), 0 14px 30px rgba($primary, 0.14);
+    }
+}
+
+.tidbits-page div.quarto-post .body h3.listing-title {
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid rgba($pink, 0.45);
+}
+
+.tidbits-page .listing-number {
+    border-bottom-style: dashed;
+}
+
+// the figure: a small print, slightly crooked, with its own bit of tape
+.tidbits-page .quarto-post .thumbnail {
+    position: relative;
+}
+
+.tidbits-page .quarto-post .thumbnail a {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 6px 14px rgba($primary, 0.12);
+    transform: rotate(2deg);
+    transition: transform 0.25s ease;
+}
+
+.tidbits-page .quarto-post:nth-child(even) .thumbnail a { transform: rotate(-1.6deg); }
+.tidbits-page .quarto-post:hover .thumbnail a { transform: rotate(0deg); }
+
+.tidbits-page .quarto-post .thumbnail-image {
+    border-radius: 0;
+    mix-blend-mode: normal;
+}
+
+// the tape sits on the print itself, so it turns with it on hover
+@include fastener-cycle(".tidbits-page .quarto-post", ".thumbnail a::after");
+
+// a single tidbit: written on a page of a ring-bound notebook. Punched holes down
+// the left edge, a pink margin line and the same pale blue rules as the cards.
+.tidbit-post main.content {
+    position: relative;
+    align-self: start;
+    background-color: $card-bg;
+    background-image:
+        radial-gradient(circle at 16px 20px, $body-bg 6px, rgba($primary, 0.18) 6.5px, transparent 7.5px),
+        linear-gradient(90deg, transparent 44px, rgba($pink, 0.4) 44px 45px, transparent 45px 48px, rgba($pink, 0.4) 48px 49px, transparent 49px),
+        repeating-linear-gradient(180deg, transparent 0 31px, $index-rule 31px 32px);
+    background-size: 32px 40px, 100% 100%, 100% 100%;
+    background-repeat: repeat-y, no-repeat, no-repeat;
+    background-position: 0 10px, 0 0, 0 2.25rem;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 10px 30px rgba($primary, 0.1);
+    padding: 2.75rem 2.5rem 2.5rem 4.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+// the writing: a rounder book serif (it sits well with the serif maths), one line
+// of text per ruled line, ragged right, and a blank line between paragraphs
+.tidbit-post main.content p,
+.tidbit-post main.content li {
+    font-family: "Literata", Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 32px;
+    text-align: left;
+    hyphens: manual;
+}
+
+.tidbit-post main.content p {
+    margin-bottom: 32px;
+}
+
+// section headings swiped with highlighter, as on the project pages
+.tidbit-post main.content h2 {
+    display: inline-block;
+    border-bottom: none;
+    padding: 0 0.3rem;
+    margin-left: -0.3rem;
+    background: linear-gradient(100deg, transparent 2%, rgba($pink, 0.2) 4%, rgba($pink, 0.24) 92%, transparent 96%) no-repeat 0 72% / 100% 46%;
+}
+
+// figures are drawn straight onto the page: their white backgrounds take on the paper
+.tidbit-post main.content .figure img,
+.tidbit-post main.content figure img {
+    mix-blend-mode: $image-blend;
+}
+
+@media (max-width: 767.98px) {
+    .tidbit-post main.content {
+        padding: 1.5rem 1rem 1.5rem 2.6rem;
+        background-image:
+            radial-gradient(circle at 12px 20px, $body-bg 4.5px, rgba($primary, 0.18) 5px, transparent 6px),
+            linear-gradient(90deg, transparent 28px, rgba($pink, 0.4) 28px 29px, transparent 29px),
+            repeating-linear-gradient(180deg, transparent 0 31px, $index-rule 31px 32px);
+        background-size: 24px 40px, 100% 100%, 100% 100%;
+        background-position: 0 10px, 0 0, 0 1rem;
+    }
+}
+
+// on wide screens the sheet grows outwards, so the text keeps its width and lines up with the title
+@media (min-width: 992px) {
+    .tidbit-post main.content {
+        margin-left: -4.5rem;
+        margin-right: -2.5rem;
+    }
+}
+
+// the title block, moved onto the sheet by tidbit_page.js: the page's heading,
+// closed off from the text by a double pink rule
+.tidbit-post main.content .post-head {
+    margin: 0 0 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 3px double rgba($pink, 0.5);
+}
+
+.tidbit-post .post-head .quarto-title-banner {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tidbit-post .post-head .quarto-title-meta {
+    margin-top: 1rem;
+}
+
+// plots from code cells: fit the page width (no scrollbars), white backgrounds take on the paper
+.tidbit-post main.content .cell-output-display {
+    overflow-x: visible;
+}
+
+.tidbit-post main.content .cell-output-display img,
+.tidbit-post main.content .cell-output-display svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    mix-blend-mode: $image-blend;
+}
+
+/* images in tidbit posts: keep figures centred (the page's left-aligned paragraph
+   rule would otherwise reach the paragraph Quarto wraps each figure in) */
+.tidbit-post main.content figure p,
+.tidbit-post main.content .quarto-figure-center p {
+    text-align: center;
+}

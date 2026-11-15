@@ -11,6 +11,7 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
+body-classes: blog-page
 title-block-banner: true
 include-in-header:
   text: |
@@ -23,5 +24,3 @@ include-after-body:
 <!-- ::: {.mb-4}
 Blog goes here.
 ::: -->
-
-<br>

@@ -1,0 +1,20 @@
+<%
+// Visualizations as frames on a strip of film: they are animations, after all.
+const split = (item) => {
+const cats = item.categories || [];
+return { year: cats.find((c) => /^\d{4}$/.test(c)), langs: cats.filter((c) => !/^\d{4}$/.test(c)) };
+};
+%>
+```{=html}
+<div class="film-strip">
+<% items.forEach((item, i) => { const { year, langs } = split(item); %>
+<a class="film-frame" href="<%- item.path %>">
+<div class="film-edge"><span><%= i + 1 %>A</span><span>&#9656; <%= year || "" %></span></div>
+<% if (item.image) { %><div class="film-pic"><img src="<%- item.image %>" alt="" loading="lazy"></div>
+<% } %><div class="film-title"><%= item.title %></div>
+<p class="film-desc"><%= item.description %></p>
+<div class="film-edge film-edge-bottom"><span><%= langs.join(" · ").toUpperCase() %></span></div>
+</a>
+<% }) %>
+</div>
+```

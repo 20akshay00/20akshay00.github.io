@@ -1,0 +1,36 @@
+<%
+// General software as a code editor: the projects are files in the explorer, and
+// opening one shows its README. Plain radio buttons switch the files, so it needs
+// no script (styles.scss, .ide).
+const split = (item) => {
+const cats = item.categories || [];
+return { year: cats.find((c) => /^\d{4}$/.test(c)), langs: cats.filter((c) => !/^\d{4}$/.test(c)) };
+};
+const LANG = { javascript: "#d9b23a", python: "#4a7fc1", html: "#e06c3c", gdscript: "#478cbf", "c++": "#9c4f96", julia: "#9558b2" };
+const colour = (langs) => LANG[(langs[0] || "").toLowerCase()] || "#8c7aa8";
+const group = "ide-" + Math.random().toString(36).slice(2, 8);
+%>
+```{=html}
+<div class="ide">
+<% items.forEach((item, i) => { %><input class="ide-radio" type="radio" name="<%= group %>" id="<%= group %>-<%= i %>"<%= i === 0 ? " checked" : "" %>>
+<% }) %><div class="ide-bar"><span class="ide-bar-title">~/projects</span></div>
+<div class="ide-body">
+<nav class="ide-explorer" aria-label="Projects">
+<div class="ide-explorer-head">Explorer</div>
+<% items.forEach((item, i) => { const { langs } = split(item); %><label class="ide-file" for="<%= group %>-<%= i %>"><span class="ide-dot" style="background: <%= colour(langs) %>"></span><%= item.title %></label>
+<% }) %></nav>
+<div class="ide-main">
+<% items.forEach((item, i) => { const { year, langs } = split(item); %><section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">&mdash; <%= item.title %></span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h"><span class="ide-hash">#</span> <%= item.title %></h3>
+<p class="ide-desc"><%= item.description %></p>
+<% if (item.image) { %><img class="ide-shot" src="<%- item.image %>" alt="" loading="lazy">
+<% } %><a class="ide-open" href="<%- item.path %>">Open project &#8599;</a>
+</div>
+<div class="ide-status"><span><span class="ide-dot" style="background: <%= colour(langs) %>"></span><%= langs.join(" · ") %></span><span><%= year || "" %></span></div>
+</section>
+<% }) %></div>
+</div>
+</div>
+```

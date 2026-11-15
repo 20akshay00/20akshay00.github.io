@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" role="img" aria-label="A single finite element: the tent function">
+<title>A single finite element: the tent function</title>
+<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a6ff" stop-opacity="0.45"/><stop offset="1" stop-color="#c9a6ff" stop-opacity="0.04"/></linearGradient></defs>
+<line x1="22" y1="118" x2="278" y2="118" stroke="#6b5f80" stroke-width="2" stroke-linecap="round"/>
+<path d="M60 118 L150 30 L240 118 Z" fill="url(#fill)"/>
+<path d="M60 118 L150 30 L240 118" fill="none" stroke="#c9a6ff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="150" y1="30" x2="150" y2="118" stroke="#6b5f80" stroke-width="1.5" stroke-dasharray="4 5"/>
+<circle cx="60" cy="118" r="6" fill="#1d1428" stroke="#6fa8ff" stroke-width="3"/><circle cx="150" cy="118" r="6" fill="#1d1428" stroke="#6fa8ff" stroke-width="3"/><circle cx="240" cy="118" r="6" fill="#1d1428" stroke="#6fa8ff" stroke-width="3"/><circle cx="150" cy="30" r="5" fill="#c9a6ff"/>
+</svg>

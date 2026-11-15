@@ -3,44 +3,27 @@ title: "Projects"
 subtitle: "Software tools and academic explorations."
 page-layout: full
 title-block-banner: true
-include-after-body:
-  text: |
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const categories = document.querySelectorAll('.listing-category');
-      categories.forEach(category => {
-        const text = category.innerText.trim();
-        if (/^\d{4}$/.test(text)) {
-          category.classList.add('year-pill');
-        } else {
-          const slug = text.toLowerCase().replace(/[^a-z0-9]/g, '-');
-          category.classList.add('lang-' + slug);
-        }
-      });
-    });
-    </script>
+body-classes: projects-page
 listing:
   - id: research-software
     contents:
       - title: "TentMPS.jl"
         description: "Numerical implementation of the Finite-Element Matrix Product State (FE-MPS) framework for simulating 1D continuum models of interacting bosons."
         path: "https://github.com/20akshay00/TentMPS.jl/"
-        image: "images/projects/tentmpsjl.png"
+        image: "images/projects/tentmps.svg"
         categories: [Julia, "2026"]
       - title: "LiebLinigerBetheAnsatz.jl"
         description: "Numerical implementation of the Bethe Ansatz solution for the 1D Lieb-Liniger model."
         path: "https://github.com/20akshay00/LiebLinigerBetheAnsatz.jl/"
-        image: "images/projects/lieblinigerbetheansatzjl.png"
+        image: "images/projects/lieblinigerbetheansatz.svg"
         categories: [Julia, "2026"]
       - title: "HermiteUtils.jl"
         description: "Simple utilities for working with Hermite polynomials and functions."
         path: "https://github.com/20akshay00/HermiteUtils.jl/"
-        image: "images/projects/hermiteutils.png"
+        image: "images/projects/hermiteutils.svg"
         categories: [Julia, "2026"]
-    type: grid
-    fields: [title, description, categories, image]
-    grid-columns: 3
-    image-height: 200px
+    type: custom
+    template: _templates/terminal.ejs
 
   - id: software-projects
     contents:
@@ -69,10 +52,8 @@ listing:
         path: "https://github.com/20akshay00/godot-wii-input/"
         image: "images/projects/godotwiiinput.png"
         categories: [GDScript, C++, "2025"]
-    type: grid
-    fields: [title, description, categories, image]
-    grid-columns: 3
-    image-height: 200px
+    type: custom
+    template: _templates/editor.ejs
 
   - id: coursework-projects
     contents:
@@ -101,27 +82,8 @@ listing:
         path: "https://20akshay00.github.io/PHY638-Assignment-5/"
         image: "images/projects/surface-waves.png"
         categories: [HTML, "2023"]
-    type: grid
-    fields: [title, description, categories, image]
-    grid-columns: 3
-    image-height: 150px
-
-  - id: gamedev-projects
-    contents:
-      - title: "GTA: Stress City"
-        description: "A treasure hunt event built using the tetra game engine."
-        path: "https://iiserm.github.io/GTA-Stress-City/"
-        image: "images/projects/gta.png"
-        categories: [Python, "2021"]
-      - title: "Radar Defender"
-        description: "A retro arcade-style game made using AlphaZero.jl where players must defend their base from incoming threats."
-        path: "https://github.com/20akshay00/RadarDefender"
-        image: "images/projects/radar-defender.png"
-        categories: [Julia, "2022"]
-    type: grid
-    fields: [title, description, categories, image]
-    grid-columns: 3
-    image-height: 350px
+    type: custom
+    template: _templates/toc.ejs
 
   - id: misc-projects
     contents:
@@ -129,11 +91,6 @@ listing:
         description: "Simulation of a pendulum with an elastic string, demonstrating chaotic motion trajectories."
         path: "https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6"
         image: "images/projects/elastic-pendulum.png"
-        categories: [JavaScript, "2020"]
-      - title: "Coupled pendulum"
-        description: "Simulation of two pendulums connected by a spring, exploring energy exchange and normal modes."
-        path: "https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR"
-        image: "images/projects/coupled-pendulum.png"
         categories: [JavaScript, "2020"]
       - title: "PhysicsJavisAnim"
         description: "A collection of physics-based visualizations created using the Javis.jl library."
@@ -145,10 +102,8 @@ listing:
         path: "https://20akshay00.github.io/Summer2021/"
         image: "images/projects/wavepacketdynamics.png"
         categories: [Python, "2021"]
-    type: grid
-    fields: [title, description, categories, image]
-    grid-columns: 3
-    image-height: 250px
+    type: custom
+    template: _templates/filmstrip.ejs
 ---
 
 ::: {.project-section}
@@ -172,14 +127,6 @@ listing:
 *Selected academic projects from my time at IISER Mohali.*
 
 :::{#coursework-projects}
-:::
-:::
-
-::: {.project-section}
-## Game Development
-*Video games! More projects can be found on my [itch.io profile](https://20akshay00.itch.io/).*
-
-:::{#gamedev-projects}
 :::
 :::
 

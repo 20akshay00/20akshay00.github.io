@@ -3,20 +3,22 @@ const ctx = canvas.getContext('2d');
 
 let width, height, isMobile;
 let atoms = [];
-const numAtoms = 600;
+// The number of atoms follows the window's area (600 on a typical laptop screen),
+// so a big monitor is as dense as a small one; capped, since every pair interacts.
+const atomDensity = 600 / (1440 * 900);
+const minAtoms = 250, maxAtoms = 1000;
 
-// Atoms fade from slate (hot gas) to teal (condensate) as they cool. One palette
+// Atoms fade from slate (hot gas) to purple (condensate) as they cool. One palette
 // per site theme (light, dark), picked from the class Quarto puts on the body.
+// The canvas is transparent: the page's notebook paper shows through it.
 const PALETTES = {
-    light: { bg: '#fcfcf9', grid: 'rgba(44, 62, 80, 0.075)', hot: [44, 62, 80, 0.175], cold: [0, 109, 119, 0.45] },
-    dark: { bg: '#14181b', grid: 'rgba(213, 221, 226, 0.06)', hot: [213, 221, 226, 0.16], cold: [92, 184, 194, 0.5] },
+    light: { hot: [42, 35, 56, 0.17], cold: [90, 42, 156, 0.45] },
+    dark: { hot: [226, 216, 240, 0.16], cold: [180, 140, 240, 0.5] },
 };
 const colorBins = 6;
-let bgColor, gridColor, binColors;
+let binColors;
 function readPalette() {
     const p = document.body.classList.contains('quarto-dark') ? PALETTES.dark : PALETTES.light;
-    bgColor = p.bg;
-    gridColor = p.grid;
     binColors = Array.from({ length: colorBins }, (_, k) => {
         const cold = k / (colorBins - 1);
         const c = p.hot.map((h, i) => h + (p.cold[i] - h) * cold);
@@ -26,15 +28,17 @@ function readPalette() {
 readPalette();
 new MutationObserver(readPalette).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-const gridSize = 100;
 const interactionRadius = 50;
 const coreRadius = 9;
 
-// --- the cursor is an optical trap ---
-// Held still, it cools nearby atoms (molasses friction) and gently confines
+// --- the cursor ---
+// TRAP_ON = false: the cursor simply pushes atoms away (radius 150 px, as before).
+// TRAP_ON = true: the cursor is an optical trap. Held still, it cools nearby atoms (molasses friction) and gently confines
 // them, so they settle into a single cloud. The cloud keeps a finite size
 // because cold atoms still repel softly (like a Thomas-Fermi condensate).
 // Moved quickly, it stirs and heats them instead.
+const TRAP_ON = false;
+const pushRadius = 150;
 const trapRadius = 170;
 const trapStiffness = 0.0006;
 const molasses = 0.08;      // max velocity damping per frame at the centre
@@ -50,7 +54,7 @@ function init() {
     height = canvas.height = window.innerHeight;
     isMobile = width < 768;
 
-    const currentNumAtoms = isMobile ? 250 : numAtoms;
+    const currentNumAtoms = Math.round(Math.min(maxAtoms, Math.max(minAtoms, width * height * atomDensity)));
 
     atoms = [];
     for (let i = 0; i < currentNumAtoms; i++) {
@@ -84,32 +88,23 @@ window.addEventListener('touchstart', (e) => {
 window.addEventListener('touchmove', (e) => moveTrap(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
 window.addEventListener('touchend', () => { mouse.active = false; mouse.x = mouse.y = -1000; });
 
-function drawGrid(angle = Math.PI / 180 * 30) {
-    const diag = Math.sqrt(width ** 2 + height ** 2);
-    ctx.save();
-    ctx.translate(width / 2, height / 2);
-    ctx.rotate(angle);
-    ctx.strokeStyle = gridColor;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    for (let x = -diag / 2; x <= diag / 2; x += gridSize) {
-        ctx.moveTo(x, -diag / 2);
-        ctx.lineTo(x, diag / 2);
+// The physics advances in fixed steps of 1/60 s, however often the screen refreshes:
+// on a 144 Hz monitor a step per frame would run everything 2.4 times as fast.
+const STEP = 1000 / 60;
+let lastTime = 0, pending = 0;
+
+function animate(now) {
+    pending += lastTime ? Math.min(now - lastTime, 100) : STEP;
+    lastTime = now;
+    while (pending >= STEP) {
+        step();
+        pending -= STEP;
     }
-    for (let y = -diag / 2; y <= diag / 2; y += gridSize) {
-        ctx.moveTo(-diag / 2, y);
-        ctx.lineTo(diag / 2, y);
-    }
-    ctx.stroke();
-    ctx.restore();
+    draw();
+    requestAnimationFrame(animate);
 }
 
-function animate() {
-    ctx.fillStyle = bgColor;
-    ctx.fillRect(0, 0, width, height);
-
-    drawGrid();
-
+function step() {
     // 1 when the cursor rests, 0 when it is moving fast
     const stillness = Math.max(0, 1 - mouse.speed / 6);
     const stir = Math.min(1, mouse.speed / 25);
@@ -150,7 +145,16 @@ function animate() {
             }
         }
 
-        if (mouse.active) {
+        if (mouse.active && !TRAP_ON) {
+            let dx = mouse.x - a.x;
+            let dy = mouse.y - a.y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < pushRadius && dist > 0) {
+                let force = (pushRadius - dist) / pushRadius;
+                a.vx -= (dx / dist) * force * 0.6;
+                a.vy -= (dy / dist) * force * 0.6;
+            }
+        } else if (mouse.active) {
             let dx = mouse.x - a.x;
             let dy = mouse.y - a.y;
             let dist = Math.sqrt(dx * dx + dy * dy);
@@ -186,7 +190,10 @@ function animate() {
         a.x += a.vx;
         a.y += a.vy;
     }
+}
 
+function draw() {
+    ctx.clearRect(0, 0, width, height);
     // draw in a few colour bins so each bin is a single path
     for (let k = 0; k < colorBins; k++) {
         ctx.fillStyle = binColors[k];
@@ -198,8 +205,6 @@ function animate() {
         }
         ctx.fill();
     }
-
-    requestAnimationFrame(animate);
 }
 
 
@@ -224,4 +229,4 @@ window.addEventListener('resize', () => {
 });
 
 init();
-animate();
+requestAnimationFrame(animate);

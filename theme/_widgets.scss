@@ -1,0 +1,852 @@
+// The interactive figures on the research page: the matter-wave simulation
+// (tdse_widget.js), the MPS compression widget (tn_widget.js) and the absorption
+// images (bec_widget.js).
+
+/* --- Interactive TDSE widget (tdse_widget.js) --- */
+.tdse {
+    --tdse-rho: #{$primary};
+    --tdse-rho-fill: #{rgba($primary, 0.18)};
+    --tdse-re: #{$body-color};
+    --tdse-im: #{$accent};
+    --tdse-backing: #{rgba($body-bg, 0.92)};
+    --tdse-pot: #{rgba($body-color, 0.09)};
+    --tdse-pot-line: #{rgba($body-color, 0.45)};
+    --tdse-axis: #{rgba($body-color, 0.25)};
+    --tdse-text: #{$secondary};
+
+    background-color: $card-bg;
+    border: 1px solid $card-border-light;
+    border-radius: $radius;
+    margin: 1.25rem 0 0.25rem;
+    font-size: 0.9rem;
+    color: $body-color;
+    overflow: hidden;
+}
+
+// demos above the plot: a tinted strip of topic tabs (the open one joins the area
+// below, like a folder tab), then the topic's demos as chips and the caption
+.tdse-demos {
+    border-bottom: 1px solid $card-border-light;
+    padding-bottom: 0.7rem;
+}
+
+.tdse-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 0.4rem;
+    background-color: rgba($primary, 0.05);
+    border-bottom: 1px solid $card-border-light;
+}
+
+.tdse-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tdse-tabs button {
+    position: relative;
+    flex: none;
+    font: inherit;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 0.93rem;
+    color: $secondary;
+    background: none;
+    border: 1px solid transparent;
+    border-top: 2px solid transparent;
+    border-bottom: none;
+    padding: 0.55rem 0.95rem 0.5rem;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+// thin dividers between tabs, dropped next to the open one
+.tdse-tabs button + button::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 32%;
+    height: 36%;
+    width: 1px;
+    background-color: $card-border;
+}
+
+.tdse-tabs button[aria-selected="true"]::before,
+.tdse-tabs button[aria-selected="true"] + button::before {
+    display: none;
+}
+
+.tdse-tabs button:hover {
+    color: $primary;
+}
+
+.tdse-tabs button[aria-selected="true"] {
+    color: $primary;
+    background-color: $card-bg;
+    border-color: $card-border-light;
+    border-top-color: $primary;
+    border-bottom: 1px solid $card-bg;
+}
+
+.tdse-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.75rem 0.75rem 0;
+}
+
+.tdse-chip {
+    font: inherit;
+    font-size: 0.85rem;
+    color: $body-color;
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 999px;
+    padding: 2px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.tdse-chip:hover {
+    border-color: $primary;
+    color: $primary;
+}
+
+.tdse-chip[aria-pressed="true"] {
+    background-color: $primary;
+    border-color: $primary;
+    color: $on-primary;
+}
+
+.tdse-demo-caption {
+    margin: 0.65rem 0.75rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    background-color: rgba($primary, 0.06);
+    font-size: 0.88rem !important;
+    line-height: 1.5;
+    text-align: left !important;
+    color: $body-color;
+}
+
+// the experiment a demo follows
+.tdse-demo-ref {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+.tdse-demo-ref a {
+    color: $primary;
+}
+
+// shown once a demo's settings have been tweaked
+.tdse-demo-mod {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+.tdse-demo-caption.tdse-demo-caption-custom {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    color: $secondary;
+}
+
+// a choice that cannot work as set up, explained in place
+.tdse-note.tdse-warn {
+    color: $warn-color;
+}
+
+.tdse-stage {
+    padding: 0.75rem 0.75rem 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.tdse-canvas {
+    display: block;
+    width: 100%;
+    height: 300px;
+    cursor: crosshair;
+    touch-action: pan-y;
+}
+
+.tdse-drawing .tdse-canvas {
+    cursor: cell;
+    touch-action: none;
+}
+
+// playback, directly under the plot
+.tdse-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid $card-border-light;
+}
+
+.tdse-toolbar .tdse-status {
+    margin-left: auto;
+}
+
+// real / imaginary time switch
+.tdse-seg {
+    display: inline-flex;
+    border: 1px solid $card-border;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tdse-seg button {
+    font: inherit;
+    color: $secondary;
+    background-color: $card-bg;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.tdse-seg button + button {
+    border-left: 1px solid $card-border;
+}
+
+.tdse-seg button[aria-pressed="true"] {
+    background-color: $primary;
+    color: $on-primary;
+}
+
+// full-width segmented choices in the initial-state panel
+.tdse-seg-full {
+    display: flex;
+    width: 100%;
+}
+
+.tdse-seg.tdse-seg-full button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 4px 6px;
+    font-size: 0.82rem;
+    line-height: 1.25;
+}
+
+.tdse-seg[hidden],
+.tdse-step[hidden] {
+    display: none;
+}
+
+.tdse-seg button:disabled {
+    color: rgba($secondary, 0.45);
+    cursor: not-allowed;
+}
+
+.tdse-seg button:not([aria-pressed="true"]):not(:disabled):hover {
+    color: $primary;
+}
+
+// numbered sub-steps: 1 Prepare, 2 Then
+.tdse-step {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $secondary;
+}
+
+.tdse-step::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: $card-border-light;
+}
+
+.tdse-step-n {
+    display: inline-grid;
+    place-items: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    border: 1px solid $primary;
+    color: $primary;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+}
+
+// a slider with a small reset button after its value
+.tdse-field.tdse-field-reset {
+    grid-template-columns: 5.5rem minmax(0, 1fr) 2.5rem 1.4rem;
+}
+
+.tdse-field > label {
+    color: $secondary;
+    margin: 0;
+}
+
+.tdse-mini {
+    display: inline-grid;
+    place-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: 0;
+    font-size: 0.7rem;
+    color: $secondary;
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tdse-mini:hover:not(:disabled) {
+    color: $primary;
+    border-color: $primary;
+}
+
+.tdse-mini:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+// accuracy indicator: coloured badge that pulses when the level changes
+$acc-ok: #2f855a;
+$acc-info: $primary;
+$acc-warn: #b7791f;
+$acc-bad: #c53030;
+
+.tdse-status {
+    --acc: #{$acc-ok};
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 3px 11px 3px 9px;
+    border: 1px solid rgba($acc-ok, 0.45);
+    border-radius: 999px;
+    background-color: rgba($acc-ok, 0.1);
+    color: $acc-ok;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: help;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.tdse-status i {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+@each $level, $c in (info: $acc-info, warn: $acc-warn, bad: $acc-bad) {
+    .tdse-status[data-level="#{$level}"] {
+        --acc: #{$c};
+        border-color: rgba($c, 0.45);
+        background-color: rgba($c, 0.1);
+        color: $c;
+    }
+}
+
+.tdse-status.tdse-pulse {
+    animation: tdse-pulse 0.9s ease-out 2;
+}
+
+@keyframes tdse-pulse {
+    0% { box-shadow: 0 0 0 0 var(--acc); }
+    100% { box-shadow: 0 0 0 9px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tdse-status.tdse-pulse { animation: none; }
+}
+
+// three groups of settings
+.tdse-panel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background-color: mix($primary, $card-bg, 3%);
+}
+
+.tdse-group {
+    min-width: 0;
+    padding: 1.1rem 1.1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.tdse-group + .tdse-group {
+    border-left: 1px solid $card-border-light;
+}
+
+.tdse-group-title {
+    margin-bottom: 0.15rem;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: $primary;
+}
+
+.tdse-field {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr) 2.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.tdse-field[hidden] {
+    display: none;
+}
+
+.tdse-field > span {
+    color: $secondary;
+}
+
+.tdse-field .tdse-select {
+    grid-column: 2 / 4;
+}
+
+.tdse-field output {
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
+    color: $secondary;
+    text-align: right;
+}
+
+.tdse-speed {
+    grid-template-columns: auto 110px;
+}
+
+.tdse input[type="range"] {
+    width: 100%;
+    accent-color: $primary;
+}
+
+.tdse-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 0.15rem;
+}
+
+.tdse-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.tdse-check input {
+    accent-color: $primary;
+    margin: 0;
+}
+
+.tdse-check .sw {
+    display: inline-block;
+    flex: none;
+    width: 14px;
+    height: 3px;
+}
+
+.tdse-check .sw-rho { background: $primary; height: 9px; opacity: 0.6; }
+.tdse-check .sw-re { background: $body-color; }
+.tdse-check .sw-im { background: $accent; }
+.tdse-check .sw-e { border-top: 2px dashed $accent; height: 0; }
+.tdse-check .sw-p { background: $primary; height: 9px; width: 4px; margin: 0 5px; opacity: 0.6; box-shadow: -5px 3px 0 -1px rgba($primary, 0.6), 5px 3px 0 -1px rgba($primary, 0.6); }
+
+// strips under the main plot (momentum, phase)
+.tdse-strip {
+    display: block;
+    width: 100%;
+    height: 108px;
+    border-top: 1px dashed $card-border-light;
+}
+
+.tdse-strip.tdse-strip-tall {
+    height: 150px;
+}
+
+.tdse-strip[hidden] {
+    display: none;
+}
+
+.tdse-check .sw-hist { height: 10px; background: linear-gradient(to bottom, rgba($primary, 0.75), rgba($primary, 0.15)); }
+.tdse-check .sw-ph { height: 10px; border-left: 2px solid $body-color; border-bottom: 2px solid $body-color; transform: skewX(-25deg); width: 8px; margin: 0 3px; }
+
+// collapsed numerics settings
+.tdse-adv {
+    margin-top: 0.5rem;
+    border-top: 1px solid $card-border-light;
+    padding-top: 0.45rem;
+}
+
+.tdse-adv summary {
+    cursor: pointer;
+    color: $secondary;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.tdse-adv summary:hover {
+    color: $primary;
+}
+
+.tdse-adv .tdse-field {
+    margin-bottom: 0.35rem;
+}
+
+.tdse-check .sw-cl { width: 10px; height: 10px; margin: 0 2px; border: 2px solid $accent; border-radius: 50%; }
+
+.tdse-eq {
+    margin: 0.1rem 0 0.35rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    color: $primary;
+}
+
+.tdse-eq-v {
+    margin: 0.2rem 0 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tdse-eq-v mjx-container[display="true"] {
+    margin: 0 !important;
+}
+
+.tdse-eq-v + .tdse-eq-sub {
+    margin-top: -0.35rem;
+}
+
+.tdse-eq-sub {
+    margin: -0.6rem 0 0.35rem;
+    font-size: 0.78rem !important;
+    text-align: center !important;
+    color: $secondary;
+}
+
+.tdse-note {
+    margin: 0.2rem 0 0;
+    font-size: 0.85rem !important;
+    line-height: 1.45;
+    text-align: left !important;
+    color: $secondary;
+}
+
+.tdse-credit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-top: 1px solid $card-border-light;
+    font-size: 0.75rem;
+    color: $secondary;
+}
+
+// Claude mark (Simple Icons, CC0) in Claude's brand colour
+.tdse-claude {
+    width: 13px;
+    height: 13px;
+    fill: #d97757;
+    flex: none;
+}
+
+.tdse-select,
+.tdse-btn {
+    font: inherit;
+    color: $body-color;
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 4px;
+    padding: 3px 10px;
+}
+
+.tdse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.tdse-btn:hover {
+    border-color: $primary;
+    color: $primary;
+}
+
+.tdse-btn[aria-pressed="true"] {
+    background-color: $primary;
+    border-color: $primary;
+    color: $on-primary;
+}
+
+/* --- MPS compression widget (tn_widget.js), built on the .tdse styles --- */
+// the MPS, drawn like the usual tensor-network diagram
+.tn-mps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0.25rem 0.4rem;
+    color: $body-color;
+}
+
+.tn-lhs {
+    flex: none;
+    padding-top: 0.55rem;
+    font-size: 0.95rem;
+}
+
+.tn-chain {
+    --tn-site: clamp(2.2rem, 8vw, 3.4rem);
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: 2.3rem 1.2rem auto;
+}
+
+.tn-box {
+    grid-row: 1;
+    width: var(--tn-site);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: mix($primary, $card-bg, 9%);
+    border: 1.5px solid $primary;
+    border-radius: $radius;
+    color: $primary;
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+}
+
+.tn-box.tn-rest {
+    width: auto;
+    z-index: 1;
+    border-style: dashed;
+    background: mix($primary, $card-bg, 4%);
+}
+
+.tn-box[hidden],
+.tn-rest span[hidden] {
+    display: none;
+}
+
+.tn-leg {
+    grid-row: 2;
+    justify-self: center;
+    width: 1.5px;
+    background: rgba($body-color, 0.6);
+}
+
+.tn-n {
+    grid-row: 3;
+    justify-self: center;
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+}
+
+.tn-bond {
+    grid-row: 1;
+    position: relative;
+}
+
+.tn-bond::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 0.75px);
+    height: 1.5px;
+    background: rgba($body-color, 0.6);
+}
+
+.tn-bond span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(50% + 2px);
+    text-align: center;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+.tn-bond span.tn-cut {
+    color: $primary;
+    font-weight: 700;
+}
+
+// stepping through the construction
+.tn-build {
+    margin: 0.1rem 0 0.7rem;
+    padding: 0.6rem 0.7rem;
+    background: mix($primary, $card-bg, 3%);
+    border: 1px solid $card-border-light;
+    border-radius: $radius;
+}
+
+.tn-build-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.45rem;
+}
+
+.tn-build-title {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    color: $primary;
+}
+
+.tn-build .tdse-note {
+    margin: 0;
+}
+
+.tn-amp-cap {
+    margin: 0;
+    padding: 0.45rem 0.5rem 0;
+    border-top: 1px dashed $card-border-light;
+    font-size: 0.78rem !important;
+    color: $secondary;
+}
+
+.tn .tn-amp {
+    display: block;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .tn-lhs {
+        display: none;
+    }
+}
+
+.tn .tn-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid $card-border-light;
+}
+
+.tn-params {
+    margin: 0.1rem 0 0;
+    color: $secondary;
+}
+
+.tn-params b {
+    color: $body-color;
+}
+
+// the overlap, large, next to the naive alternative
+.tn-score {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid $card-border-light;
+    border-radius: $radius;
+    overflow: hidden;
+}
+
+.tn-score > div {
+    padding: 0.55rem 0.7rem 0.5rem;
+    background: mix($primary, $card-bg, 7%);
+}
+
+.tn-score > .tn-score-alt {
+    background: $card-bg;
+    border-left: 1px solid $card-border-light;
+}
+
+.tn-score-v {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    color: $primary;
+    white-space: nowrap;
+}
+
+.tn-score-alt .tn-score-v {
+    color: $secondary;
+}
+
+.tn-score-l {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    color: $secondary;
+}
+
+/* --- raw absorption images (bec_widget.js): a figure, not a card --- */
+.tdse.bec {
+    background: none;
+    border: none;
+    margin: 0;
+    overflow: visible;
+}
+
+.bec figure {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.bec-frame {
+    display: block;
+    width: 100%;
+}
+
+.bec-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+// notes that change keep the height of their longest version (see setNote)
+.tn-stable {
+    display: grid;
+}
+
+.tn-stable > span {
+    grid-area: 1 / 1;
+}
+
+.tn .tdse-field.tn-off {
+    opacity: 0.4;
+}
+
+.tn .tdse-field {
+    grid-template-columns: 8.75rem minmax(0, 1fr) 2.5rem;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .tdse-panel,
+    .tn .tn-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .tdse-group + .tdse-group {
+        border-left: none;
+        border-top: 1px solid $card-border-light;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tdse-canvas {
+        height: 220px;
+    }
+
+    .tdse-stage {
+        padding: 0.5rem 0.5rem 0;
+    }
+}

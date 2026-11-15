@@ -16,6 +16,7 @@ begin
     Pkg.activate("../../")
     Pkg.instantiate()
     using JLD2, Plots, StatsBase
+    include("../_plot_style.jl")
 end
 ```
 

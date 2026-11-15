@@ -1,0 +1,18 @@
+// Dark mode: touches for things that keep their light-mode look.
+
+/* =====================================================================
+   Dark mode touches for things that keep their light-mode look
+   ===================================================================== */
+
+// the robot on the landing page: a light sticker edge so it shows on the dark paper
+body.quarto-dark .robot-walker {
+    filter: drop-shadow(1px 0 0 rgba(255, 255, 255, 0.7)) drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.7)) drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.7));
+}
+
+// figures that are dark ink on white paper (hand-drawn sketches, line plots; post_page.js
+// marks them .ink): invert them, so the ink is light on the dark page; the hue turn
+// keeps the colours roughly what they were, and the screen blend drops the black
+body.quarto-dark main.content img.ink {
+    filter: invert(1) hue-rotate(180deg) brightness(0.88);   // the paper goes fully black, so the blend drops it
+    mix-blend-mode: screen;
+}

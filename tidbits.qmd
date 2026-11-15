@@ -11,6 +11,7 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
+body-classes: tidbits-page
 title-block-banner: true
 include-in-header:
   text: |
@@ -23,5 +24,3 @@ include-after-body:
 ::: {.mb-4}
 Over the course of my PhD, I've found that my research seems to involve solving many tiny problems which have _some_ insight to offer but not enough to share in any usual platforms of scientific discourse. As an attempt to preserve these tidbits from fading into obscurity as I inevitably forget about them, I have begun documenting them here.
 :::
-
-<br>
