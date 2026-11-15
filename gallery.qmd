@@ -9,6 +9,23 @@ lightbox:
 ---
 
 ::: {.project-section}
+## Origami
+*Modular (3D) origami, where many small folded paper units are slotted together into the final shape.*
+
+::: {.art-column-grid}
+
+::: {.art-card}
+![**Penguin**](/images/origami/PenguinOrigami.jpg){group="origami"}
+:::
+
+::: {.art-card}
+![**Swan**](/images/origami/SwanOrigami.jpg){group="origami"}
+:::
+
+:::
+:::
+
+::: {.project-section}
 ## Pixel Art
 *To make these, I use [Aseprite](https://www.aseprite.org/) which used to be FOSS till 2016, but is currently a paid (but source-available) software. It can be built locally from the source, by following [these](https://www.reddit.com/r/PixelArt/comments/on9pw6/guide_how_to_build_aseprite_from_source_aseprite/) instructions, but it is certainly worth purchasing as well.*
 
