@@ -33,20 +33,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73d6fe625f822855f4cbbd2b14006d0f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-72981b43ebc2b08d635ab9cd047e3492.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-631c7299a166810c9fa5d60b8cf6781f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-72981b43ebc2b08d635ab9cd047e3492.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -77,11 +79,287 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-games-arcade .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-image','listing-jam','listing-cta',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-description","listing-image","listing-jam","listing-cta"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-games-arcade'] = new List('listing-games-arcade', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-pixel-editor .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-description","listing-image"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-pixel-editor'] = new List('listing-pixel-editor', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-models-blender .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-image',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-image"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-models-blender'] = new List('listing-models-blender', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed gallery-page quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -118,31 +396,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./gallery.html" aria-current="page"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=8XmbbYgAAAAJ"> 
-<span class="menu-text"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/0009-0009-9521-1188"> 
-<span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/20akshay00"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/20akshay00"> <i class="bi bi-linkedin" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://20akshay00.itch.io/"> 
-<span class="menu-text"><i class="fa-brands fa-itch-io" aria-label="itch-io"></i></span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -176,128 +433,263 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="pixel-art" class="level2 project-section">
-<h2 class="anchored" data-anchor-id="pixel-art">Pixel Art</h2>
-<p><em>To make these, I use <a href="https://www.aseprite.org/">Aseprite</a> which used to be FOSS till 2016, but is currently a paid (but source-available) software. It can be built locally from the source, by following <a href="https://www.reddit.com/r/PixelArt/comments/on9pw6/guide_how_to_build_aseprite_from_source_aseprite/">these</a> instructions, but it is certainly worth purchasing as well.</em></p>
+
+<section id="games" class="level2 project-section">
+<h2 class="anchored" data-anchor-id="games">Games</h2>
+<img class="sticker float" src="images/sprites/island.png" alt="" style="top: -40px; right: 3%; width: 230px; transform: rotate(-2deg);">
+<p><em>Games I’ve made, most of them with the <a href="https://godotengine.org/">Godot engine</a> for game jams with friends. Those live on my <a href="https://20akshay00.itch.io/">itch.io page</a>, and most can be played right in the browser.</em></p>
+<div id="listing-games-arcade" class="quarto-listing quarto-listing-container-custom">
+<div class="arcade" data-arcade="" tabindex="0" aria-roledescription="carousel" aria-label="Games">
+<div class="arcade-cab">
+<div class="arcade-marquee"><span class="arcade-sign is-on">Not Dead Yet</span><span class="arcade-sign">Repressed</span><span class="arcade-sign">Cyberloop</span><span class="arcade-sign">V1RUS.exe</span><span class="arcade-sign">Sketchometry</span><span class="arcade-sign">Lest Ye Falter</span><span class="arcade-sign">Cellular Conquest</span><span class="arcade-sign">Summon Squad</span><span class="arcade-sign">Trickshot</span><span class="arcade-sign">Radar Defender</span><span class="arcade-sign">GTA: Stress City</span></div>
+<div class="arcade-screen">
+<img class="arcade-slide is-on" src="images/gamedev/covers/notdeadyet.png" alt="Not Dead Yet" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/repressed.png" alt="Repressed" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/cyberloop.png" alt="Cyberloop" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/v1rusexe.png" alt="V1RUS.exe" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/sketchometry.png" alt="Sketchometry" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/lestyefalter.png" alt="Lest Ye Falter" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/cellularconquest.png" alt="Cellular Conquest" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/summonsquad.png" alt="Summon Squad" loading="lazy">
+<img class="arcade-slide" src="images/gamedev/covers/trickshot.png" alt="Trickshot" loading="lazy">
+<img class="arcade-slide" src="images/projects/radar-defender.png" alt="Radar Defender" loading="lazy">
+<img class="arcade-slide" src="images/projects/gta.png" alt="GTA: Stress City" loading="lazy">
+<div class="arcade-glass" aria-hidden="true"></div>
+</div>
+<button class="arcade-hit arcade-prev" type="button" data-step="-1" aria-label="Previous game"></button>
+<button class="arcade-hit arcade-next" type="button" data-step="1" aria-label="Next game"></button>
+<a class="arcade-hit arcade-go" href="https://20akshay00.itch.io/notdeadyet" aria-label="Start Not Dead Yet"></a>
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 60px; --y: 14%;">
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 118px; --y: 30%; width: 32px; animation-delay: 1.2s;">
+<img class="sticker float arcade-jet" src="images/sprites/jet1.png" alt="" style="--x: 48px; --y: 47%; width: 34px; animation-delay: 2.3s;">
+<span class="arcade-blob" aria-hidden="true"></span>
+</div>
+<div class="arcade-side">
+<div class="arcade-count">01 / 11</div>
+<div class="arcade-about is-on" data-href="https://20akshay00.itch.io/notdeadyet" data-title="Not Dead Yet">
+<div class="arcade-title">Not Dead Yet</div>
+<div class="arcade-jam">GMTK Game Jam 2026</div>
+<p class="arcade-tag">Your heart is stopping. The countdown has begun. Cling to life and fight to survive.</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/notdeadyet">Play</a>
+</div>
+<div class="arcade-about" data-href="https://20akshay00.itch.io/repressed" data-title="Repressed">
+<div class="arcade-title">Repressed</div>
+<div class="arcade-jam">Brackeys Game Jam 2026.1</div>
+<p class="arcade-tag">A memory repressed. A memory freed.</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/repressed">Play</a>
+</div>
+<div class="arcade-about" data-href="https://20akshay00.itch.io/cyberloop" data-title="Cyberloop">
+<div class="arcade-title">Cyberloop</div>
+<div class="arcade-jam">GMTK Game Jam 2025</div>
+<p class="arcade-tag">Your trail's a weapon and every tight turn could be your last. Outsmart, outlive and outloop.</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/cyberloop">Play</a>
+</div>
+<div class="arcade-about" data-href="https://20akshay00.itch.io/v1rusexe" data-title="V1RUS.exe">
+<div class="arcade-title">V1RUS.exe</div>
+<div class="arcade-jam">Beginner's Jam Winter 2024</div>
+<p class="arcade-tag">Infect the system. Avoid detection. Deliver the payload.</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/v1rusexe">Play</a>
+</div>
+<div class="arcade-about" data-href="https://20akshay00.itch.io/sketchometry" data-title="Sketchometry">
+<div class="arcade-title">Sketchometry</div>
+<div class="arcade-jam">GMTK Game Jam 2024</div>
+<p class="arcade-tag">Bend, twist, and stretch your way to geometric perfection!</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/sketchometry">Play</a>
+</div>
+<div class="arcade-about" data-href="https://quantum-forge-games.itch.io/lest-ye-falter" data-title="Lest Ye Falter">
+<div class="arcade-title">Lest Ye Falter</div>
+<div class="arcade-jam">The Secret Cult Horror Jam</div>
+<p class="arcade-tag">You sense defiance brewing among your followers. Their faith must be restored... NO MATTER THE COST.</p>
+<a class="arcade-start" href="https://quantum-forge-games.itch.io/lest-ye-falter">Play</a>
+</div>
+<div class="arcade-about" data-href="https://quantum-forge-games.itch.io/cellular-conquest" data-title="Cellular Conquest">
+<div class="arcade-title">Cellular Conquest</div>
+<div class="arcade-jam">Godot Jam 2024</div>
+<p class="arcade-tag">A cell in a petri dish, trying to grow and escape the lab.</p>
+<a class="arcade-start" href="https://quantum-forge-games.itch.io/cellular-conquest">Download</a>
+</div>
+<div class="arcade-about" data-href="https://roman-hyacinths.itch.io/summon-squad" data-title="Summon Squad">
+<div class="arcade-title">Summon Squad</div>
+<div class="arcade-jam">Ludum Dare 55</div>
+<p class="arcade-tag">Explore the crumbling ruins of forgotten treasures by solving puzzles with a little help from your summoned friends.</p>
+<a class="arcade-start" href="https://roman-hyacinths.itch.io/summon-squad">Play</a>
+</div>
+<div class="arcade-about" data-href="https://20akshay00.itch.io/trickshot" data-title="Trickshot">
+<div class="arcade-title">Trickshot</div>
+<div class="arcade-jam">GMTK Game Jam 2023</div>
+<p class="arcade-tag">In this world, you are not the wielder but the weapon itself! Are you worthy of making the trickiest shots of them all?</p>
+<a class="arcade-start" href="https://20akshay00.itch.io/trickshot">Play</a>
+</div>
+<div class="arcade-about" data-href="https://github.com/20akshay00/RadarDefender" data-title="Radar Defender">
+<div class="arcade-title">Radar Defender</div>
+<div class="arcade-jam">Julia · 2022</div>
+<p class="arcade-tag">A retro arcade-style game made using AlphaZero.jl where players must defend their base from incoming threats.</p>
+<a class="arcade-start" href="https://github.com/20akshay00/RadarDefender">Source</a>
+</div>
+<div class="arcade-about" data-href="https://iiserm.github.io/GTA-Stress-City/" data-title="GTA: Stress City">
+<div class="arcade-title">GTA: Stress City</div>
+<div class="arcade-jam">IISER Mohali · 2021</div>
+<p class="arcade-tag">A treasure hunt event built using the Tetra game engine.</p>
+<a class="arcade-start" href="https://iiserm.github.io/GTA-Stress-City/">Play in browser</a>
+</div>
+<div class="arcade-select" aria-label="Select a game">
+<a class="arcade-pick is-on" href="https://20akshay00.itch.io/notdeadyet" data-index="0" title="Not Dead Yet"><img src="images/gamedev/covers/notdeadyet.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://20akshay00.itch.io/repressed" data-index="1" title="Repressed"><img src="images/gamedev/covers/repressed.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://20akshay00.itch.io/cyberloop" data-index="2" title="Cyberloop"><img src="images/gamedev/covers/cyberloop.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://20akshay00.itch.io/v1rusexe" data-index="3" title="V1RUS.exe"><img src="images/gamedev/covers/v1rusexe.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://20akshay00.itch.io/sketchometry" data-index="4" title="Sketchometry"><img src="images/gamedev/covers/sketchometry.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://quantum-forge-games.itch.io/lest-ye-falter" data-index="5" title="Lest Ye Falter"><img src="images/gamedev/covers/lestyefalter.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://quantum-forge-games.itch.io/cellular-conquest" data-index="6" title="Cellular Conquest"><img src="images/gamedev/covers/cellularconquest.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://roman-hyacinths.itch.io/summon-squad" data-index="7" title="Summon Squad"><img src="images/gamedev/covers/summonsquad.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://20akshay00.itch.io/trickshot" data-index="8" title="Trickshot"><img src="images/gamedev/covers/trickshot.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://github.com/20akshay00/RadarDefender" data-index="9" title="Radar Defender"><img src="images/projects/radar-defender.png" alt="" loading="lazy"></a>
+<a class="arcade-pick" href="https://iiserm.github.io/GTA-Stress-City/" data-index="10" title="GTA: Stress City"><img src="images/projects/gta.png" alt="" loading="lazy"></a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="origami" class="level2 project-section">
+<h2 class="anchored" data-anchor-id="origami">Origami</h2>
+<img class="sticker float" src="images/sprites/Halves.png" alt="" style="top: -18px; right: 22%; width: 74px; transform: rotate(9deg); animation-delay: 0.8s;">
+<p><em>Modular (3D) origami, where many small folded paper units are slotted together into the final shape.</em></p>
 <div class="art-column-grid">
 <div class="art-card">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href=".\images/pixelart/phi1.png" class="lightbox" data-gallery="pixel" title="Phi@I logo #1 And God said, let there be Phi."><img src=".\images/pixelart/phi1.png" class="img-fluid figure-img" alt="Phi@I logo #1 And God said, let there be Phi."></a></p>
-<figcaption><strong>Phi@I logo #1</strong> And God said, let there be Phi.</figcaption>
+<p><a href=".\images/origami/PenguinOrigami.jpg" class="lightbox" data-gallery="origami" title="Penguin"><img src=".\images/origami/PenguinOrigami.jpg" class="img-fluid figure-img" alt="Penguin"></a></p>
+<figcaption><strong>Penguin</strong></figcaption>
 </figure>
 </div>
 </div>
 <div class="art-card">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href=".\images/pixelart/phi2.png" class="lightbox" data-gallery="pixel" title="Phi@I logo #2 Any sufficiently advanced technology is indistinguishable from magic."><img src=".\images/pixelart/phi2.png" class="img-fluid figure-img" alt="Phi@I logo #2 Any sufficiently advanced technology is indistinguishable from magic."></a></p>
-<figcaption><strong>Phi@I logo #2</strong> Any sufficiently advanced technology is indistinguishable from magic.</figcaption>
+<p><a href=".\images/origami/SwanOrigami.jpg" class="lightbox" data-gallery="origami" title="Swan"><img src=".\images/origami/SwanOrigami.jpg" class="img-fluid figure-img" alt="Swan"></a></p>
+<figcaption><strong>Swan</strong></figcaption>
 </figure>
 </div>
 </div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/pixelart/phi3.png" class="lightbox" data-gallery="pixel" title="Phi@I logo #3 The future is now, old man."><img src=".\images/pixelart/phi3.png" class="img-fluid figure-img" alt="Phi@I logo #3 The future is now, old man."></a></p>
-<figcaption><strong>Phi@I logo #3</strong> The future is now, old man.</figcaption>
-</figure>
+</div>
+</section>
+<section id="pixel-art" class="level2 project-section">
+<h2 class="anchored" data-anchor-id="pixel-art">Pixel Art</h2>
+<img class="sticker float" src="images/sprites/Wizard1.png" alt="" style="top: -26px; right: 5%; width: 68px; transform: rotate(-7deg); animation-delay: 2s;">
+<p><em>To make these, I use <a href="https://www.aseprite.org/">Aseprite</a> which used to be FOSS till 2016, but is currently a paid (but source-available) software. It can be built locally from the source, by following <a href="https://www.reddit.com/r/PixelArt/comments/on9pw6/guide_how_to_build_aseprite_from_source_aseprite/">these</a> instructions, but it is certainly worth purchasing as well.</em></p>
+<div id="listing-pixel-editor" class="quarto-listing quarto-listing-container-custom">
+<div class="ase" data-ase="" tabindex="0" aria-label="Pixel art">
+<div class="ase-bar"><span class="ase-file">phi1.aseprite</span></div>
+<div class="ase-menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Sprite</span><span>Layer</span><span>Frame</span><span>Select</span><span>View</span></div>
+<div class="ase-body">
+<div class="ase-tools" aria-hidden="true"><span class="">▣</span><span class="is-on">✎</span><span class="">◌</span><span class="">▧</span><span class="">⬚</span><span class="">✥</span><span class="">◐</span><span class="">⌖</span></div>
+<div class="ase-canvas">
+<a class="lightbox ase-art is-on" data-gallery="pixel" data-file="phi1.aseprite" href="images/pixelart/phi1.png" title="Phi@I logo #1"><img src="images/pixelart/phi1.png" alt="Phi@I logo #1" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="phi2.aseprite" href="images/pixelart/phi2.png" title="Phi@I logo #2"><img src="images/pixelart/phi2.png" alt="Phi@I logo #2" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="phi3.aseprite" href="images/pixelart/phi3.png" title="Phi@I logo #3"><img src="images/pixelart/phi3.png" alt="Phi@I logo #3" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="choices.aseprite" href="images/pixelart/choices.png" title="Choices"><img src="images/pixelart/choices.png" alt="Choices" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="trapped.aseprite" href="images/pixelart/trapped.png" title="Trapped"><img src="images/pixelart/trapped.png" alt="Trapped" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="entwined.aseprite" href="images/pixelart/entwined.png" title="Entwined"><img src="images/pixelart/entwined.png" alt="Entwined" loading="lazy"></a>
+<a class="lightbox ase-art" data-gallery="pixel" data-file="adventure.aseprite" href="images/pixelart/adventure.png" title="Adventure"><img src="images/pixelart/adventure.png" alt="Adventure" loading="lazy"></a>
+</div>
+<div class="ase-side">
+<div class="ase-panel-head">Palette</div>
+<div class="ase-palette" aria-hidden="true"><span style="background: #14101c"></span><span style="background: #2b2236"></span><span style="background: #3d3150"></span><span style="background: #5a2a9c"></span><span style="background: #7b4fc4"></span><span style="background: #b48cf0"></span><span style="background: #d14081"></span><span style="background: #e05a7a"></span><span style="background: #e2b24f"></span><span style="background: #f2dd8c"></span><span style="background: #5fd3a6"></span><span style="background: #2c7a73"></span><span style="background: #478cbf"></span><span style="background: #9ac3f0"></span><span style="background: #d9cfe8"></span><span style="background: #ffffff"></span></div>
+<div class="ase-panel-head">Properties</div>
+<div class="ase-props is-on"><div class="ase-props-title">Phi@I logo #1</div><div class="ase-props-desc">And God said, let there be Phi.</div></div>
+<div class="ase-props"><div class="ase-props-title">Phi@I logo #2</div><div class="ase-props-desc">Any sufficiently advanced technology is indistinguishable from magic.</div></div>
+<div class="ase-props"><div class="ase-props-title">Phi@I logo #3</div><div class="ase-props-desc">The future is now, old man.</div></div>
+<div class="ase-props"><div class="ase-props-title">Choices</div><div class="ase-props-desc">The bad and the ugly of a competitive environment.</div></div>
+<div class="ase-props"><div class="ase-props-title">Trapped</div><div class="ase-props-desc">A different perspective of the previous piece, Choices.</div></div>
+<div class="ase-props"><div class="ase-props-title">Entwined</div><div class="ase-props-desc">The struggles within. Inseparable. Ensnared. Entwined.</div></div>
+<div class="ase-props"><div class="ase-props-title">Adventure</div><div class="ase-props-desc">Inspired by Terraria. Exploring the unknown is strangely addictive.</div></div>
 </div>
 </div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/pixelart/choices.png" class="lightbox" data-gallery="pixel" title="Choices The bad and the ugly of a competitive environment."><img src=".\images/pixelart/choices.png" class="img-fluid figure-img" alt="Choices The bad and the ugly of a competitive environment."></a></p>
-<figcaption><strong>Choices</strong> The bad and the ugly of a competitive environment.</figcaption>
-</figure>
+<div class="ase-timeline">
+<div class="ase-frames">
+<button class="ase-frame is-on" type="button" data-index="0" aria-label="Phi@I logo #1"><img src="images/pixelart/phi1.png" alt="" loading="lazy"><span>1</span></button>
+<button class="ase-frame" type="button" data-index="1" aria-label="Phi@I logo #2"><img src="images/pixelart/phi2.png" alt="" loading="lazy"><span>2</span></button>
+<button class="ase-frame" type="button" data-index="2" aria-label="Phi@I logo #3"><img src="images/pixelart/phi3.png" alt="" loading="lazy"><span>3</span></button>
+<button class="ase-frame" type="button" data-index="3" aria-label="Choices"><img src="images/pixelart/choices.png" alt="" loading="lazy"><span>4</span></button>
+<button class="ase-frame" type="button" data-index="4" aria-label="Trapped"><img src="images/pixelart/trapped.png" alt="" loading="lazy"><span>5</span></button>
+<button class="ase-frame" type="button" data-index="5" aria-label="Entwined"><img src="images/pixelart/entwined.png" alt="" loading="lazy"><span>6</span></button>
+<button class="ase-frame" type="button" data-index="6" aria-label="Adventure"><img src="images/pixelart/adventure.png" alt="" loading="lazy"><span>7</span></button>
+</div>
+<div class="ase-controls"><button class="ase-step" type="button" data-step="-1" aria-label="Previous piece">◀</button><button class="ase-play" type="button" aria-label="Play through the pieces">▶</button><button class="ase-step" type="button" data-step="1" aria-label="Next piece">▶</button></div>
 </div>
 </div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/pixelart/trapped.png" class="lightbox" data-gallery="pixel" title="Trapped A different perspective of the previous piece, Choices."><img src=".\images/pixelart/trapped.png" class="img-fluid figure-img" alt="Trapped A different perspective of the previous piece, Choices."></a></p>
-<figcaption><strong>Trapped</strong> A different perspective of the previous piece, <em>Choices</em>.</figcaption>
-</figure>
-</div>
-</div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/pixelart/entwined.png" class="lightbox" data-gallery="pixel" title="Entwined The struggles within. Inseparable. Ensnared. Entwined."><img src=".\images/pixelart/entwined.png" class="img-fluid figure-img" alt="Entwined The struggles within. Inseparable. Ensnared. Entwined."></a></p>
-<figcaption><strong>Entwined</strong> The struggles within. Inseparable. Ensnared. Entwined.</figcaption>
-</figure>
-</div>
-</div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/pixelart/adventure.png" class="lightbox" data-gallery="pixel" title="Adventure Inspired by Terraria. Exploring the unknown is strangely addictive."><img src=".\images/pixelart/adventure.png" class="img-fluid figure-img" alt="Adventure Inspired by Terraria. Exploring the unknown is strangely addictive."></a></p>
-<figcaption><strong>Adventure</strong> Inspired by Terraria. Exploring the unknown is strangely addictive.</figcaption>
-</figure>
-</div>
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="d-models" class="level2 project-section">
 <h2 class="anchored" data-anchor-id="d-models">3D Models</h2>
+<img class="sticker float" src="images/sprites/Bot1.png" alt="" style="top: -4px; right: 9%; width: 66px; transform: rotate(5deg); animation-delay: 1.1s;">
 <p><em>Exploring the third dimension with <a href="https://www.blender.org/">Blender</a>.</em></p>
-<div class="art-column-grid">
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/arrow.png" class="lightbox" data-gallery="3d" title="Bow and Arrow"><img src=".\images/blender/arrow.png" class="img-fluid figure-img" alt="Bow and Arrow"></a></p>
-<figcaption><strong>Bow and Arrow</strong></figcaption>
-</figure>
+<div id="listing-models-blender" class="quarto-listing quarto-listing-container-custom">
+<div class="bl" data-blender="" tabindex="0" aria-label="3D renders">
+<div class="bl-top" aria-hidden="true">
+<span class="bl-logo"></span><span>File</span><span>Edit</span><span>Render</span><span>Window</span><span>Help</span>
+<span class="bl-tabs"><span>Layout</span><span>Modeling</span><span>Shading</span><span class="is-on">Rendering</span></span>
+</div>
+<div class="bl-body">
+<div class="bl-editor">
+<div class="bl-head"><span class="bl-chip">▣ Render Result</span><span class="bl-chip">Slot 1</span><span class="bl-head-name">Bow and Arrow</span></div>
+<div class="bl-view">
+<a class="lightbox bl-render is-on" data-gallery="3d" href="images/blender/arrow.png" title="Bow and Arrow"><img src="images/blender/arrow.png" alt="Bow and Arrow" loading="lazy"></a>
+<a class="lightbox bl-render" data-gallery="3d" href="images/blender/roulette.png" title="Roulette"><img src="images/blender/roulette.png" alt="Roulette" loading="lazy"></a>
+<a class="lightbox bl-render" data-gallery="3d" href="images/blender/cyberpunk.png" title="Futuristic"><img src="images/blender/cyberpunk.png" alt="Futuristic" loading="lazy"></a>
+<a class="lightbox bl-render" data-gallery="3d" href="images/blender/horse.png" title="Rocking Horse"><img src="images/blender/horse.png" alt="Rocking Horse" loading="lazy"></a>
+<a class="lightbox bl-render" data-gallery="3d" href="images/blender/windmill.png" title="Windmill"><img src="images/blender/windmill.png" alt="Windmill" loading="lazy"></a>
+<a class="lightbox bl-render" data-gallery="3d" href="images/blender/clock.png" title="Grandfather Clock"><img src="images/blender/clock.png" alt="Grandfather Clock" loading="lazy"></a>
 </div>
 </div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/roulette.png" class="lightbox" data-gallery="3d" title="Roulette"><img src=".\images/blender/roulette.png" class="img-fluid figure-img" alt="Roulette"></a></p>
-<figcaption><strong>Roulette</strong></figcaption>
-</figure>
+<div class="bl-side">
+<div class="bl-panel-head">Outliner</div>
+<div class="bl-tree">
+<div class="bl-row bl-root"><span class="bl-ico bl-ico-col"></span>Scene Collection</div>
+<button class="bl-row bl-obj is-on" type="button" data-index="0"><span class="bl-ico bl-ico-mesh"></span>Bow and Arrow</button>
+<button class="bl-row bl-obj" type="button" data-index="1"><span class="bl-ico bl-ico-mesh"></span>Roulette</button>
+<button class="bl-row bl-obj" type="button" data-index="2"><span class="bl-ico bl-ico-mesh"></span>Futuristic</button>
+<button class="bl-row bl-obj" type="button" data-index="3"><span class="bl-ico bl-ico-mesh"></span>Rocking Horse</button>
+<button class="bl-row bl-obj" type="button" data-index="4"><span class="bl-ico bl-ico-mesh"></span>Windmill</button>
+<button class="bl-row bl-obj" type="button" data-index="5"><span class="bl-ico bl-ico-mesh"></span>Grandfather Clock</button>
+</div>
+<div class="bl-panel-head">Object</div>
+<div class="bl-props is-on"><div class="bl-prop"><span>Name</span><b>Bow and Arrow</b></div></div>
+<div class="bl-props"><div class="bl-prop"><span>Name</span><b>Roulette</b></div></div>
+<div class="bl-props"><div class="bl-prop"><span>Name</span><b>Futuristic</b></div></div>
+<div class="bl-props"><div class="bl-prop"><span>Name</span><b>Rocking Horse</b></div></div>
+<div class="bl-props"><div class="bl-prop"><span>Name</span><b>Windmill</b></div></div>
+<div class="bl-props"><div class="bl-prop"><span>Name</span><b>Grandfather Clock</b></div></div>
+<div class="bl-step"><button type="button" data-step="-1" aria-label="Previous render">◀</button><button type="button" data-step="1" aria-label="Next render">▶</button></div>
 </div>
 </div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/cyberpunk.png" class="lightbox" data-gallery="3d" title="Futuristic"><img src=".\images/blender/cyberpunk.png" class="img-fluid figure-img" alt="Futuristic"></a></p>
-<figcaption><strong>Futuristic</strong></figcaption>
-</figure>
+<div class="bl-status"><span>Render Result</span><span class="bl-count">1 / 6</span></div>
 </div>
-</div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/horse.png" class="lightbox" data-gallery="3d" title="Rocking Horse"><img src=".\images/blender/horse.png" class="img-fluid figure-img" alt="Rocking Horse"></a></p>
-<figcaption><strong>Rocking Horse</strong></figcaption>
-</figure>
-</div>
-</div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/windmill.png" class="lightbox" data-gallery="3d" title="Windmill"><img src=".\images/blender/windmill.png" class="img-fluid figure-img" alt="Windmill"></a></p>
-<figcaption><strong>Windmill</strong></figcaption>
-</figure>
-</div>
-</div>
-<div class="art-card">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href=".\images/blender/clock.png" class="lightbox" data-gallery="3d" title="Grandfather Clock"><img src=".\images/blender/clock.png" class="img-fluid figure-img" alt="Grandfather Clock"></a></p>
-<figcaption><strong>Grandfather Clock</strong></figcaption>
-</figure>
-</div>
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
+<script src="gallery_widgets.js"></script>
+
 
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

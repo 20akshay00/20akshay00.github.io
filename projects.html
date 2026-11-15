@@ -41,14 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73d6fe625f822855f4cbbd2b14006d0f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-72981b43ebc2b08d635ab9cd047e3492.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-631c7299a166810c9fa5d60b8cf6781f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-72981b43ebc2b08d635ab9cd047e3492.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-description','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       
       searchColumns: ["listing-title","listing-description","listing-image","listing-categories"],
     };
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-description','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       
       searchColumns: ["listing-title","listing-description","listing-image","listing-categories"],
     };
@@ -142,41 +142,13 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-description','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       
       searchColumns: ["listing-title","listing-description","listing-image","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-coursework-projects'] = new List('listing-coursework-projects', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-gamedev-projects .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-description","listing-image","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-gamedev-projects'] = new List('listing-gamedev-projects', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -198,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-description','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       
       searchColumns: ["listing-title","listing-description","listing-image","listing-categories"],
     };
@@ -250,7 +222,169 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed projects-page quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -287,31 +421,10 @@ window.Quarto = {
     <a class="nav-link" href="./gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=8XmbbYgAAAAJ"> 
-<span class="menu-text"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/0009-0009-9521-1188"> 
-<span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/20akshay00"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/20akshay00"> <i class="bi bi-linkedin" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://20akshay00.itch.io/"> 
-<span class="menu-text"><i class="fa-brands fa-itch-io" aria-label="itch-io"></i></span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -345,79 +458,43 @@ window.Quarto = {
 
 
 
+
 <section id="research-software" class="level2 project-section">
 <h2 class="anchored" data-anchor-id="research-software">Research Software</h2>
 <p><em>Specialized libraries and scripts developed during my research involving computational quantum many-body physics.</em></p>
-<div id="listing-research-software" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="SnVsaWElMkMyMDI2">
-<a href="https://github.com/20akshay00/TentMPS.jl/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/tentmpsjl.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-TentMPS.jl
-</h5>
-<div class="listing-categories">
+<div id="listing-research-software" class="quarto-listing quarto-listing-container-custom">
+<div class="pkg-terminal">
+<div class="pkg-terminal-bar"><span class="pkg-terminal-title">julia — ~/research</span></div>
+<div class="pkg-terminal-body">
 
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
+<a class="pkg-entry" href="https://github.com/20akshay00/TentMPS.jl/">
+<div class="pkg-text">
+<div class="pkg-cmd"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> add <span class="pkg-name">TentMPS</span></div>
+<div class="pkg-comment"># Numerical implementation of the Finite-Element Matrix Product State (FE-MPS) framework for simulating 1D continuum models of interacting bosons.</div>
+        <div class="pkg-year"># since 2026</div>
+      </div>
+      <img class="pkg-plot" src="images/projects/tentmps.svg" alt="" loading="lazy">
+    </a>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNg=='); return false;">2026</div>
+<a class="pkg-entry" href="https://github.com/20akshay00/LiebLinigerBetheAnsatz.jl/">
+<div class="pkg-text">
+<div class="pkg-cmd"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> add <span class="pkg-name">LiebLinigerBetheAnsatz</span></div>
+<div class="pkg-comment"># Numerical implementation of the Bethe Ansatz solution for the 1D Lieb-Liniger model.</div>
+        <div class="pkg-year"># since 2026</div>
+      </div>
+      <img class="pkg-plot" src="images/projects/lieblinigerbetheansatz.svg" alt="" loading="lazy">
+    </a>
 
-</div>
-<div class="card-text listing-description delink">
-<p>Numerical implementation of the Finite-Element Matrix Product State (FE-MPS) framework for simulating 1D continuum models of interacting bosons.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="SnVsaWElMkMyMDI2">
-<a href="https://github.com/20akshay00/LiebLinigerBetheAnsatz.jl/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/lieblinigerbetheansatzjl.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LiebLinigerBetheAnsatz.jl
-</h5>
-<div class="listing-categories">
+<a class="pkg-entry" href="https://github.com/20akshay00/HermiteUtils.jl/">
+<div class="pkg-text">
+<div class="pkg-cmd"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> add <span class="pkg-name">HermiteUtils</span></div>
+<div class="pkg-comment"># Simple utilities for working with Hermite polynomials and functions.</div>
+        <div class="pkg-year"># since 2026</div>
+      </div>
+      <img class="pkg-plot" src="images/projects/hermiteutils.svg" alt="" loading="lazy">
+    </a>
 
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNg=='); return false;">2026</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Numerical implementation of the Bethe Ansatz solution for the 1D Lieb-Liniger model.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="SnVsaWElMkMyMDI2">
-<a href="https://github.com/20akshay00/HermiteUtils.jl/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/hermiteutils.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-HermiteUtils.jl
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNg=='); return false;">2026</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Simple utilities for working with Hermite polynomials and functions.</p>
-</div>
-</div>
-</div></a>
+<div class="pkg-cmd pkg-idle"><span class="pkg-prompt">(@v1.11) pkg&gt;</span> <span class="pkg-cursor"></span></div>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
@@ -426,126 +503,75 @@ HermiteUtils.jl
 <section id="general-software" class="level2 project-section">
 <h2 class="anchored" data-anchor-id="general-software">General Software</h2>
 <p><em>Random projects made to solve a problem or explore something new.</em></p>
-<div id="listing-software-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="SmF2YVNjcmlwdCUyQzIwMjA=">
-<a href="https://github.com/OpenPsiMu/ThePhysicsHub" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/physicshub.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-ThePhysicsHub
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMA=='); return false;">2020</div>
-
+<div id="listing-software-projects" class="quarto-listing quarto-listing-container-custom">
+<div class="ide">
+<input class="ide-radio" type="radio" name="ide-gd5bht" id="ide-gd5bht-0" checked="">
+<input class="ide-radio" type="radio" name="ide-gd5bht" id="ide-gd5bht-1">
+<input class="ide-radio" type="radio" name="ide-gd5bht" id="ide-gd5bht-2">
+<input class="ide-radio" type="radio" name="ide-gd5bht" id="ide-gd5bht-3">
+<input class="ide-radio" type="radio" name="ide-gd5bht" id="ide-gd5bht-4">
+<div class="ide-bar"><span class="ide-bar-title">~/projects</span></div>
+<div class="ide-body">
+<nav class="ide-explorer" aria-label="Projects">
+<div class="ide-explorer-head">Explorer</div>
+<label class="ide-file" for="ide-gd5bht-0"><span class="ide-dot" style="background: #d9b23a"></span>ThePhysicsHub</label>
+<label class="ide-file" for="ide-gd5bht-1"><span class="ide-dot" style="background: #d9b23a"></span>Schedule Selector</label>
+<label class="ide-file" for="ide-gd5bht-2"><span class="ide-dot" style="background: #4a7fc1"></span>Tetra Engine</label>
+<label class="ide-file" for="ide-gd5bht-3"><span class="ide-dot" style="background: #4a7fc1"></span>Pentra Engine</label>
+<label class="ide-file" for="ide-gd5bht-4"><span class="ide-dot" style="background: #478cbf"></span>GDWiiInput</label>
+</nav>
+<div class="ide-main">
+<section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">— ThePhysicsHub</span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h anchored"><span class="ide-hash">#</span> ThePhysicsHub</h3>
+<p class="ide-desc">Open source repository of interactive physics simulations created by the cumulative effort of a group of undergraduates, built with p5.js.</p>
+<img class="ide-shot" src="images/projects/physicshub.png" alt="" loading="lazy">
+<a class="ide-open" href="https://github.com/OpenPsiMu/ThePhysicsHub">Open project ↗</a>
 </div>
-<div class="card-text listing-description delink">
-<p>Open source repository of interactive physics simulations created by the cumulative effort of a group of undergraduates, built with p5.js.</p>
+<div class="ide-status"><span><span class="ide-dot" style="background: #d9b23a"></span>JavaScript</span><span>2020</span></div>
+</section>
+<section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">— Schedule Selector</span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h anchored"><span class="ide-hash">#</span> Schedule Selector</h3>
+<p class="ide-desc">A tool to automate course selection and schedule filtering for IISER Mohali students.</p>
+<img class="ide-shot" src="images/projects/schedule-selector.png" alt="" loading="lazy">
+<a class="ide-open" href="https://20akshay00.github.io/schedule-selector/">Open project ↗</a>
 </div>
+<div class="ide-status"><span><span class="ide-dot" style="background: #d9b23a"></span>JavaScript · HTML</span><span>2021</span></div>
+</section>
+<section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">— Tetra Engine</span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h anchored"><span class="ide-hash">#</span> Tetra Engine</h3>
+<p class="ide-desc">A simple 2D game engine written in Python with an Ascii-based renderer for treasure hunt events at IISER Mohali.</p>
+<img class="ide-shot" src="images/projects/tetra.png" alt="" loading="lazy">
+<a class="ide-open" href="https://github.com/DhruvaSambrani/turing-hunt-engine">Open project ↗</a>
 </div>
-</div></a>
+<div class="ide-status"><span><span class="ide-dot" style="background: #4a7fc1"></span>Python</span><span>2021</span></div>
+</section>
+<section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">— Pentra Engine</span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h anchored"><span class="ide-hash">#</span> Pentra Engine</h3>
+<p class="ide-desc">An evolution of the Tetra engine utilizing Pygame for 2D rendering with lighting and shadows.</p>
+<img class="ide-shot" src="images/projects/pentra.png" alt="" loading="lazy">
+<a class="ide-open" href="https://github.com/DhruvaSambrani/pentra">Open project ↗</a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="SmF2YVNjcmlwdCUyQ0hUTUwlMkMyMDIx">
-<a href="https://20akshay00.github.io/schedule-selector/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/schedule-selector.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Schedule Selector
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SFRNTA=='); return false;">HTML</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
+<div class="ide-status"><span><span class="ide-dot" style="background: #4a7fc1"></span>Python</span><span>2023</span></div>
+</section>
+<section class="ide-panel">
+<div class="ide-tabs"><span class="ide-tab">README.md <span class="ide-tab-dir">— GDWiiInput</span></span></div>
+<div class="ide-doc">
+<h3 class="ide-h anchored"><span class="ide-hash">#</span> GDWiiInput</h3>
+<p class="ide-desc">GDExtension to use Wii controllers with the Godot game engine.</p>
+<img class="ide-shot" src="images/projects/godotwiiinput.png" alt="" loading="lazy">
+<a class="ide-open" href="https://github.com/20akshay00/godot-wii-input/">Open project ↗</a>
 </div>
-<div class="card-text listing-description delink">
-<p>A tool to automate course selection and schedule filtering for IISER Mohali students.</p>
+<div class="ide-status"><span><span class="ide-dot" style="background: #478cbf"></span>GDScript · C++</span><span>2025</span></div>
+</section>
 </div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UHl0aG9uJTJDMjAyMQ==">
-<a href="https://github.com/DhruvaSambrani/turing-hunt-engine" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/tetra.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tetra Engine
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A simple 2D game engine written in Python with an Ascii-based renderer for treasure hunt events at IISER Mohali.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDMjAyMw==">
-<a href="https://github.com/DhruvaSambrani/pentra" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/pentra.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Pentra Engine
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">2023</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>An evolution of the Tetra engine utilizing Pygame for 2D rendering with lighting and shadows.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="R0RTY3JpcHQlMkNDJTJCJTJCJTJDMjAyNQ==">
-<a href="https://github.com/20akshay00/godot-wii-input/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/godotwiiinput.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GDWiiInput
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R0RTY3JpcHQ='); return false;">GDScript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QyUyQiUyQg=='); return false;">C++</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNQ=='); return false;">2025</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>GDExtension to use Wii controllers with the Godot game engine.</p>
-</div>
-</div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
@@ -554,281 +580,98 @@ GDWiiInput
 <section id="undergraduate-coursework" class="level2 project-section">
 <h2 class="anchored" data-anchor-id="undergraduate-coursework">Undergraduate Coursework</h2>
 <p><em>Selected academic projects from my time at IISER Mohali.</em></p>
-<div id="listing-coursework-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDSnVsaWElMkMyMDIx">
-<a href="https://github.com/20akshay00/modellingComplexSystems" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/complex-systems.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Modelling Complex Systems
-</h5>
-<div class="listing-categories">
+<div id="listing-coursework-projects" class="quarto-listing quarto-listing-container-custom">
+<ol class="toc-list">
 
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+<li class="toc-entry">
+<a href="https://github.com/20akshay00/modellingComplexSystems">
+<span class="toc-num">1.</span>
+<span class="toc-title">Modelling Complex Systems</span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year">2021</span>
+<span class="toc-desc">Numerical simulations of SIRS models, Sandpile models, and Kuramoto oscillators. <span class="toc-langs">Python · Julia</span></span>
+      <img class="toc-peek" src="images/projects/complex-systems.png" alt="" loading="lazy">
+    </a>
+</li>
 
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
+<li class="toc-entry">
+<a href="https://github.com/20akshay00/PHY312-Project">
+<span class="toc-num">2.</span>
+<span class="toc-title">Charge Density Estimation</span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year">2021</span>
+<span class="toc-desc">Exploring the piezo-electric effect in PZT and PVDF materials using COMSOL. <span class="toc-langs">COMSOL</span></span>
+      <img class="toc-peek" src="images/projects/charge-density.png" alt="" loading="lazy">
+    </a>
+</li>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
+<li class="toc-entry">
+<a href="https://github.com/20akshay00/News-Recommender-System">
+<span class="toc-num">3.</span>
+<span class="toc-title">News Recommender System</span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year">2022</span>
+<span class="toc-desc">An NLP-based recommender system using web scraping and collaborative filtering. <span class="toc-langs">Python</span></span>
+      <img class="toc-peek" src="images/projects/news-recommender.png" alt="" loading="lazy">
+    </a>
+</li>
 
-</div>
-<div class="card-text listing-description delink">
-<p>Numerical simulations of SIRS models, Sandpile models, and Kuramoto oscillators.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Q09NU09MJTJDMjAyMQ==">
-<a href="https://github.com/20akshay00/PHY312-Project" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/charge-density.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Charge Density Estimation
-</h5>
-<div class="listing-categories">
+<li class="toc-entry">
+<a href="https://github.com/20akshay00/IDC409/blob/master/project_2_report.pdf">
+<span class="toc-num">4.</span>
+<span class="toc-title">Signature Fraud Detection</span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year">2022</span>
+<span class="toc-desc">Applying K-means clustering to classify and detect fraudulent signatures. <span class="toc-langs">Python</span></span>
+      <img class="toc-peek" src="images/projects/signature-fraud.png" alt="" loading="lazy">
+    </a>
+</li>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Q09NU09M'); return false;">COMSOL</div>
+<li class="toc-entry">
+<a href="https://20akshay00.github.io/PHY638-Assignment-5/">
+<span class="toc-num">5.</span>
+<span class="toc-title">Surface Waves in Fluids</span>
+<span class="toc-dots" aria-hidden="true"></span>
+<span class="toc-year">2023</span>
+<span class="toc-desc">A theoretical exploration of the physics of waves on liquid surfaces. <span class="toc-langs">HTML</span></span>
+      <img class="toc-peek" src="images/projects/surface-waves.png" alt="" loading="lazy">
+    </a>
+</li>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Exploring the piezo-electric effect in PZT and PVDF materials using COMSOL.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UHl0aG9uJTJDMjAyMg==">
-<a href="https://github.com/20akshay00/News-Recommender-System" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/news-recommender.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-News Recommender System
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">2022</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>An NLP-based recommender system using web scraping and collaborative filtering.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDMjAyMg==">
-<a href="https://github.com/20akshay00/IDC409/blob/master/project_2_report.pdf" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/signature-fraud.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Signature Fraud Detection
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">2022</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Applying K-means clustering to classify and detect fraudulent signatures.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="SFRNTCUyQzIwMjM=">
-<a href="https://20akshay00.github.io/PHY638-Assignment-5/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/surface-waves.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Surface Waves in Fluids
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SFRNTA=='); return false;">HTML</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">2023</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A theoretical exploration of the physics of waves on liquid surfaces.</p>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</section>
-<section id="game-development" class="level2 project-section">
-<h2 class="anchored" data-anchor-id="game-development">Game Development</h2>
-<p><em>Video games! More projects can be found on my <a href="https://20akshay00.itch.io/">itch.io profile</a>.</em></p>
-<div id="listing-gamedev-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDMjAyMQ==">
-<a href="https://iiserm.github.io/GTA-Stress-City/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/gta.png" class="thumbnail-image card-img" style="height: 350px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GTA: Stress City
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A treasure hunt event built using the tetra game engine.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="SnVsaWElMkMyMDIy">
-<a href="https://github.com/20akshay00/RadarDefender" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/radar-defender.png" class="thumbnail-image card-img" style="height: 350px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Radar Defender
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">2022</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A retro arcade-style game made using AlphaZero.jl where players must defend their base from incoming threats.</p>
-</div>
-</div>
-</div></a>
-</div>
-</div>
+</ol>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="visualization" class="level2 project-section">
 <h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
 <p><em>Interactive sketches and physics visualizations from my early days of programming.</em></p>
-<div id="listing-misc-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="SmF2YVNjcmlwdCUyQzIwMjA=">
-<a href="https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/elastic-pendulum.png" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Elastic pendulum
-</h5>
-<div class="listing-categories">
+<div id="listing-misc-projects" class="quarto-listing quarto-listing-container-custom">
+<div class="film-strip">
 
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
+<a class="film-frame" href="https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6">
+<div class="film-edge"><span>1A</span><span>▸ 2020</span></div>
+<div class="film-pic"><img src="images/projects/elastic-pendulum.png" alt="" loading="lazy"></div>
+<div class="film-title">Elastic pendulum</div>
+<p class="film-desc">Simulation of a pendulum with an elastic string, demonstrating chaotic motion trajectories.</p>
+<div class="film-edge film-edge-bottom"><span>JAVASCRIPT</span></div>
+</a>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMA=='); return false;">2020</div>
+<a class="film-frame" href="https://20akshay00.github.io/PhysicsJavisAnim/">
+<div class="film-edge"><span>2A</span><span>▸ 2021</span></div>
+<div class="film-pic"><img src="images/projects/physjavisanims.png" alt="" loading="lazy"></div>
+<div class="film-title">PhysicsJavisAnim</div>
+<p class="film-desc">A collection of physics-based visualizations created using the Javis.jl library.</p>
+<div class="film-edge film-edge-bottom"><span>JULIA</span></div>
+</a>
 
-</div>
-<div class="card-text listing-description delink">
-<p>Simulation of a pendulum with an elastic string, demonstrating chaotic motion trajectories.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="SmF2YVNjcmlwdCUyQzIwMjA=">
-<a href="https://editor.p5js.org/20akshay00/sketches/NuIwwXqnR" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/coupled-pendulum.png" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Coupled pendulum
-</h5>
-<div class="listing-categories">
+<a class="film-frame" href="https://20akshay00.github.io/Summer2021/">
+<div class="film-edge"><span>3A</span><span>▸ 2021</span></div>
+<div class="film-pic"><img src="images/projects/wavepacketdynamics.png" alt="" loading="lazy"></div>
+<div class="film-title">Wave-packet dynamics</div>
+<p class="film-desc">Simulation of the time-evolution of a quantum mechanical wave packet in various 1D potentials.</p>
+<div class="film-edge film-edge-bottom"><span>PYTHON</span></div>
+</a>
 
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMA=='); return false;">2020</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Simulation of two pendulums connected by a spring, exploring energy exchange and normal modes.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="SnVsaWElMkMyMDIx">
-<a href="https://20akshay00.github.io/PhysicsJavisAnim/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/physjavisanims.png" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-PhysicsJavisAnim
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A collection of physics-based visualizations created using the Javis.jl library.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDMjAyMQ==">
-<a href="https://20akshay00.github.io/Summer2021/" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="images/projects/wavepacketdynamics.png" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Wave-packet dynamics
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyMQ=='); return false;">2021</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Simulation of the time-evolution of a quantum mechanical wave packet in various 1D potentials.</p>
-</div>
-</div>
-</div></a>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
@@ -840,6 +683,19 @@ Wave-packet dynamics
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1239,20 +1095,6 @@ Wave-packet dynamics
   });
   </script>
 </div> <!-- /content -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const categories = document.querySelectorAll('.listing-category');
-  categories.forEach(category => {
-    const text = category.innerText.trim();
-    if (/^\d{4}$/.test(text)) {
-      category.classList.add('year-pill');
-    } else {
-      const slug = text.toLowerCase().replace(/[^a-z0-9]/g, '-');
-      category.classList.add('lang-' + slug);
-    }
-  });
-});
-</script>
 
 
 
