@@ -1881,17 +1881,17 @@
     let rhoRGB, dipRGB;                     // the same two colours as RGB, for the space-time strip
     function readColors() {
         Object.assign(C, {
-            rho: color("--tdse-rho", "#006d77"),
-            rhoFill: color("--tdse-rho-fill", "rgba(0, 109, 119, 0.2)"),
-            re: color("--tdse-re", "#2c3e50"),
+            rho: color("--tdse-rho", "#5a2a9c"),
+            rhoFill: color("--tdse-rho-fill", "rgba(90, 42, 156, 0.18)"),
+            re: color("--tdse-re", "#2a2338"),
             im: color("--tdse-im", "#c2410c"),
-            pot: color("--tdse-pot", "rgba(44, 62, 80, 0.10)"),
-            potLine: color("--tdse-pot-line", "rgba(44, 62, 80, 0.45)"),
-            axis: color("--tdse-axis", "rgba(44, 62, 80, 0.25)"),
-            text: color("--tdse-text", "#5b6b78"),
-            backing: color("--tdse-backing", "rgba(252, 252, 249, 0.92)"),
+            pot: color("--tdse-pot", "rgba(42, 35, 56, 0.09)"),
+            potLine: color("--tdse-pot-line", "rgba(42, 35, 56, 0.45)"),
+            axis: color("--tdse-axis", "rgba(42, 35, 56, 0.25)"),
+            text: color("--tdse-text", "#75707e"),
+            backing: color("--tdse-backing", "rgba(241, 235, 247, 0.92)"),
         });
-        rhoRGB = rgbOf(C.rho, [0, 109, 119]);
+        rhoRGB = rgbOf(C.rho, [90, 42, 156]);
         dipRGB = rgbOf(C.im, [194, 65, 12]);
     }
     readColors();
@@ -2069,7 +2069,7 @@
     // Space-time strip: one row of pixels per `history.dt` of simulated time, the
     // newest at the top (right under the plot it continues), older ones scrolling
     // down. Kept in an offscreen canvas that is shifted by a row as time goes on.
-    // Mode "change" shows the density minus its value at t = 0 instead (teal where
+    // Mode "change" shows the density minus its value at t = 0 instead (purple where
     // denser, orange where thinner): small waves on a big condensate stand out.
     const history = { cv: document.createElement("canvas"), dt: 0.5, next: 0, mode: "density", ref: null };
     history.cx = history.cv.getContext("2d");
@@ -2084,6 +2084,23 @@
         history.cv.width = ui.hcanvas.clientWidth || 1;
         history.cv.height = ui.hcanvas.clientHeight || 1;
         history.cx.clearRect(0, 0, history.cv.width, history.cv.height);
+    }
+
+    // After a light/dark flip the rows already recorded still carry the old theme's
+    // colours. Every pixel is one of the two strip colours with its strength in the
+    // alpha, so swap each to the matching new colour and keep the alpha.
+    function recolorHistory(oldRho, oldDip) {
+        const hw = history.cv.width, hh = history.cv.height;
+        if (hw < 2 || hh < 2) return;
+        if (String(oldRho) === String(rhoRGB) && String(oldDip) === String(dipRGB)) return;
+        const img = history.cx.getImageData(0, 0, hw, hh), p = img.data;
+        const dist = (i, c) => (p[i] - c[0]) ** 2 + (p[i + 1] - c[1]) ** 2 + (p[i + 2] - c[2]) ** 2;
+        for (let i = 0; i < p.length; i += 4) {
+            if (p[i + 3] === 0) continue;
+            const c = dist(i, oldDip) < dist(i, oldRho) ? dipRGB : rhoRGB;
+            p[i] = c[0]; p[i + 1] = c[1]; p[i + 2] = c[2];
+        }
+        history.cx.putImageData(img, 0, 0);
     }
 
     // called after every frame's steps: add the rows that have come due
@@ -2116,7 +2133,7 @@
         cx.textAlign = "left";
         cx.fillStyle = C.text;
         cx.fillText(history.mode === "change"
-            ? "Space–time, change since t = 0 (teal: denser, orange: thinner), newest at the top"
+            ? "Space–time, change since t = 0 (purple: denser, orange: thinner), newest at the top"
             : "Space–time: newest at the top", 8, 3);
         // time ticks down the right edge
         const span = sh * history.dt, every = [5, 10, 20, 50, 100, 200].find((e) => span / e <= 6) || 500;
@@ -2555,7 +2572,9 @@
 
     // light/dark toggle: Quarto swaps the stylesheet and the body's class
     new MutationObserver(() => requestAnimationFrame(() => {
+        const oldRho = rhoRGB, oldDip = dipRGB;
         readColors();
+        recolorHistory(oldRho, oldDip);
         draw();
     })).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
