@@ -60,22 +60,22 @@ listing:
       - title: "Modelling Complex Systems"
         description: "Numerical simulations of SIRS models, Sandpile models, and Kuramoto oscillators."
         path: "https://github.com/20akshay00/modellingComplexSystems"
-        image: "images/projects/complex-systems.png"
+        image: "images/projects/complex-systems.webp"
         categories: [Python, Julia, "2021"]
       - title: "Charge Density Estimation"
         description: "Exploring the piezo-electric effect in PZT and PVDF materials using COMSOL."
         path: "https://github.com/20akshay00/PHY312-Project"
-        image: "images/projects/charge-density.png"
+        image: "images/projects/charge-density.webp"
         categories: [COMSOL, "2021"]
       - title: "News Recommender System"
         description: "An NLP-based recommender system using web scraping and collaborative filtering."
         path: "https://github.com/20akshay00/News-Recommender-System"
-        image: "images/projects/news-recommender.png"
+        image: "images/projects/news-recommender.webp"
         categories: [Python, "2022"]
       - title: "Signature Fraud Detection"
         description: "Applying K-means clustering to classify and detect fraudulent signatures."
         path: "https://github.com/20akshay00/IDC409/blob/master/project_2_report.pdf"
-        image: "images/projects/signature-fraud.png"
+        image: "images/projects/signature-fraud.webp"
         categories: [Python, "2022"]
       - title: "Surface Waves in Fluids"
         description: "A theoretical exploration of the physics of waves on liquid surfaces."
@@ -90,7 +90,7 @@ listing:
       - title: "Elastic pendulum"
         description: "Simulation of a pendulum with an elastic string, demonstrating chaotic motion trajectories."
         path: "https://editor.p5js.org/20akshay00/sketches/D3l4cWAm6"
-        image: "images/projects/elastic-pendulum.png"
+        image: "images/projects/elastic-pendulum.webp"
         categories: [JavaScript, "2020"]
       - title: "PhysicsJavisAnim"
         description: "A collection of physics-based visualizations created using the Javis.jl library."

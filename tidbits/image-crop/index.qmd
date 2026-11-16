@@ -3,7 +3,7 @@ title: "Automating image cropping"
 author: "Akshay Shankar, Dhruva Sambrani"
 date: "2023-11-21"
 categories: [tidbit, code, bec]
-image: "BEC.png"
+image: "BEC.webp"
 description: "A scrappy approach to automatically crop an image without human input."
 ---
 
