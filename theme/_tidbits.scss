@@ -151,6 +151,39 @@
     margin-top: 1rem;
 }
 
+// display equations wider than the page scroll sideways inside it, rather than
+// running off the sheet (tidbit and blog posts alike)
+.tidbit-post main.content .math.display,
+.blog-post main.content .math.display {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;   // room for the scrollbar without clipping subscripts
+    scrollbar-width: thin;
+}
+
+// a safety net: nothing inside a post (MathJax's invisible screen-reader copies of
+// formulas, say) may push the page wider than the screen; the wide things that matter
+// scroll inside their own lines (above and below), so nothing visible is cut off
+.tidbit-post main.content,
+.blog-post main.content {
+    overflow-x: clip;
+}
+
+// an inline formula wider than its paragraph (post_page.js marks it): a line of its own
+// that scrolls sideways, instead of pushing the page wider than the screen
+.tidbit-post main.content span.math.inline.math-too-wide,
+.blog-post main.content span.math.inline.math-too-wide {
+    display: block !important;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 2px 0;
+    scrollbar-width: thin;
+}
+
 // plots from code cells: fit the page width (no scrollbars), white backgrounds take on the paper
 .tidbit-post main.content .cell-output-display {
     overflow-x: visible;

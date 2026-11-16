@@ -53,3 +53,26 @@
         else img.addEventListener("load", () => classify(img), { once: true });
     });
 })();
+
+// Inline maths never line-breaks, so on a narrow screen a long inline formula can be
+// wider than the page and drag the whole page sideways. Any that is wider than its
+// paragraph gets a line of its own that scrolls sideways (.math-too-wide in
+// theme/_tidbits.scss); the rest stay inline. Checked once MathJax has typeset, and
+// again when the window is resized.
+(function () {
+    function fit() {
+        document.querySelectorAll("main.content span.math.inline").forEach((m) => {
+            m.classList.remove("math-too-wide");
+            const column = m.closest("p, li, td") || m.parentElement;
+            if (m.getBoundingClientRect().width > column.clientWidth) m.classList.add("math-too-wide");
+        });
+    }
+    function whenTypeset(run) {
+        const mj = window.MathJax;
+        if (mj && mj.startup && mj.startup.promise) mj.startup.promise.then(run);
+        else window.addEventListener("load", run);
+    }
+    whenTypeset(fit);
+    let pending = 0;
+    window.addEventListener("resize", () => { clearTimeout(pending); pending = setTimeout(fit, 150); });
+})();

@@ -366,6 +366,54 @@ $acc-bad: #c53030;
     .tdse-status.tdse-pulse { animation: none; }
 }
 
+// the settings sit behind a bar under the plot: closed until someone wants to tweak
+.tdse-controls {
+    border-top: 1px solid $card-border-light;
+}
+
+.tdse-controls-toggle {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.75rem 1.1rem;
+    list-style: none;
+    cursor: pointer;
+    color: $primary;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    background-color: mix($primary, $card-bg, 3%);
+    transition: background-color 0.2s ease;
+}
+
+.tdse-controls-toggle::-webkit-details-marker { display: none; }
+.tdse-controls-toggle:hover { background-color: mix($primary, $card-bg, 8%); }
+
+.tdse-controls-toggle small {
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: $secondary;
+}
+
+// a chevron at the far end that turns when the controls are open
+.tdse-controls-toggle::after {
+    content: "";
+    margin-left: auto;
+    align-self: center;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.tdse-controls[open] > .tdse-controls-toggle::after { transform: rotate(-135deg); }
+.tdse-controls[open] > .tdse-controls-toggle { border-bottom: 1px solid $card-border-light; }
+
+// the tabs only exist on narrow screens (see below)
+.tdse-panel-tabs { display: none; }
+
 // three groups of settings
 .tdse-panel {
     display: grid;
@@ -835,10 +883,25 @@ $acc-bad: #c53030;
         grid-template-columns: 1fr;
     }
 
-    .tdse-group + .tdse-group {
-        border-left: none;
-        border-top: 1px solid $card-border-light;
+    // one group at a time, picked with the tabs
+    .tdse-panel-tabs {
+        display: flex;
+        margin: 0.8rem 1.1rem 0;
     }
+
+    .tdse-panel-tabs button { flex: 1; padding: 5px 6px; }
+}
+
+@media (max-width: 575.98px) {
+    .tdse-controls-toggle small { display: none; }   // the tabs say it once the bar is open
+
+    .tdse-panel[data-tab] .tdse-group { display: none; }   // only the panel that has tabs
+
+    .tdse-panel[data-tab="ham"] .tdse-group[data-group="ham"],
+    .tdse-panel[data-tab="state"] .tdse-group[data-group="state"],
+    .tdse-panel[data-tab="display"] .tdse-group[data-group="display"] { display: flex; }
+
+    .tdse-group + .tdse-group { border-left: none; }
 }
 
 @media (max-width: 767.98px) {

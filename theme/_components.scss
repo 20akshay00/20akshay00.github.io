@@ -2,6 +2,13 @@
 // (the tidbit and blog lists), and their small-screen rules.
 
 /* --- Tags & Pills --- */
+// the category list beside the tidbit and blog lists: the same tags, in the same capitals
+.quarto-listing-category .category {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
 .quarto-categories {
     display: flex !important;
     flex-wrap: wrap;
@@ -19,7 +26,8 @@
     font-family: $font-family-monospace;
     font-size: 0.72rem !important;
     font-weight: 400 !important;
-    text-transform: lowercase !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em;
     color: $body-color !important;
     background-color: transparent !important;
     margin-right: 2px;
