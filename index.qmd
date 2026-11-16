@@ -1,5 +1,31 @@
 ---
 title: "Akshay Shankar"
+description: "Akshay Shankar is a PhD student at Ghent University developing tensor network methods for ultracold bosonic gases. Research, notes, software and games."
+image: images/social-card.png   # the link-preview picture: the notebook card
+# structured data: tells search engines (and the LLM tools built on them) that this
+# site and the profiles below belong to the same person
+include-in-header:
+  - _head.html     # the site-wide head tags: this list replaces the one in _quarto.yml
+  - text: |
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Akshay Shankar",
+        "url": "https://20akshay00.github.io/",
+        "image": "https://20akshay00.github.io/images/profile.jpg",
+        "jobTitle": "PhD student",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Ghent University" },
+        "knowsAbout": ["Tensor networks", "Ultracold atoms", "Quantum gases", "Computational physics", "Game development"],
+        "sameAs": [
+          "https://github.com/20akshay00",
+          "https://orcid.org/0009-0009-9521-1188",
+          "https://scholar.google.com/citations?user=8XmbbYgAAAAJ",
+          "https://linkedin.com/in/20akshay00",
+          "https://20akshay00.itch.io/"
+        ]
+      }
+      </script>
 about:
   template: jolla
   image: images/profile.jpg

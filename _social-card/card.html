@@ -1,0 +1,92 @@
+<!doctype html>
+<!--
+  The link-preview card (images/social-card.png): what LinkedIn, Slack, Bluesky and
+  the like show when someone shares the site. 1200 x 630, the size they expect.
+
+  Quarto ignores this folder (it starts with "_"); the picture is made by taking a
+  screenshot of this page. From the repository root:
+
+    "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new \
+      --disable-gpu --hide-scrollbars --allow-file-access-from-files \
+      --window-size=1200,630 --virtual-time-budget=5000 \
+      --screenshot="$PWD/images/social-card.png" "file:///$PWD/_social-card/card.html"
+
+  (Chrome works the same way.) The fonts come from Google Fonts, so stay online.
+-->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@600&display=block" rel="stylesheet">
+<style>
+  :root { --paper: #f1ebf7; --ink: #2a2338; --primary: #5a2a9c; --pink: #d14081; --plum: #23093f; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  /* the site's paper: a dot grid with a little grain */
+  body {
+    position: relative;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(90, 42, 156, 0.22) 1.1px, transparent 1.6px),
+      url("../images/sprites/paper-grain.svg");
+    background-size: 22px 22px, 240px 240px;
+    font-family: "Source Sans 3", sans-serif;
+    color: var(--ink);
+  }
+  /* the navbar and its waves */
+  .band { position: absolute; top: 0; left: 0; width: 1200px; height: 64px; background: var(--plum); }
+  .band span {
+    position: absolute; left: 72px; top: 20px;
+    font: 600 18px "JetBrains Mono", monospace; letter-spacing: 0.12em; color: #fff; text-transform: uppercase;
+  }
+  .waves { position: absolute; top: 64px; left: 0; width: 1200px; height: 36px; }
+  /* a sheet of notebook paper with a pink margin line, taped on */
+  .sheet {
+    position: absolute; left: 72px; top: 164px; width: 700px; height: 380px;
+    background-color: #f9f6fc;
+    background-image:
+      linear-gradient(90deg, transparent 34px, rgba(209, 64, 129, 0.4) 34px, rgba(209, 64, 129, 0.4) 36px, transparent 36px),
+      repeating-linear-gradient(180deg, transparent 0 39px, rgba(90, 42, 156, 0.1) 39px 40px);
+    border: 1px solid rgba(42, 35, 56, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05), 0 16px 40px rgba(90, 42, 156, 0.12);
+    transform: rotate(-1.2deg);
+    padding: 56px 40px 0 70px;
+  }
+  .tape {
+    position: absolute; top: -14px; left: 300px; width: 120px; height: 30px;
+    background: repeating-linear-gradient(45deg, rgba(209, 64, 129, 0.55) 0 9px, rgba(255, 220, 235, 0.75) 9px 18px);
+    transform: rotate(-4deg);
+    clip-path: polygon(2% 0, 98% 4%, 100% 100%, 0 96%);
+  }
+  h1 { font: 700 78px/1 "Lora", serif; color: var(--primary); }
+  /* the highlighter swipe the site's headings get */
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(100deg, transparent 1%, rgba(209, 64, 129, 0.22) 3%, rgba(209, 64, 129, 0.26) 93%, transparent 97%) no-repeat 0 78% / 100% 40%;
+  }
+  p.role { margin-top: 30px; font-size: 31px; line-height: 40px; }
+  /* pixel stickers with a white die-cut edge */
+  .sticker {
+    position: absolute; image-rendering: pixelated;
+    filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.22));
+  }
+  /* the robot: the first frame of its idle sheet (32 x 32 frames), drawn at 7x */
+  .robot { width: 224px; height: 224px; background: url("../images/sprites/robot_idle.png") 0 0 / 448px 224px no-repeat; }
+  .trail { position: absolute; overflow: visible; }
+  .trail path { fill: none; stroke: #6ccf4f; stroke-width: 4; stroke-dasharray: 11 11; stroke-linecap: round; opacity: 0.85; }
+</style></head>
+<body>
+  <div class="band"><span>20akshay00.github.io</span></div>
+  <img class="waves" src="../images/sprites/navbar-waves.svg" alt="">
+
+  <div class="sheet">
+    <div class="tape"></div>
+    <h1><em>Akshay Shankar</em></h1>
+    <p class="role">PhD student at Ghent University, simulating ultracold quantum gases with tensor networks.</p>
+  </div>
+
+  <!-- the jet's dashed flight path, from the top right corner down to the jet -->
+  <svg class="trail" style="left: 880px; top: 128px; width: 280px; height: 150px;" viewBox="0 0 280 150">
+    <path d="M270 10 C 200 0, 210 90, 160 96 S 110 50, 130 40 S 90 120, 20 120"/>
+  </svg>
+  <img class="sticker" src="../images/sprites/jet1.png" style="left: 832px; top: 214px; width: 88px; transform: rotate(-14deg) scaleX(-1);">
+  <img class="sticker" src="../images/sprites/cage.png" style="left: 1010px; top: 392px; width: 150px; transform: rotate(4deg);">
+  <div class="sticker robot" style="left: 790px; top: 316px;"></div>
+</body></html>

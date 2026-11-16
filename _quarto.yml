@@ -13,11 +13,23 @@ project:
     - gallery_widgets.js
     - data/bec_shots.bin
     - images/sprites/*
+    - images/social-card.png
+    - favicon.svg
+    - favicon-32.png
+    - apple-touch-icon.png
+    - google59d58b70a5916fbe.html   # Google Search Console verification: keep
 
 website:
   title: "Akshay Shankar"
   site-url: "https://20akshay00.github.io/"
   description: "A personal website with the latest updates on my research, projects, and thoughts."
+  # link previews (LinkedIn, Slack, Bluesky, ...): title, description and an image;
+  # pages without a picture of their own show the notebook card (1200 x 630)
+  image: images/social-card.png
+  open-graph: true
+  twitter-card: true
+  # a plain-text map of the site for LLM tools (llms.txt)
+  llms-txt: true
   navbar:
     search: true
     collapse-below: lg
@@ -33,6 +45,9 @@ website:
       - href: gallery.qmd
 format:
   html:
+    # favicon, phone theme colour and GoatCounter (pages with their own
+    # include-in-header must list this file too: see the note in it)
+    include-in-header: _head.html
     theme:
       light:
         - journal

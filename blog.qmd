@@ -1,6 +1,8 @@
 ---
 title: "<a href='blog.xml' class='rss-link'><i class='bi bi-rss'></i></a> Blog"
 pagetitle: "Blog"
+description: "Thoughts and experiences from Akshay Shankar, including game jam write-ups."
+image: images/social-card.png   # the link-preview picture: the notebook card
 subtitle: "A not-so-actively maintained collection of thoughts and experiences."
 listing:
   contents: blog
@@ -14,8 +16,9 @@ page-layout: full
 body-classes: blog-page
 title-block-banner: true
 include-in-header:
-  text: |
-    <link rel="alternate" type="application/rss+xml" title="Research Tidbits" href="blog.xml">
+  - _head.html     # the site-wide head tags: this list replaces the one in _quarto.yml
+  - text: |
+      <link rel="alternate" type="application/rss+xml" title="Blog" href="blog.xml">
 include-after-body:
   text: |
     <script src="listing.js"></script>

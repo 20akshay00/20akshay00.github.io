@@ -1,0 +1,175 @@
+// The 404 page (404.qmd): a page torn out of the notebook, a big pixel "404",
+// links as index tabs, and the robot from the landing page pacing the bottom of
+// the sheet, wondering where the page went.
+
+.notfound-page main.content { padding-top: 1rem; }
+
+.nf-sheet {
+    position: relative;
+    max-width: 760px;
+    margin: 3rem auto 4.5rem;
+    padding: 3rem 2.5rem 9rem 4.2rem;
+    background-color: $card-bg;
+    // a pink margin line and pale ruled lines, like the section pages
+    background-image:
+        linear-gradient(90deg, transparent 34px, rgba($pink, 0.35) 34px, rgba($pink, 0.35) 35px, transparent 35px),
+        repeating-linear-gradient(180deg, transparent 0 31px, rgba($primary, 0.1) 31px 32px);
+    background-position: 0 0, 0 22px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 14px 34px rgba($primary, 0.12);
+    transform: rotate(-0.8deg);
+
+    // washi tape holding it on
+    &::before { @include tape(110px, -4deg, $washi-pink, -40px); top: -13px; }
+
+    // the bottom edge is torn: a zigzag in the paper's colour hangs below the sheet
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -11px;
+        height: 12px;
+        background:
+            linear-gradient(-45deg, transparent 8px, $card-bg 0) 0 0 / 16px 12px repeat-x,
+            linear-gradient(45deg, transparent 8px, $card-bg 0) 0 0 / 16px 12px repeat-x;
+        filter: drop-shadow(0 3px 2px rgba($primary, 0.1));
+    }
+}
+
+// the big number: pixel font, highlighter swipe, each digit a little askew
+.nf-code {
+    display: inline-block;
+    margin: 0 0 0.4rem -0.3rem;
+    padding: 0 0.6rem;
+    font-family: "Pixelify Sans", monospace;
+    font-weight: 700;
+    font-size: clamp(5.5rem, 17vw, 9.5rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: $primary;
+    background: linear-gradient(100deg, transparent 2%, rgba($pink, 0.2) 4%, rgba($pink, 0.24) 92%, transparent 96%) no-repeat 0 78% / 100% 34%;
+
+    span { display: inline-block; }
+    span:nth-child(1) { transform: rotate(-5deg) translateY(4px); }
+    span:nth-child(2) { transform: rotate(3deg); color: $pink; }
+    span:nth-child(3) { transform: rotate(-2deg) translateY(-3px); }
+}
+
+.nf-title {
+    margin: 0.6rem 0 1rem;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    color: $text-strong;
+    border: none;
+}
+
+.nf-sheet p { max-width: 34rem; font-size: 1.1rem; line-height: 2rem; }   // text sits on the ruled lines
+
+// the way back: index-card tabs, each in a different tape colour
+.nf-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 0.8rem;
+    margin: 1.6rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+        display: inline-block;
+        padding: 0.35rem 1rem 0.4rem;
+        font-family: "JetBrains Mono", $font-family-monospace;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: $body-color;
+        text-decoration: none;
+        border-radius: 6px 6px 2px 2px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    a:hover, a:focus-visible { transform: translateY(-3px) rotate(0deg) !important; box-shadow: 0 5px 10px rgba($primary, 0.2); }
+    a:focus-visible { outline: 2px solid $primary; outline-offset: 2px; }
+
+    li:nth-child(1) a { background: rgba($primary, 0.16); transform: rotate(-1.5deg); }
+    li:nth-child(2) a { background: rgba($pink, 0.2); transform: rotate(1deg); }
+    li:nth-child(3) a { background: rgba(108, 207, 79, 0.28); transform: rotate(-0.5deg); }
+    li:nth-child(4) a { background: rgba(236, 196, 92, 0.38); transform: rotate(1.5deg); }
+    li:nth-child(5) a { background: rgba(74, 120, 200, 0.2); transform: rotate(-1deg); }
+    li:nth-child(6) a { background: rgba($pink, 0.12); transform: rotate(0.8deg); }
+}
+
+// the robot: walks to one end of the dotted line, turns, walks back (32 x 32
+// frames drawn at 3x), with a "?" bubble over its head
+.nf-floor {
+    position: absolute;
+    left: 4.2rem;
+    right: 2.5rem;
+    bottom: 1.6rem;
+    height: 6px;
+    background: radial-gradient(circle, rgba($primary, 0.5) 1.5px, transparent 2.1px) 0 50% / 8px 6px repeat-x;
+}
+
+.nf-walker {
+    position: absolute;
+    bottom: -19px;            // its feet (row 26 of 32) on the dots
+    left: 0;
+    width: 96px;
+    height: 96px;
+    animation: nf-pace 16s linear infinite;
+}
+
+.nf-robot {
+    width: 96px;
+    height: 96px;
+    background: url("/images/sprites/robot_walk.png") 0 0 / 960px 96px no-repeat;
+    image-rendering: pixelated;
+    animation: nf-steps 0.9s steps(10) infinite, nf-turn 16s step-end infinite;
+}
+
+.nf-bubble {
+    position: absolute;
+    bottom: 82px;
+    left: 58px;
+    padding: 0 0.45rem;
+    font-family: "Pixelify Sans", monospace;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+    color: $primary;
+    background: $card-bg;
+    border: 2px solid $primary;
+    border-radius: 8px 8px 8px 2px;
+    animation: nf-wonder 2.4s ease-in-out infinite;
+}
+
+@keyframes nf-pace {
+    0% { left: 0; }
+    50% { left: calc(100% - 96px); }
+    100% { left: 0; }
+}
+
+@keyframes nf-turn {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(-1); }
+}
+
+@keyframes nf-steps {
+    to { background-position: -960px 0; }
+}
+
+@keyframes nf-wonder {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-4px) rotate(4deg); }
+}
+
+// with "reduce motion" set: the robot stands still at the start of the line
+@media (prefers-reduced-motion: reduce) {
+    .nf-walker, .nf-robot, .nf-bubble { animation: none; }
+    .nf-robot { background-image: url("/images/sprites/robot_idle.png"); background-size: 192px 96px; }
+}
+
+@media (max-width: 576px) {
+    .nf-sheet { margin: 2rem 0.2rem 3.5rem; padding: 2.4rem 1.2rem 8.5rem 2.8rem; }
+    .nf-sheet::before { width: 84px; margin-left: -60px; }
+    .nf-floor { left: 2.8rem; right: 1.2rem; }
+}

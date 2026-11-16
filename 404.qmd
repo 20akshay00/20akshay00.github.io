@@ -1,0 +1,27 @@
+---
+pagetitle: "Page not found"
+description: "This page does not exist (any more)."
+body-classes: notfound-page
+sitemap: false
+search: false
+---
+
+```{=html}
+<!-- styled in theme/_notfound.scss -->
+<div class="nf-sheet">
+    <div class="nf-code" aria-label="404"><span>4</span><span>0</span><span>4</span></div>
+    <h1 class="nf-title">This page has been torn out.</h1>
+    <p>Whatever was written here is gone: it may have moved when the notebook was reorganised, or the link has a typo. The robot is looking for it. In the meantime, try one of these, or the search in the top right.</p>
+    <ul class="nf-tabs">
+        <li><a href="/index.html">home</a></li>
+        <li><a href="/research.html">research</a></li>
+        <li><a href="/tidbits.html">tidbits</a></li>
+        <li><a href="/projects.html">projects</a></li>
+        <li><a href="/blog.html">blog</a></li>
+        <li><a href="/gallery.html">gallery</a></li>
+    </ul>
+    <div class="nf-floor" aria-hidden="true">
+        <div class="nf-walker"><div class="nf-bubble">?</div><div class="nf-robot"></div></div>
+    </div>
+</div>
+```
