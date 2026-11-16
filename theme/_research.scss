@@ -89,16 +89,16 @@
     z-index: 1;
 }
 
-// tiles and publication lists as sheets of paper, all on the same lilac
+// tiles and publication lists as white sheets of paper, like the other notebook pages
 .research-page .interest-tile,
 .research-page .pub-section {
-    background-color: $panel-bg;
+    background-color: $card-bg;
     border: 1px solid rgba($body-color, 0.1);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 28px rgba($primary, 0.07);
 }
 
-// the papers inside are white cards on that lilac sheet, not more of the same lilac
-.research-page .pub-row { background: $card-bg; }
+// the papers inside: cards with the faintest lilac tint, so they read as cards on the white sheet
+.research-page .pub-row { background: mix($primary, $card-bg, 3%); }
 
 .research-page .pub-section h2 {
     display: inline-block;
