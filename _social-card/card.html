@@ -12,6 +12,9 @@
       --screenshot="$PWD/images/social-card.png" "file:///$PWD/_social-card/card.html"
 
   (Chrome works the same way.) The fonts come from Google Fonts, so stay online.
+  Then shrink it: WhatsApp drops preview images over ~300 KB.
+
+    pngquant --quality 80-95 --speed 1 -f --ext .png images/social-card.png
 -->
 <html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@600&display=block" rel="stylesheet">
@@ -39,7 +42,7 @@
   .waves { position: absolute; top: 64px; left: 0; width: 1200px; height: 36px; }
   /* a sheet of notebook paper with a pink margin line, taped on */
   .sheet {
-    position: absolute; left: 72px; top: 164px; width: 700px; height: 380px;
+    position: absolute; left: 72px; top: 164px; width: 700px; height: 412px;
     background-color: #f9f6fc;
     background-image:
       linear-gradient(90deg, transparent 34px, rgba(209, 64, 129, 0.4) 34px, rgba(209, 64, 129, 0.4) 36px, transparent 36px),
@@ -69,8 +72,11 @@
   }
   /* the robot: the first frame of its idle sheet (32 x 32 frames), drawn at 7x */
   .robot { width: 224px; height: 224px; background: url("../images/sprites/robot_idle.png") 0 0 / 448px 224px no-repeat; }
-  .trail { position: absolute; overflow: visible; }
-  .trail path { fill: none; stroke: #6ccf4f; stroke-width: 4; stroke-dasharray: 11 11; stroke-linecap: round; opacity: 0.85; }
+  /* the jet with its dashed flight path, as on the landing page (170 x 120 box there) */
+  .jet-trail { position: absolute; width: 340px; height: 240px; }
+  .jet-trail svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .jet-trail path { fill: none; stroke: #6ccf4f; stroke-width: 2.5; stroke-dasharray: 7 7; stroke-linecap: round; opacity: 0.85; }
+  .jet-trail .sticker { top: 12px; left: 0; width: 88px; }
 </style></head>
 <body>
   <div class="band"><span>20akshay00.github.io</span></div>
@@ -82,11 +88,10 @@
     <p class="role">PhD student at Ghent University, simulating ultracold quantum gases with tensor networks.</p>
   </div>
 
-  <!-- the jet's dashed flight path, from the top right corner down to the jet -->
-  <svg class="trail" style="left: 880px; top: 128px; width: 280px; height: 150px;" viewBox="0 0 280 150">
-    <path d="M270 10 C 200 0, 210 90, 160 96 S 110 50, 130 40 S 90 120, 20 120"/>
-  </svg>
-  <img class="sticker" src="../images/sprites/jet1.png" style="left: 832px; top: 214px; width: 88px; transform: rotate(-14deg) scaleX(-1);">
-  <img class="sticker" src="../images/sprites/cage.png" style="left: 1010px; top: 392px; width: 150px; transform: rotate(4deg);">
-  <div class="sticker robot" style="left: 790px; top: 316px;"></div>
+  <!-- the jet and its looping flight path: the landing page's sticker, drawn at 2x -->
+  <div class="jet-trail" style="left: 835px; top: 135px;">
+    <svg viewBox="0 0 170 120"><path d="M30 34 C 70 6, 96 70, 70 84 S 40 70, 70 52 S 130 96, 166 112"/></svg>
+    <img class="sticker" src="../images/sprites/jet1.png">
+  </div>
+  <div class="sticker robot" style="left: 935px; top: 345px; transform: scaleX(-1);"></div>
 </body></html>
