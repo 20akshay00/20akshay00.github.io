@@ -96,8 +96,9 @@
         border-right: none;
     }
 
-    // the Aseprite menu bar: let the last items fall off quietly instead of overflowing
-    .ase-menu { overflow: hidden; white-space: nowrap; }
+    // the Aseprite menu bar: all seven items spread across the width; on the very
+    // narrowest screens the last ones fall off quietly instead of overflowing
+    .ase-menu { justify-content: space-between; gap: 0.4rem; overflow: hidden; white-space: nowrap; }
 
     // the blog's postcards: photo on top, the stamp stuck on the photo's corner,
     // the note across the full width (no empty address lines)

@@ -18,8 +18,10 @@ const PALETTE = ["#14101c", "#2b2236", "#3d3150", "#5a2a9c", "#7b4fc4", "#b48cf0
 <div class="ase-panel-head">Palette</div>
 <div class="ase-palette" aria-hidden="true"><% PALETTE.forEach((c) => { %><span style="background: <%= c %>"></span><% }) %></div>
 <div class="ase-panel-head">Properties</div>
+<div class="ase-props-stack">
 <% items.forEach((item, i) => { %><div class="ase-props<%= i === 0 ? " is-on" : "" %>"><div class="ase-props-title"><%= item.title %></div><div class="ase-props-desc"><%= item.description || "" %></div></div>
 <% }) %></div>
+</div>
 </div>
 <div class="ase-timeline">
 <div class="ase-frames">

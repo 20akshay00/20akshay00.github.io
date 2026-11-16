@@ -389,8 +389,11 @@
 
 .ase-palette span { aspect-ratio: 1; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35); }
 
-.ase-props { display: none; }
-.ase-props.is-on { display: block; }
+// every piece's notes share one cell, so the panel is as tall as the longest of them
+// and the editor keeps its height while you flip through the frames
+.ase-props-stack { display: grid; }
+.ase-props { grid-area: 1 / 1; visibility: hidden; }
+.ase-props.is-on { visibility: visible; }
 .ase-props-title { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
 .ase-props-desc { margin-top: 4px; font-family: $font-family-sans-serif; font-size: 0.85rem; line-height: 1.4; color: #c9bddb; }
 
@@ -464,7 +467,10 @@
     .ase-body { grid-template-columns: minmax(0, 1fr); }
     .ase-tools { display: none; }
     .ase-side { border-left: none; border-top: 2px solid #14101c; }
-    .ase-palette { display: none; }
+    .ase-palette, .ase-side .ase-panel-head:first-child { display: none; }   // the palette and its heading
+    // a fixed canvas: tall and wide pieces both fit inside it, so the window keeps its size
+    .ase-canvas { height: 300px; padding: 14px; }
+    .ase-art img { max-height: 268px; }
 }
 
 // ---- 3D models: a Blender render window (_templates/blender.ejs) ----
