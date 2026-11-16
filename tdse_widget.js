@@ -2067,11 +2067,14 @@
 
     // Space-time strip: one row of pixels per `history.dt` of simulated time, the
     // newest at the top (right under the plot it continues), older ones scrolling
-    // down. Kept in an offscreen canvas that is shifted by a row as time goes on.
+    // down. Kept offscreen and shifted down a row as time goes on, by drawing it a row
+    // lower into a second canvas and swapping the two: drawing a canvas onto itself
+    // (the obvious way) is unreliable in Firefox with an accelerated canvas.
     // Mode "change" shows the density minus its value at t = 0 instead (purple where
     // denser, orange where thinner): small waves on a big condensate stand out.
-    const history = { cv: document.createElement("canvas"), dt: 0.5, next: 0, mode: "density", ref: null };
+    const history = { cv: document.createElement("canvas"), alt: document.createElement("canvas"), dt: 0.5, next: 0, mode: "density", ref: null };
     history.cx = history.cv.getContext("2d");
+    history.altCx = history.alt.getContext("2d");
 
     // the density at t = 0, for the "change" mode
     function snapshotHistory() {
@@ -2080,9 +2083,9 @@
 
     function resetHistory() {
         history.next = time;
-        history.cv.width = ui.hcanvas.clientWidth || 1;
-        history.cv.height = ui.hcanvas.clientHeight || 1;
-        history.cx.clearRect(0, 0, history.cv.width, history.cv.height);
+        // (setting the size clears a canvas)
+        history.cv.width = history.alt.width = ui.hcanvas.clientWidth || 1;
+        history.cv.height = history.alt.height = ui.hcanvas.clientHeight || 1;
     }
 
     // After a light/dark flip the rows already recorded still carry the old theme's
@@ -2109,9 +2112,11 @@
         if (hw !== ui.hcanvas.clientWidth || hh !== ui.hcanvas.clientHeight) resetHistory();
         while (time >= history.next) {
             history.next += history.dt;
-            history.cx.globalCompositeOperation = "copy";
-            history.cx.drawImage(history.cv, 0, 1);
-            history.cx.globalCompositeOperation = "source-over";
+            // shift: the current image a row lower into the spare canvas, then swap
+            history.altCx.clearRect(0, 0, hw, hh);
+            history.altCx.drawImage(history.cv, 0, 1);
+            [history.cv, history.alt] = [history.alt, history.cv];
+            [history.cx, history.altCx] = [history.altCx, history.cx];
             const row = history.cx.createImageData(hw, 1);
             const change = history.mode === "change" && history.ref && history.ref.length === N;
             for (let X = 0; X < hw; X++) {
