@@ -48,8 +48,15 @@
     });
     tube.addEventListener("pointermove", (e) => tube.hasPointerCapture(e.pointerId) && scrollFromPointer(e));
 
-    addEventListener("scroll", update, { passive: true });
-    addEventListener("resize", update);
+    // scroll events can fire many times per frame: update at most once per frame
+    let queued = false;
+    const schedule = () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => { queued = false; update(); });
+    };
+    addEventListener("scroll", schedule, { passive: true });
+    addEventListener("resize", schedule);
     new MutationObserver(update).observe(document.body, { attributes: true, attributeFilter: ["class"] });
     update();
 })();

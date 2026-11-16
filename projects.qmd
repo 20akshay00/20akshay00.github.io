@@ -40,7 +40,7 @@ listing:
       - title: "Tetra Engine"
         description: "A simple 2D game engine written in Python with an Ascii-based renderer for treasure hunt events at IISER Mohali."
         path: "https://github.com/DhruvaSambrani/turing-hunt-engine"
-        image: "images/projects/tetra.png"
+        image: "images/projects/tetra.webp"
         categories: [Python, "2021"]
       - title: "Pentra Engine"
         description: "An evolution of the Tetra engine utilizing Pygame for 2D rendering with lighting and shadows."

@@ -12,7 +12,7 @@ Given a quantum many-body Hamiltonian, one of the first goals usually is to acco
 While solving the whole many-body problem is a computationally expensive task, we will try to show that plotting the phase diagram does not necessarily require the entire information contained in the ground state, allowing us to make some smart optimizations.
 
 # The Bose-Hubbard model
-Let us consider a really simple system for demonstrating this; the 1D [Bose-Hubbard model](https://en.wikipedia.org/wiki/Bose%E2%80%93Hubbard_model) which describes interacting bosons in an optical lattice. What follows is largely based on things I worked on during my [master's thesis](https://20akshay00.github.io/files/MS18117_PRJ502.pdf), so I will skip some details that can be found there. The Hamiltonian for the system is given as follows:
+Let us consider a really simple system for demonstrating this; the 1D [Bose-Hubbard model](https://en.wikipedia.org/wiki/Bose%E2%80%93Hubbard_model) which describes interacting bosons in an optical lattice. What follows is largely based on things I worked on during my [master's thesis](../../images/misc/MS18117_PRJ502.pdf), so I will skip some details that can be found there. The Hamiltonian for the system is given as follows:
 
 $$
 \hat{H} = -t\sum_{i} (\hat{a}^{\dagger}_i \hat{a}_{i+1} + \hat{a}^{\dagger}_{i+1} \hat{a}_{i} ) + \frac{U}{2}\sum_{i} n_i (n_i - 1) - \mu \sum_i n_i

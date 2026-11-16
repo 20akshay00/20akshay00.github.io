@@ -7,14 +7,8 @@
    band of interference fringes, and
    pictures are taped on like printouts.
    ===================================================================== */
-// the same dotted paper as everywhere else (research_cooling.js only shifts its colour)
-.research-page {
-    background-image:
-        radial-gradient(circle at 1px 1px, $dots 1.1px, transparent 1.6px),
-        url("/images/sprites/paper-grain.svg");
-    background-size: 22px 22px, 240px 240px;
-}
-
+// the paper is the same as everywhere else (theme/_base.scss); research_cooling.js
+// only shifts the colour underneath it
 
 
 // the thermometer, bottom left: it doubles as a scrollbar

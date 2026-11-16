@@ -22,7 +22,7 @@ My research broadly focuses on bridging this gap between the individual and the 
 In our search for quantum-ness, we find that the world gets a lot more interesting near absolute zero. At these temperatures, dilute vapors of atoms form "quantum gases" where their wave-like nature dictates the physics, in stark contrast to fluids we encounter in daily life. For bosonic species, this results in a coherent entity that exhibits a variety of unclassical behavior, most notably superfluidity. Practically, we study these objects using cold atom experiments where an atomic species such as Rb87 is cooled to around 100nK and prodded with laser beams to see how the system responds. A large part of my work involves theoretically modelling and simulating these ultracold gases on a computer.
 
 ::: {layout-ncol=2}
-![Table-top cold atom experiment at UGent.](images/research/coldatomlabgent.png){.lightbox group="quantum-gas" width=70%}
+![Table-top cold atom experiment at UGent.](images/research/coldatomlabgent.webp){.lightbox group="quantum-gas" width=70%}
 
 ```{=html}
 <div id="bec-widget"></div>

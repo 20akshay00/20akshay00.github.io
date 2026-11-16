@@ -1,13 +1,23 @@
 // The page itself: notebook paper, the navbar waves, the theme's base type and layout.
 
 // notebook paper: a dot grid with a little grain
+// The texture sits on its own fixed layer behind the page rather than on the body
+// with background-attachment: fixed, which makes browsers repaint the whole
+// window on every scroll. It looks the same; the browser just slides the page over it.
 body {
     background-color: $body-bg;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image:
         radial-gradient(circle at 1px 1px, $dots 1.1px, transparent 1.6px),
         url("/images/sprites/paper-grain.svg");
     background-size: 22px 22px, 240px 240px;
-    background-attachment: fixed;
 }
 
 h1,
