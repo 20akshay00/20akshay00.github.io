@@ -23,13 +23,15 @@ const pad = (n) => String(n).padStart(2, "0");
 </div>
 <div class="arcade-side">
 <div class="arcade-count">01 / <%= pad(items.length) %></div>
+<div class="arcade-abouts">
 <% items.forEach((item, i) => { %><div class="arcade-about<%= i === 0 ? " is-on" : "" %>" data-href="<%- item.path %>" data-title="<%= item.title %>">
 <div class="arcade-title"><%= item.title %></div>
 <div class="arcade-jam"><%= item.jam || "" %></div>
 <p class="arcade-tag"><%= item.description %></p>
 <a class="arcade-start" href="<%- item.path %>"><%= item.cta || "Play" %></a>
 </div>
-<% }) %><div class="arcade-select" aria-label="Select a game">
+<% }) %></div>
+<div class="arcade-select" aria-label="Select a game">
 <% items.forEach((item, i) => { %><a class="arcade-pick<%= i === 0 ? " is-on" : "" %>" href="<%- item.path %>" data-index="<%= i %>" title="<%= item.title %>"><img src="<%- item.image %>" alt="" loading="lazy"></a>
 <% }) %></div>
 </div>

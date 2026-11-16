@@ -6,7 +6,7 @@ subtitle: "Understanding the behaviour of ultra-cold matter through numerical si
 page-layout: full
 title-block-banner: true
 engine: markdown
-body-classes: research-page
+body-classes: research-page seo-description
 ---
 
 Physics is often framed as a search for the fundamental laws of the universe, and like many, I was first drawn to the field [by the search for the building blocks of our universe](https://www.nature.com/articles/nature.2012.10940). However, I soon found that the most captivating mysteries aren't just in the particles themselves, but in what happens [when you bring them together](https://cse-robotics.engr.tamu.edu/dshell/cs689/papers/anderson72more_is_different.pdf).

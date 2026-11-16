@@ -1,6 +1,7 @@
 ---
 title: "Akshay Shankar"
 description: "Akshay Shankar is a PhD student at Ghent University developing tensor network methods for ultracold bosonic gases. Research, notes, software and games."
+body-classes: seo-description
 image: images/social-card.png   # the link-preview picture: the notebook card
 # structured data: tells search engines (and the LLM tools built on them) that this
 # site and the profiles below belong to the same person
@@ -55,10 +56,12 @@ Hi! I'm Akshay, a PhD student at [QuantumGroup@UGent](https://quantumghent.githu
 
 ```{=html}
 <!-- the stickers sit at a distance from the centre that grows with the window
-     (max(px, vw)): on a normal screen the px values hold, on a big monitor they spread out -->
+     (max(px, vw)): on a normal screen the px values hold, on a big monitor they spread out.
+     The cage sits inside the text column's width, so it is pinned by its bottom edge
+     (top + translateY(-100%)): as it grows on wide screens it grows upwards, never onto the text -->
 <div id="landing-art" hidden>
     <img class="sticker float" src="images/sprites/flyer.png" alt="" style="top: max(50px, 3.6vw); right: calc(50% + max(205px, 15.8vw)); width: clamp(124px, 9.5vw, 190px); transform: rotate(-6deg);">
-    <img class="sticker float" src="images/sprites/cage.png" alt="" style="top: clamp(200px, 11vw, 290px); left: calc(50% + max(215px, 16.5vw)); width: clamp(126px, 9.7vw, 190px); animation-delay: 1.6s;">
+    <img class="sticker float" src="images/sprites/cage.png" alt="" style="top: 325px; transform: translateY(-100%); left: calc(50% + max(215px, 16.5vw)); width: clamp(126px, 9.7vw, 190px); animation-delay: 1.6s;">
     <img class="sticker float" src="images/sprites/terminal.png" alt="" style="top: 580px; right: calc(50% + max(400px, 28vw)); width: clamp(70px, 5.2vw, 104px); transform: rotate(5deg); animation-delay: 2.4s;">
     <div class="sticker-trail float" style="top: 520px; left: calc(50% + max(430px, 29vw)); animation-delay: 0.7s;">
         <svg viewBox="0 0 170 120" aria-hidden="true"><path d="M30 34 C 70 6, 96 70, 70 84 S 40 70, 70 52 S 130 96, 166 112"/></svg>

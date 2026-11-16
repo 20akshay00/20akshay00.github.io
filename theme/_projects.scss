@@ -200,9 +200,17 @@
     .toc-peek { display: none; }
 }
 
-// visualizations: frames on a strip of film (they are animations, after all)
+// visualizations: frames on a strip of film (they are animations, after all), in the
+// site's colours rather than real film's near-black: a lilac strip with sprocket holes
+// punched through to the paper, taped down at both ends like everything else in the
+// notebook. Every colour comes from the theme, so dark mode gets a plum strip of its own.
+$film-base: mix($primary, $card-bg, 9%);
+$film-rule: rgba($primary, 0.16);
+$film-edge: mix($primary, $card-bg, 17%);   // the bands the sprocket holes are punched through
+
 .film-strip {
     --sprocket: #{$body-bg};
+    position: relative;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: minmax(0, 1fr);
@@ -210,23 +218,30 @@
     background:
         repeating-linear-gradient(90deg, transparent 0 9px, var(--sprocket) 9px 19px, transparent 19px 28px) 0 7px / 100% 9px no-repeat,
         repeating-linear-gradient(90deg, transparent 0 9px, var(--sprocket) 9px 19px, transparent 19px 28px) 0 calc(100% - 7px) / 100% 9px no-repeat,
-        #1a1320;
+        linear-gradient($film-edge, $film-edge) 0 0 / 100% 23px no-repeat,
+        linear-gradient($film-edge, $film-edge) 0 100% / 100% 23px no-repeat,
+        $film-base;
+    border: 1px solid $film-rule;
     border-radius: 3px;
-    box-shadow: 0 8px 22px rgba(35, 9, 63, 0.25);
+    box-shadow: 0 1px 2px $shadow, 0 10px 26px rgba($primary, 0.12);
     transform: rotate(-0.6deg);
 }
+
+// a strip of tape over each end
+.film-strip::before { @include tape(84px, -5deg, $washi-pink); left: 3%; }
+.film-strip::after { @include tape(70px, 4deg, $washi-dots); left: 97%; }
 
 .film-frame {
     display: flex;
     flex-direction: column;
     padding: 2px 14px;
-    border-left: 2px solid #0e0a13;
-    color: #e6def2;
+    border-left: 1px dashed $film-rule;
+    color: $body-color;
     text-decoration: none;
 }
 
 .film-frame:first-child { border-left: none; }
-.film-frame:hover { color: #ffffff; }
+.film-frame:hover { color: $body-color; }
 
 .film-edge {
     display: flex;
@@ -234,7 +249,7 @@
     font-family: "JetBrains Mono", $font-family-monospace;
     font-size: 0.66rem;
     letter-spacing: 0.08em;
-    color: #e2a54f;
+    color: $pink;
     padding: 0 2px 5px;
 }
 
@@ -243,8 +258,9 @@
 .film-pic {
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    border-radius: 4px;
-    background: #000;
+    border-radius: 3px;
+    background: $card-bg;
+    box-shadow: 0 0 0 1px $film-rule, 0 2px 6px rgba($primary, 0.1);
 }
 
 .film-pic img {
@@ -261,14 +277,16 @@
     font-family: "Lora", serif;
     font-weight: 700;
     font-size: 1.15rem;
-    color: #ffffff;
+    color: $primary;
 }
+
+.film-frame:hover .film-title { text-decoration: underline; text-underline-offset: 3px; }
 
 .film-desc {
     margin: 0.35rem 0 0.6rem;
     font-size: 0.9rem;
     line-height: 1.45;
-    color: #b9aecb;
+    color: $secondary;
     text-align: left;
 }
 

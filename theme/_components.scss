@@ -589,3 +589,7 @@
 .description {
     margin-top: 1rem !important;
 }
+
+// pages whose `description` is only there for search results and link previews
+// (the <meta> tag): keep it out of the visible title block
+.seo-description #title-block-header .description { display: none; }

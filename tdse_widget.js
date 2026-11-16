@@ -1065,7 +1065,6 @@
         rho0 *= prep.zoom || 1;
         pPeak = 0;
         kBuf.P0 = null;
-        resetPhaseView();
         resetHistory();
         absorbedLeft = absorbedRight = 0;
         time = 0;
@@ -2150,22 +2149,16 @@
         }
     }
 
-    // Phase strip: the phase of psi, unwrapped into one continuous line (a dark
-    // soliton is a step of pi under its dip, a winding current a steady ramp),
-    // measured from the cloud's left edge since the overall phase just rotates in
-    // time. Drawn only where there is density; the axis grows during a run, never
-    // shrinks, so it does not jitter.
-    // lo/hi: the axis range in units of pi
-    const phase = { u: null, lo: -1, hi: 1, calm: 0 };
-    function resetPhaseView() {
-        phase.lo = -1;
-        phase.hi = 1;
-        phase.calm = 0;
-    }
-
+    // Phase strip: the phase of psi on a fixed axis from 0 to 2 pi, wrapping around:
+    // a winding current is a sawtooth, wrapping once per unit of circulation. The phase
+    // is measured from the cloud's left edge (the overall phase just rotates in time),
+    // which sits at pi, in the middle: a dark soliton's step then drops towards 0 or
+    // climbs towards 2 pi, so its direction stays visible. Drawn only where there is
+    // density; where the phase wraps, the line leaves one edge and comes back at the other.
+    let phaseU = null;
     function drawPhase(cx, sw, sh) {
-        if (!phase.u || phase.u.length !== N) phase.u = new Float64Array(N);
-        const u = phase.u;
+        if (!phaseU || phaseU.length !== N) phaseU = new Float64Array(N);
+        const u = phaseU, TWO_PI = 2 * Math.PI;
         let peak = 0;
         for (let j = j0; j <= j1; j++) peak = Math.max(peak, pR[j] * pR[j] + pI[j] * pI[j]);
         const dens = (j) => pR[j] * pR[j] + pI[j] * pI[j];
@@ -2173,72 +2166,26 @@
         while (ref < j1 && dens(ref) < 0.1 * peak) ref++;
         // phase increment between neighbours j-1 -> j
         const inc = (j) => Math.atan2(pR[j - 1] * pI[j] - pI[j - 1] * pR[j], pR[j - 1] * pR[j] + pI[j - 1] * pI[j]);
-        // Each step between neighbours is taken as the smallest one. A soliton's jump
-        // is only defined up to 2 pi, and this choice makes its sign show the
-        // direction it moves in (and its size how fast: pi when it stands still).
-        u[ref] = 0;
+        // Unwrapped first (each step between neighbours taken as the smallest one, so a
+        // soliton's step shows the direction it moves in), then wrapped while drawing.
+        u[ref] = Math.PI;
         for (let j = ref + 1; j <= j1; j++) u[j] = u[j - 1] + inc(j);
         for (let j = ref - 1; j >= j0; j--) u[j] = u[j + 1] - inc(j + 1);
 
-        // Axis in whole multiples of pi (a step of exactly pi sits on the pi line),
-        // at least 2 pi tall. It widens at once when the curve needs room, and
-        // narrows only after the curve has stayed in a smaller range for a while.
-        let cLo = Infinity, cHi = -Infinity;
-        for (let j = j0; j <= j1; j++) {
-            if (dens(j) < 0.02 * peak) continue;
-            cLo = Math.min(cLo, u[j]);
-            cHi = Math.max(cHi, u[j]);
-        }
-        if (cLo <= cHi) {
-            let lo = Math.floor(cLo / Math.PI + 0.1), hi = Math.ceil(cHi / Math.PI - 0.1);
-            if (hi - lo < 2) {
-                if (hi <= 0) hi = lo + 2;
-                else lo = hi - 2;
-            }
-            if (lo < phase.lo || hi > phase.hi) {
-                phase.lo = Math.min(phase.lo, lo);
-                phase.hi = Math.max(phase.hi, hi);
-                phase.calm = 0;
-            } else if (lo > phase.lo || hi < phase.hi) {
-                if (++phase.calm > 90) {
-                    phase.lo = lo;
-                    phase.hi = hi;
-                    phase.calm = 0;
-                }
-            } else {
-                phase.calm = 0;
-            }
-        }
-        const lo = phase.lo, hi = phase.hi;
-        const pad = 14, Y = (th) => sh - pad - ((th / Math.PI - lo) / (hi - lo)) * (sh - 2 * pad);
-        const every = Math.max(1, Math.ceil((hi - lo) / 5));
+        const pad = 14, Y = (th) => sh - pad - (th / TWO_PI) * (sh - 2 * pad);
+        const turns = (v) => Math.floor(v / TWO_PI);
         cx.font = "11px 'Source Sans 3', sans-serif";
-        cx.textAlign = "right";
-        cx.textBaseline = "middle";
         cx.strokeStyle = C.axis;
-        for (let m = lo; m <= hi; m++) {
-            if (m % every) continue;
+        for (let m = 0; m <= 2; m++) {
             const y = Math.round(Y(m * Math.PI)) + 0.5;
-            cx.setLineDash(m === 0 ? [] : [2, 3]);
+            cx.setLineDash(m === 1 ? [2, 3] : []);
             cx.beginPath();
             cx.moveTo(0, y);
             cx.lineTo(sw, y);
             cx.stroke();
         }
         cx.setLineDash([]);
-        const tickLabels = () => {
-            // on a soft backing, so they stay readable over the curve
-            for (let m = lo; m <= hi; m++) {
-                if (m % every) continue;
-                const y = Math.round(Y(m * Math.PI)) + 0.5;
-                const t = m === 0 ? "0" : m === 1 ? "π" : m === -1 ? "−π" : `${m < 0 ? "−" : ""}${Math.abs(m)}π`;
-                const tw = cx.measureText(t).width;
-                cx.fillStyle = C.backing;
-                cx.fillRect(sw - tw - 8, y - 7, tw + 6, 14);
-                cx.fillStyle = C.text;
-                cx.fillText(t, sw - 4, y);
-            }
-        };
+        cx.fillStyle = C.text;
         cx.textAlign = "left";
         cx.textBaseline = "top";
         cx.fillText("Phase of ψ", 8, 3);
@@ -2246,20 +2193,41 @@
         cx.strokeStyle = C.re;
         cx.lineWidth = 1.6;
         cx.beginPath();
-        let drawing = false;
+        let prev = -1;   // the last point drawn, or -1 after a gap in the density
         for (let j = j0; j <= j1; j++) {
             if (dens(j) < 0.02 * peak) {
-                drawing = false;
+                prev = -1;
                 continue;
             }
-            if (drawing) cx.lineTo(px(x[j]), Y(u[j]));
-            else cx.moveTo(px(x[j]), Y(u[j]));
-            drawing = true;
+            const X = px(x[j]), v = u[j], w = v - turns(v) * TWO_PI;
+            if (prev < 0) {
+                cx.moveTo(X, Y(w));
+            } else {
+                const v0 = u[prev], n0 = turns(v0), n1 = turns(v);
+                if (n0 !== n1) {
+                    // crossed a multiple of 2 pi: run to that edge and come back at the other
+                    const up = n1 > n0, edge = (up ? n1 : n0) * TWO_PI;
+                    const Xm = px(x[prev]) + ((edge - v0) / (v - v0)) * (X - px(x[prev]));
+                    cx.lineTo(Xm, Y(up ? TWO_PI : 0));
+                    cx.moveTo(Xm, Y(up ? 0 : TWO_PI));
+                }
+                cx.lineTo(X, Y(w));
+            }
+            prev = j;
         }
         cx.stroke();
+
+        // tick labels on a soft backing, so they stay readable over the curve
         cx.textAlign = "right";
         cx.textBaseline = "middle";
-        tickLabels();
+        ["0", "π", "2π"].forEach((t, m) => {
+            const y = Math.round(Y(m * Math.PI)) + 0.5;
+            const tw = cx.measureText(t).width;
+            cx.fillStyle = C.backing;
+            cx.fillRect(sw - tw - 8, y - 7, tw + 6, 14);
+            cx.fillStyle = C.text;
+            cx.fillText(t, sw - 4, y);
+        });
     }
 
     // Momentum strip: |phi(k)|^2 over the preset's range of k. On a ring only

@@ -13,7 +13,7 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
-body-classes: tidbits-page
+body-classes: tidbits-page seo-description
 title-block-banner: true
 include-in-header:
   - _head.html     # the site-wide head tags: this list replaces the one in _quarto.yml

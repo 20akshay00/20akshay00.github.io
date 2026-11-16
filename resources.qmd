@@ -1,6 +1,7 @@
 ---
 title: "Resources"
 description: "A curated list of books, courses and tutorials on physics, programming and game development."
+body-classes: seo-description
 subtitle: "A collection of works to learn new things."
 permalink: /resources/
 toc: false

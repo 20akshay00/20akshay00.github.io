@@ -162,8 +162,11 @@
     color: $secondary;
 }
 
-.arcade-about { display: none; }
-.arcade-about.is-on { display: block; animation: arcade-in 0.3s ease; }
+// every game's blurb sits in the same grid cell, the inactive ones invisible but still
+// taking up room: the panel is as tall as the longest blurb and doesn't jump between games
+.arcade-abouts { display: grid; }
+.arcade-about { grid-area: 1 / 1; visibility: hidden; }
+.arcade-about.is-on { visibility: visible; animation: arcade-in 0.3s ease; }
 
 @keyframes arcade-in {
     from { opacity: 0; transform: translateY(4px); }
