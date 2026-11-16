@@ -42,8 +42,8 @@ window.TDSE_DEMOS = (() => {
             label: "Tunnelling", topic: "tunnel", preset: "barrier", p1: 2.4, p2: 0.8,
             prep: P({ x0: -15, k: 1.8, sigma: 3 }), show: { showHist: true }, hist: 0.2,
             caption: `
-                The packet has less energy than the barrier is high. The classical particle always
-                bounces back, but part of the wave leaks through.
+                When the wavepacket has less energy than the barrier, the classical particle always
+                bounces back, but the quantum particle has a probability of tunneling through.
             `,
         },
 
@@ -62,7 +62,7 @@ window.TDSE_DEMOS = (() => {
             prep: P({ x0: 18, k: -0.5, sigma: 5 }), show: { showHist: true }, hist: 0.4,
             caption: `
                 The packet runs down a sudden drop. A classical particle would just speed up and
-                carry on, but almost half of the wave bounces back off the edge of the cliff.
+                carry on, but almost half of the quantum probability density bounces back off the edge of the cliff.
             `,
         },
 
@@ -71,7 +71,7 @@ window.TDSE_DEMOS = (() => {
             prep: P({ x0: -24, k: 0.85, sigma: 7 }), show: { showHist: true }, hist: 0.5,
             caption: `
                 A slow particle passing over a dip. Classically it just speeds up and carries on,
-                but a quantum wave is partly reflected by the dip. At this energy the wave fits the
+                but a quantum particle is partly reflected by the dip. At this energy the wave fits the
                 well exactly and 99% passes through. Change the momentum to 0.3 and only about 37%
                 does.
             `,
@@ -153,10 +153,7 @@ window.TDSE_DEMOS = (() => {
                 away it swings back and forth over many lattice sites and returns every 2π/(F·d) ≈
                 63 time units. The momentum strip shows why: the force changes the momentum
                 steadily, but whenever it reaches the edge of the Brillouin zone (k = ±π/2), the
-                lattice Bragg-reflects it to the opposite edge, so it never runs away. Bloch
-                oscillations, first seen with cold atoms in 1996. Set g to 1 and restart:
-                interactions wash the oscillation out within a few periods, which is why precision
-                experiments switch them off.
+                lattice Bragg-reflects it to the opposite edge, so it never runs away.
             `,
         },
 
