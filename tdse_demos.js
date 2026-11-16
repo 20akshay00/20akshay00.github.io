@@ -283,9 +283,10 @@ window.TDSE_DEMOS = (() => {
             prep: G({ imprint: "soliton", x0: -3.6, v: 0 }), show: { showPh: true, showHist: true }, hist: 1,
             caption: `
                 A dip in the condensate with a phase step of about π across it keeps its shape and
-                oscillates through the cloud, more slowly than the cloud itself would. In the phase
-                strip the step points down while the soliton moves right and up while it moves left,
-                passing through π each time it turns around.
+                oscillates through the cloud, more slowly than the cloud itself would. The phase strip
+                starts at π on the left: the step drops towards 0 while the soliton moves right and
+                climbs towards 2π while it moves left, flipping between the two (the same phase) each
+                time it turns around.
             `,
         },
 
@@ -389,7 +390,7 @@ window.TDSE_DEMOS = (() => {
             prep: G({ imprint: "kick", wind: 2 }), show: { showPh: true, showP: true },
             caption: `
                 A condensate flowing around a ring: its phase climbs steadily by 4π = 2 × 2π on the
-                way around (w = 2, see the phase strip), steepest at the weak link where the flow is
+                way around, wrapping twice in the phase strip (w = 2), steepest at the weak link where the flow is
                 fastest. It flows past the weak link without slowing down, indefinitely. Its
                 circulation can only take whole-number values, and can only change where the density
                 drops to zero. Set w to 5 and restart: that flow is too fast for the weak link,
@@ -401,7 +402,7 @@ window.TDSE_DEMOS = (() => {
         {
             label: "Phase slips", topic: "superfluid", preset: "ringstir", p1: 0.6, p2: 0.8, g: 20, speed: 40,
             refs: [["Wright et al., PRL 2013", "https://arxiv.org/abs/1208.3608"]],
-            prep: G({}), show: { showHist: true, showP: true }, hist: 3, histMode: "change",
+            prep: G({}), show: { showHist: true, showP: true, showPh: true }, hist: 3, histMode: "change",
             caption: `
                 A weak link is dragged around the ring at 0.6 times the speed of sound. The
                 condensate cannot speed up smoothly: whenever the flow through the link gets too

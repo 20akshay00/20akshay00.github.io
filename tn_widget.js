@@ -292,7 +292,7 @@
             </div>
         </div>
         <details class="tdse-controls tn-why">
-        <summary class="tdse-controls-toggle"><i class="bi bi-lightbulb" aria-hidden="true"></i><span>Why does it work?</span><small>how few amplitudes matter, and what a small D keeps</small></summary>
+        <summary class="tdse-controls-toggle"><i class="bi bi-lightbulb" aria-hidden="true"></i><span>Why does it work?</span></summary>
         <div class="tdse-stage tn-why-stage">
             <p class="tn-amp-cap">Every amplitude <span class="math inline">\\(C_{n_1 \\dots n_${L}} = \\langle n_1 \\dots n_${L} | \\psi \\rangle\\)</span>, largest first: exact (grey) and from the MPS (teal)</p>
             <canvas class="tn-amp" aria-label="All amplitudes of the exact state, largest first, with those of the compressed state on top"></canvas>
