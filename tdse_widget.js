@@ -1199,7 +1199,7 @@
             <label class="tdse-field tdse-speed"><span>Speed</span><input type="range" min="1" max="60" step="1" value="10" data-ui="speed"></label>
         </div>
         <details class="tdse-controls">
-        <summary class="tdse-controls-toggle"><i class="bi bi-sliders" aria-hidden="true"></i><span>Tweak the simulation</span><small>Hamiltonian, initial state, display</small></summary>
+        <summary class="tdse-controls-toggle"><i class="bi bi-sliders" aria-hidden="true"></i><span>Tweak the simulation</span></summary>
         <div class="tdse-seg tdse-panel-tabs" role="group" aria-label="Settings">
             <button type="button" data-tab="ham" aria-pressed="true">Hamiltonian</button>
             <button type="button" data-tab="state" aria-pressed="false">Initial state</button>
@@ -1434,7 +1434,7 @@
         if (prep.kind === "ground") {
             const where = prep.prepIn === "same" ? "this potential"
                 : prep.prepIn === "twotraps" ? String.raw`two harmonic traps \(\tfrac{1}{2}\omega_0^2 (|x| - s/2)^2\)`
-                : `the ${presets[prep.prepIn].label.toLowerCase()} potential`;
+                    : `the ${presets[prep.prepIn].label.toLowerCase()} potential`;
             const gTxt = prep.sameG ? "the same interaction g" : String.raw`interaction \(g_0\)`;
             const extra = {
                 none: "",
