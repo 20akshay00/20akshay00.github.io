@@ -1,0 +1,21 @@
+# Akshay Shankar
+
+> A personal website with the latest updates on my research, projects, and thoughts.
+
+## Pages
+
+- [Resources](https://20akshay00.github.io/resources.llms.md)
+- [<a href='blog.xml' class='rss-link'><i class='bi bi-rss'></i></a> Blog](https://20akshay00.github.io/blog.llms.md)
+- [Summon Squad: A weekend of spaghetti](https://20akshay00.github.io/blog/post1/index.llms.md)
+- [Akshay Shankar](https://20akshay00.github.io/index.llms.md)
+- [Research](https://20akshay00.github.io/research.llms.md)
+- [Determining phase boundaries](https://20akshay00.github.io/tidbits/phase-diagram/index.llms.md)
+- [The callback pattern](https://20akshay00.github.io/tidbits/callbacks/index.llms.md)
+- [Demystifying Bogoliubov transformations](https://20akshay00.github.io/tidbits/bogoliubov-transformations/index.llms.md)
+- [Thermal states in a quantum harmonic oscillator (I)](https://20akshay00.github.io/tidbits/harmonic-oscillator-thermal-state-1/index.llms.md)
+- [Automating image cropping](https://20akshay00.github.io/tidbits/image-crop/index.llms.md)
+- [Linearly indexing a 2D grid](https://20akshay00.github.io/tidbits/linear-indexing/index.llms.md)
+- [Superfluidity as a response to phase twists](https://20akshay00.github.io/tidbits/phase-twists/index.llms.md)
+- [Projects](https://20akshay00.github.io/projects.llms.md)
+- [<a href='tidbits.xml' class='rss-link'><i class='bi bi-rss'></i></a> /ˈtɪdbɪt/](https://20akshay00.github.io/tidbits.llms.md)
+- [Gallery](https://20akshay00.github.io/gallery.llms.md)

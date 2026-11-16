@@ -26,7 +26,13 @@ function readPalette() {
     });
 }
 readPalette();
-new MutationObserver(readPalette).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+new MutationObserver(() => {
+    readPalette();
+    if (reducedMotion) draw();   // the still frame is not redrawn otherwise
+}).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+// With "reduce motion" set in the OS, the atoms are drawn once and stay put.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const interactionRadius = 50;
 const coreRadius = 9;
@@ -93,6 +99,38 @@ window.addEventListener('touchend', () => { mouse.active = false; mouse.x = mous
 const STEP = 1000 / 60;
 let lastTime = 0, pending = 0;
 
+// --- neighbour grid ---
+// Checking every pair of atoms costs n^2 (half a million pairs per step for 1000
+// atoms). Instead the atoms are sorted into square cells a bit wider than the
+// interaction radius (the margin covers how far atoms move during a step), and
+// each atom only looks at its own cell and the eight around it.
+const CELL = interactionRadius + 10;
+let gridCols = 0, gridRows = 0, cellHead = new Int32Array(0), cellNext = new Int32Array(0),
+    cellX = new Int32Array(0), cellY = new Int32Array(0);
+
+function buildGrid() {
+    const n = atoms.length;
+    gridCols = Math.max(1, Math.ceil(width / CELL));
+    gridRows = Math.max(1, Math.ceil(height / CELL));
+    if (cellHead.length !== gridCols * gridRows) cellHead = new Int32Array(gridCols * gridRows);
+    if (cellNext.length !== n) {
+        cellNext = new Int32Array(n);
+        cellX = new Int32Array(n);
+        cellY = new Int32Array(n);
+    }
+    cellHead.fill(-1);
+    for (let i = 0; i < n; i++) {
+        // atoms that drift past the edge share the edge cells
+        const gx = Math.min(gridCols - 1, Math.max(0, Math.floor(atoms[i].x / CELL)));
+        const gy = Math.min(gridRows - 1, Math.max(0, Math.floor(atoms[i].y / CELL)));
+        cellX[i] = gx;
+        cellY[i] = gy;
+        const c = gy * gridCols + gx;
+        cellNext[i] = cellHead[c];
+        cellHead[c] = i;
+    }
+}
+
 function animate(now) {
     pending += lastTime ? Math.min(now - lastTime, 100) : STEP;
     lastTime = now;
@@ -111,6 +149,7 @@ function step() {
     mouse.speed *= 0.85;
 
     const R2 = interactionRadius * interactionRadius;
+    buildGrid();
 
     for (let i = 0; i < atoms.length; i++) {
         let a = atoms[i];
@@ -120,7 +159,13 @@ function step() {
         if (a.y < 50) a.vy += 0.05;
         if (a.y > height - 50) a.vy -= 0.05;
 
-        for (let j = i + 1; j < atoms.length; j++) {
+        // only atoms in this cell and the eight around it can be close enough to interact;
+        // each pair is handled once, by its lower index, as in a plain double loop
+        const ci = cellX[i], cj = cellY[i];
+        for (let gy = Math.max(0, cj - 1); gy <= Math.min(gridRows - 1, cj + 1); gy++)
+        for (let gx = Math.max(0, ci - 1); gx <= Math.min(gridCols - 1, ci + 1); gx++)
+        for (let j = cellHead[gy * gridCols + gx]; j !== -1; j = cellNext[j]) {
+            if (j <= i) continue;
             let b = atoms[j];
             let dx = b.x - a.x;
             let dy = b.y - a.y;
@@ -226,7 +271,13 @@ window.addEventListener('resize', () => {
         lastWidth = currentWidth;
         init();
     }
+    if (reducedMotion) draw();
 });
 
 init();
-requestAnimationFrame(animate);
+if (reducedMotion) {
+    // a still scatter of atoms: the look of the page without the motion
+    draw();
+} else {
+    requestAnimationFrame(animate);
+}

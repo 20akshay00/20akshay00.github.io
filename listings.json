@@ -1,5 +1,15 @@
 [
   {
+    "listing": "/blog.html",
+    "items": [
+      "/blog/post1/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
+  },
+  {
     "listing": "/tidbits.html",
     "items": [
       "/tidbits/harmonic-oscillator-thermal-state-1/index.html",
@@ -12,17 +22,7 @@
     ]
   },
   {
-    "listing": "/blog.html",
-    "items": [
-      "/blog/post1/index.html"
-    ]
-  },
-  {
     "listing": "/gallery.html",
-    "items": []
-  },
-  {
-    "listing": "/projects.html",
     "items": []
   }
 ]

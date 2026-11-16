@@ -8,7 +8,14 @@
 <title>Akshay Shankar</title>
 <link>https://20akshay00.github.io/tidbits.html</link>
 <atom:link href="https://20akshay00.github.io/tidbits.xml" rel="self" type="application/rss+xml"/>
-<description>A personal website with the latest updates on my research, projects, and thoughts.</description>
+<description>Short notes by Akshay Shankar on quantum many-body physics, numerical methods and Julia programming.</description>
+<image>
+<url>https://20akshay00.github.io/images/social-card.png</url>
+<title>Akshay Shankar</title>
+<link>https://20akshay00.github.io/tidbits.html</link>
+<height>76</height>
+<width>144</width>
+</image>
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Thu, 04 Dec 2025 23:00:00 GMT</lastBuildDate>
 <item>
@@ -3716,7 +3723,7 @@ font-style: inherit;">end</span></span></code></pre></div></div>
   <category>bec</category>
   <guid>https://20akshay00.github.io/tidbits/image-crop/</guid>
   <pubDate>Mon, 20 Nov 2023 23:00:00 GMT</pubDate>
-  <media:content url="https://20akshay00.github.io/tidbits/image-crop/BEC.png" medium="image" type="image/png" height="110" width="144"/>
+  <media:content url="https://20akshay00.github.io/tidbits/image-crop/BEC.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Determining phase boundaries</title>
