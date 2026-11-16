@@ -10,7 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const SCALE = 2, SPEED = 38, PAUSE = 1.4;   // px per s, s at each end
     const FEET = 26;                             // its feet are on row 25 of 32
 
+    // load and decode both sheets now: the idle one is otherwise first fetched when the
+    // robot reaches the end, and it blinks out while that loads. Holding the images
+    // keeps them decoded, so later swaps are instant too.
+    const sheets = ["robot_walk", "robot_idle"].map((n) => {
+        const img = new Image();
+        img.src = `/images/sprites/${n}.png`;
+        img.decode().catch(() => {});
+        return img;
+    });
+
     const robot = document.createElement("div");
+    robot.sheets = sheets;
     robot.className = "robot-walker";
     robot.setAttribute("aria-hidden", "true");
     about.style.position = "relative";
