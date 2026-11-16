@@ -11,4 +11,4 @@ title-block-banner: true
 body-classes: blog-post
 include-after-body:
   text: |
-    <script src="../../post_page.js"></script>
+    <script src="../../js/post_page.js"></script>

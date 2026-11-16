@@ -84,14 +84,14 @@
 }
 
 // the writing: a rounder book serif (it sits well with the serif maths), one line
-// of text per ruled line, ragged right, and a blank line between paragraphs
+// of text per ruled line, justified like the rest of the site, and a blank line between paragraphs
 .tidbit-post main.content p,
 .tidbit-post main.content li {
     font-family: "Literata", Georgia, serif;
     font-size: 1.02rem;
     line-height: 32px;
-    text-align: left;
-    hyphens: manual;
+    text-align: justify;
+    hyphens: auto;
 }
 
 .tidbit-post main.content p {

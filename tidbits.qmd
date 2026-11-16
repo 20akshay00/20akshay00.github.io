@@ -2,7 +2,7 @@
 title: "<a href='tidbits.xml' class='rss-link'><i class='bi bi-rss'></i></a> /ˈtɪdbɪt/"
 pagetitle: "/ˈtɪdbɪt/"
 description: "Short notes by Akshay Shankar on quantum many-body physics, numerical methods and Julia programming."
-image: images/social-card.png   # the link-preview picture: the notebook card
+image: images/social-card-v2.png   # the link-preview picture: the notebook card
 subtitle: "a small and particularly interesting item of information."
 listing:
   contents: tidbits
@@ -16,12 +16,12 @@ page-layout: full
 body-classes: tidbits-page seo-description
 title-block-banner: true
 include-in-header:
-  - _head.html     # the site-wide head tags: this list replaces the one in _quarto.yml
+  - theme/head.html    # the site-wide head tags: this list replaces the one in _quarto.yml
   - text: |
       <link rel="alternate" type="application/rss+xml" title="Research Tidbits" href="tidbits.xml">
 include-after-body:
   text: |
-    <script src="listing.js"></script>
+    <script src="js/listing.js"></script>
 ---
 
 ::: {.mb-4}

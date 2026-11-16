@@ -2,11 +2,11 @@
 title: "Akshay Shankar"
 description: "Akshay Shankar is a PhD student at Ghent University developing tensor network methods for ultracold bosonic gases. Research, notes, software and games."
 body-classes: seo-description
-image: images/social-card.png   # the link-preview picture: the notebook card
+image: images/social-card-v2.png   # the link-preview picture: the notebook card
 # structured data: tells search engines (and the LLM tools built on them) that this
 # site and the profiles below belong to the same person
 include-in-header:
-  - _head.html     # the site-wide head tags: this list replaces the one in _quarto.yml
+  - theme/head.html    # the site-wide head tags: this list replaces the one in _quarto.yml
   - text: |
       <script type="application/ld+json">
       {
@@ -52,7 +52,7 @@ about:
 
 Hi! I'm Akshay, a PhD student at [QuantumGroup@UGent](https://quantumghent.github.io/) with an interest in quantum gases and computational physics. These days I mostly develop *Tensor Network* algorithms to numerically study *ultracold bosonic systems in the continuum*. When I'm not performing research, I enjoy [making games](https://20akshay00.itch.io/) with the [Godot engine](https://godotengine.org/).
 
-<script src="./atom_simulation.js"></script>
+<script src="js/atom_simulation.js"></script>
 
 ```{=html}
 <!-- the stickers sit at a distance from the centre that grows with the window
@@ -78,5 +78,5 @@ Hi! I'm Akshay, a PhD student at [QuantumGroup@UGent](https://quantumghent.githu
     box.remove();
 })();
 </script>
-<script src="robot_walker.js"></script>
+<script src="js/robot_walker.js"></script>
 ```

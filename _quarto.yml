@@ -2,21 +2,11 @@ project:
   type: website
   resources:
     - files/AkshayShankarCV.pdf
-    - listing.js
-    - tdse_demos.js
-    - tdse_widget.js
-    - tn_widget.js
-    - bec_widget.js
-    - robot_walker.js
-    - research_cooling.js
-    - post_page.js
-    - gallery_widgets.js
+    - js/*
     - data/bec_shots.bin
     - images/sprites/*
-    - images/social-card.png
-    - favicon.svg
-    - favicon-32.png
-    - apple-touch-icon.png
+    - images/social-card-v2.png
+    - images/icons/*
     - google59d58b70a5916fbe.html   # Google Search Console verification: keep
 
 website:
@@ -25,7 +15,7 @@ website:
   description: "A personal website with the latest updates on my research, projects, and thoughts."
   # link previews (LinkedIn, Slack, Bluesky, ...): title, description and an image;
   # pages without a picture of their own show the notebook card (1200 x 630)
-  image: images/social-card.png
+  image: images/social-card-v2.png
   open-graph: true
   twitter-card: true
   # a plain-text map of the site for LLM tools (llms.txt)
@@ -47,15 +37,15 @@ format:
   html:
     # favicon, phone theme colour and GoatCounter (pages with their own
     # include-in-header must list this file too: see the note in it)
-    include-in-header: _head.html
+    include-in-header: theme/head.html
     theme:
       light:
         - journal
-        - styles.scss
+        - theme/styles.scss
       dark:
         - journal
-        - styles.scss
-        - styles-dark.scss
+        - theme/styles.scss
+        - theme/styles-dark.scss
 
 execute:
   freeze: false

@@ -1,7 +1,7 @@
 ---
 title: "Gallery"
 description: "Games made with the Godot engine for game jams, plus Blender renders, pixel art and origami by Akshay Shankar."
-image: images/social-card.png   # the link-preview picture: the notebook card
+image: images/social-card-v2.png   # the link-preview picture: the notebook card
 subtitle: "A creative outlet complementing my academic activities."
 page-layout: full
 title-block-banner: true
@@ -200,4 +200,4 @@ listing:
 :::
 :::
 
-<script src="gallery_widgets.js"></script>
+<script src="js/gallery_widgets.js"></script>

@@ -1,20 +1,23 @@
 <!doctype html>
 <!--
-  The link-preview card (images/social-card.png): what LinkedIn, Slack, Bluesky and
+  The link-preview card (images/social-card-v2.png): what LinkedIn, Slack, Bluesky and
   the like show when someone shares the site. 1200 x 630, the size they expect.
 
-  Quarto ignores this folder (it starts with "_"); the picture is made by taking a
+  Quarto skips this folder (plain .html, not a page or a listed resource); the picture is made by taking a
   screenshot of this page. From the repository root:
 
     "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new \
       --disable-gpu --hide-scrollbars --allow-file-access-from-files \
       --window-size=1200,630 --virtual-time-budget=5000 \
-      --screenshot="$PWD/images/social-card.png" "file:///$PWD/_social-card/card.html"
+      --screenshot="$PWD/images/social-card-v2.png" "file:///$PWD/tools/social-card/card.html"
 
   (Chrome works the same way.) The fonts come from Google Fonts, so stay online.
   Then shrink it: WhatsApp drops preview images over ~300 KB.
 
-    pngquant --quality 80-95 --speed 1 -f --ext .png images/social-card.png
+    pngquant --quality 80-95 --speed 1 -f --ext .png images/social-card-v2.png
+
+  Sharing apps keep old previews per image URL, so a changed card gets a new name:
+  bump the -v2 suffix here, in _quarto.yml and in the pages that set `image:`.
 -->
 <html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@600&display=block" rel="stylesheet">
@@ -28,7 +31,7 @@
     background-color: var(--paper);
     background-image:
       radial-gradient(circle at 1px 1px, rgba(90, 42, 156, 0.22) 1.1px, transparent 1.6px),
-      url("../images/sprites/paper-grain.svg");
+      url("../../images/sprites/paper-grain.svg");
     background-size: 22px 22px, 240px 240px;
     font-family: "Source Sans 3", sans-serif;
     color: var(--ink);
@@ -71,7 +74,7 @@
     filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.22));
   }
   /* the robot: the first frame of its idle sheet (32 x 32 frames), drawn at 7x */
-  .robot { width: 224px; height: 224px; background: url("../images/sprites/robot_idle.png") 0 0 / 448px 224px no-repeat; }
+  .robot { width: 224px; height: 224px; background: url("../../images/sprites/robot_idle.png") 0 0 / 448px 224px no-repeat; }
   /* the jet with its dashed flight path, as on the landing page (170 x 120 box there) */
   .jet-trail { position: absolute; width: 340px; height: 240px; }
   .jet-trail svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
@@ -80,7 +83,7 @@
 </style></head>
 <body>
   <div class="band"><span>20akshay00.github.io</span></div>
-  <img class="waves" src="../images/sprites/navbar-waves.svg" alt="">
+  <img class="waves" src="../../images/sprites/navbar-waves.svg" alt="">
 
   <div class="sheet">
     <div class="tape"></div>
@@ -91,7 +94,7 @@
   <!-- the jet and its looping flight path: the landing page's sticker, drawn at 2x -->
   <div class="jet-trail" style="left: 835px; top: 135px;">
     <svg viewBox="0 0 170 120"><path d="M30 34 C 70 6, 96 70, 70 84 S 40 70, 70 52 S 130 96, 166 112"/></svg>
-    <img class="sticker" src="../images/sprites/jet1.png">
+    <img class="sticker" src="../../images/sprites/jet1.png">
   </div>
   <div class="sticker robot" style="left: 935px; top: 345px; transform: scaleX(-1);"></div>
 </body></html>

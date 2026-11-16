@@ -8,7 +8,7 @@
 (function () {
     const root = document.getElementById("bec-widget");
     if (!root) return;
-    const SRC = new URL("data/bec_shots.bin", document.currentScript.src).href;
+    const SRC = new URL("../data/bec_shots.bin", document.currentScript.src).href;
 
     const HOLD = [0, 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 1.1, 1.3, 1.5, 1.6, 1.8, 1.9, 2.1, 2.3];   // ms
     const T = HOLD.length, H = 96, W = 47, F = H * W, SHOTS = 5;

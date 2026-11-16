@@ -50,16 +50,16 @@ $shadow: rgba(0, 0, 0, 0.05) !default;
 /*-- scss:rules --*/
 // The rules live in theme/, one file per part of the site, imported in cascade
 // order (later files override earlier ones; the phone rules come last).
-@import "theme/base";
-@import "theme/components";
-@import "theme/widgets";
-@import "theme/notebook";
-@import "theme/landing";
-@import "theme/research";
-@import "theme/tidbits";
-@import "theme/projects";
-@import "theme/blog";
-@import "theme/gallery";
-@import "theme/notfound";
-@import "theme/dark";
-@import "theme/mobile";
+@import "base";
+@import "components";
+@import "widgets";
+@import "notebook";
+@import "landing";
+@import "research";
+@import "tidbits";
+@import "projects";
+@import "blog";
+@import "gallery";
+@import "notfound";
+@import "dark";
+@import "mobile";

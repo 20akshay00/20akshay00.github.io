@@ -136,16 +136,11 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-thumb:hover { background: rgba($primary, 0.6); }
 
+// justified with hyphenation at every width, phones included, so lines run edge to edge
 p {
     text-align: justify;
     hyphens: auto;
     font-size: 18px;
-}
-
-@media (max-width: 480px) {
-    p {
-        text-align: left;
-    }
 }
 
 .cell-output-display svg {
